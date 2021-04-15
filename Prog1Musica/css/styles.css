@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+.logoheader{
+    border-radius: 90%;
+    width: 10%;
+}
+.instagram{
+    width: 18%;
+}
+header{
+    background-color: white;
+}
+body{
+    background-color: azure;
+}
+.fotosong{
+    width: 180px;
+    height: 180px;
+}
