@@ -123,11 +123,12 @@ a{
 }
 
 footer{
-    background-color: cyan;
-}
-
-.equipo{
-    background-color: cornsilk;
+   margin-left: 30px;
+   margin-top: 20px;
+   margin-bottom: 30px;
+   background-color: black;
+   color: white;
+   text-align: center;
 }
 
 .containergenerosg{
@@ -144,4 +145,86 @@ footer{
     flex-direction: row;
     width: 100%;
 }
+/* pagina miperfil*/
+.formulario{
+    color: black;
+    background: rgba(0, 255, 21, 0.637);
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    margin-top: 6%;
+    width: 800px;
+    height: 600px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+
+.nombreu{
+        background-color: black;
+        color:grey;
+        width: 60%;
+        height: 30px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+}
+.mail{
+    background-color: black;
+    color:grey;
+    width: 60%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.contrasena{
+    background-color: black;
+    color:grey;
+    width: 60%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.volverainicio{
+   
+    color: black;
+}
+.slider{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 400px;
+    overflow: hidden;
+    
+}
+.slider ul{
+    margin-top: 20px;
+    width: 400%;
+    display: flex;
+    height: 100%;
+    animation: cambio 20s infinite alternate;
+    
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+    height: 100%;
+    
+}
+.slider li img{
+    width: 100%;
+}
+
+@keyframes cambio {
+    0% {margin-left:0; }
+    20% {margin-left:0; }
+
+    25% {margin-left:-100%; }
+    45% {margin-left:-100%; }
+
+    50% {margin-left:-200%; }
+    75% {margin-left:-200%; }
+
+    80% {margin-left:-300%; }
+    100% {margin-left:-300%; }
+}
