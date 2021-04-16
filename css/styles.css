@@ -27,12 +27,8 @@ body{
     border: solid 3px black;
     background-color: chartreuse;
 }
-.container{
-    background-color: rgb(31, 138, 84);
-    border: solid 3px rgb(216, 9, 9);
-    width: 100%;
-    margin-bottom: 20px;
-}
+
+
 
 .listas{
     background-color: yellow;
@@ -65,4 +61,18 @@ footer{
 
 .equipo{
     background-color: cornsilk;
+}
+.containergenerosg{
+        background-color: rgb(31, 138, 84);
+        border: solid 3px rgb(216, 9, 9);
+        width: 100%;
+        margin-bottom: 20px;
+}
+.generosg{
+    background-color: yellow;
+    border: solid 3px black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
 }
