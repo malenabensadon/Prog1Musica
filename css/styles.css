@@ -8,13 +8,61 @@
 .instagram{
     width: 18%;
 }
+
+body{
+    background-color: rgb(48, 148, 148);
+}
+
 header{
     background-color: white;
+    border: solid 3px black;
+    margin-bottom: 15px;
+}
+.cajainicio{
+    background-color: blueviolet;
+    margin-bottom: 20px;
+    border: solid 3px white;
 }
 body{
-    background-color: azure;
+    border: solid 3px black;
+    background-color: chartreuse;
 }
-.fotosong{
+.container{
+    background-color: rgb(31, 138, 84);
+    border: solid 3px rgb(216, 9, 9);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.listas{
+    background-color: yellow;
+    border: solid 3px black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+a{
+    color: white;
+}
+
+.caja{
+    width: 20%;
+    background-color: black;
+}
+
+.fotos{
     width: 180px;
     height: 180px;
+    border-radius: 90%;
+    flex-wrap: wrap;
+}
+
+footer{
+    background-color: cyan;
+}
+
+.equipo{
+    background-color: cornsilk;
 }
