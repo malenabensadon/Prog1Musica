@@ -1,6 +1,12 @@
 *{
     box-sizing: border-box;
 }
+ul,ol{
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
 .logoheader{
     border-radius: 90%;
     width: 10%;
@@ -46,13 +52,20 @@ a{
 .caja{
     width: 20%;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+.caja img{
+    width: 100%;
 }
 
 .fotos{
-    width: 180px;
-    height: 180px;
+   /* width: 180px;
+    height: 180px;*/
     border-radius: 90%;
-    flex-wrap: wrap;
 }
 
 footer{
