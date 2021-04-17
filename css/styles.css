@@ -263,26 +263,8 @@ footer{
     color: white;
     margin: 10px;
 }
-.artistascaja{
+.acaja{
     border: 3px solid blueviolet;
-}
-
-.artistaspag{
-    background-color: blueviolet;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-}
-.albumescaja{
-    border: 3px solid blueviolet;
-}
-.albumespag{
-    background-color: blueviolet;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
 }
 
 @keyframes cambio {
@@ -297,4 +279,11 @@ footer{
 
     80% {margin-left:-300%; }
     100% {margin-left:-300%; }
+}
+.pag{
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
