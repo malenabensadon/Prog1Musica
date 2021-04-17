@@ -20,8 +20,8 @@ li{
 }
 
 .buscar{
-    margin: 15px;
-    margin-top: 0%;
+    margin: 20px;
+    margin-top: 20px;
 }
 
 .menu{
@@ -43,6 +43,12 @@ li{
 
 .instagram{
     width: 18%;
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .container{
@@ -50,14 +56,20 @@ li{
 }
 
 .titulos{
-    color: white;
+    color: black;
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
 }
 
 .user{
     color: white;
     text-decoration: underline;
     font-weight: bold;
-    margin: 15px;
+    margin-left: 20px;
 }
 
 header{
@@ -69,6 +81,7 @@ header{
     background-color: black;
     margin-bottom: 20px;
 }
+
 body{
   
     background-color: black;
@@ -88,7 +101,6 @@ body{
 
 .listas{
     background-color: yellow;
-   
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -126,17 +138,17 @@ a{
 }
 
 footer{
-    border:solid 8px black;
+   border:solid 8px black;
    background-color: black;
    color: white;
    text-align: center;
 }
 
 .containergenerosg{
-        background-color: rgb(31, 138, 84);
-        border: solid 3px rgb(216, 9, 9);
-        width: 100%;
-        margin-bottom: 20px;
+    background-color: rgb(31, 138, 84);
+    border: solid 3px rgb(216, 9, 9);
+    width: 100%;
+    margin-bottom: 20px;
 }
 .generosg{
     background-color: yellow;
@@ -163,13 +175,14 @@ footer{
 
 
 .nombreu{
-        background-color: black;
-        color:grey;
-        width: 60%;
-        height: 30px;
-        border-radius: 10px;
-        margin-bottom: 5px;
+    background-color: black;
+    color:grey;
+    width: 60%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 5px;
 }
+
 .mail{
     background-color: black;
     color:grey;
@@ -178,6 +191,7 @@ footer{
     border-radius: 10px;
     margin-bottom: 5px;
 }
+
 .contrasena{
     background-color: black;
     color:grey;
@@ -190,6 +204,7 @@ footer{
    
     color: black;
 }
+
 .slider{
     width: 100%;
     margin: auto;
@@ -198,6 +213,7 @@ footer{
     overflow: hidden;
     
 }
+
 .slider ul{
     margin-top: 20px;
     width: 400%;
@@ -206,6 +222,7 @@ footer{
     animation: cambio 20s infinite alternate;
     
 }
+
 .slider li{
     width: 100%;
     list-style: none;
@@ -215,12 +232,14 @@ footer{
 .slider li img{
     width: 100%;
 }
+
+/*generales*/
 .justin{
     color: cornsilk;
 }
 
 .nombre{
-    color: cornsilk;
+    color: white;
 }
 
 .detallealbum{
@@ -229,6 +248,41 @@ footer{
 }
 .textochanges{
     margin: 15px;
+}
+.marley{
+    color: white;
+    margin: 10px;
+}
+
+.fotobob{
+    border: 2px solid white;
+    margin: 10px;
+}
+
+.bobtopfive{
+    color: white;
+    margin: 10px;
+}
+.artistascaja{
+    border: 3px solid blueviolet;
+}
+
+.artistaspag{
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.albumescaja{
+    border: 3px solid blueviolet;
+}
+.albumespag{
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 @keyframes cambio {
