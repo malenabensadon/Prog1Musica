@@ -63,6 +63,7 @@ li{
     flex-direction: row;
     justify-content: center;
     margin: 20px;
+    box-shadow: -4px 0 15px blueviolet;    
 }
 
 .user{
