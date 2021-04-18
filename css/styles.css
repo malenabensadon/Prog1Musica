@@ -8,6 +8,7 @@ ul,ol{
     padding: 0;
 }
 
+
 li{
     list-style-type: none;
 }
@@ -23,19 +24,25 @@ li{
     margin: 20px;
     margin-top: 20px;
 }
-
+.sound-now{
+    text-decoration: none;
+    font-size:40px;
+    margin-right: 60px;
+    color:  rgb(0, 255, 21);
+}
 .menu{
-    color: white;
+    color: rgb(105, 112, 98);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-end;
     justify-content: space-between;
     align-items: center;
+    margin-right: 40px;
 }
 
 .barratexto{
-    color: white;
+    color: rgb(0, 255, 21);
     font-weight: bold;
     text-decoration: none;
     margin: 15px;
@@ -53,11 +60,11 @@ li{
 
 .container{
     background-color: black;
+
 }
 
 .titulos{
-    color: black;
-    background-color: rgb(49, 127, 218);
+    color: rgb(0, 255, 21);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -66,7 +73,7 @@ li{
 }
 
 .user{
-    color: white;
+    color: rgb(0, 255, 234);
     text-decoration: underline;
     font-weight: bold;
     margin-left: 20px;
@@ -108,7 +115,7 @@ body{
 }
 
 a{
-    color: white;
+    color: rgb(105, 112, 98);
 }
 
 .caja{
@@ -122,7 +129,7 @@ a{
 }
 .names{
     text-decoration: none;
-    color: white;
+    color: rgb(105, 112, 98);
     font-weight: bold;
     margin: 10px;
 }
@@ -135,12 +142,14 @@ a{
    /* width: 180px;
     height: 180px;*/
     border-radius: 90%;
+    width: 100px;
+    height: 250px;
 }
 
 footer{
    border:solid 8px black;
    background-color: black;
-   color: white;
+   color: rgb(105, 112, 98);
    text-align: center;
 }
 
@@ -204,14 +213,13 @@ footer{
    
     color: black;
 }
-
+/*slider login*/
 .slider{
     width: 100%;
     margin: auto;
     margin-bottom: 20px;
     height: 400px;
     overflow: hidden;
-    
 }
 
 .slider ul{
@@ -220,26 +228,50 @@ footer{
     display: flex;
     height: 100%;
     animation: cambio 20s infinite alternate;
-    
 }
 
 .slider li{
     width: 100%;
     list-style: none;
     height: 100%;
-    
 }
 .slider li img{
     width: 100%;
 }
+/*slideralbum*/
+.slideralbum{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 400px;
+    overflow: hidden;
+}
 
+.slideralbum ul{
+    margin-top: 20px;
+    width: 400%;
+    display: flex;
+    height: 100%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slideralbum li{
+    width: 100%;
+    list-style: none;
+    height: 100%;
+}
+.slideralbum li img{
+    width: 100%;
+}
 /*generales*/
 .justin{
     color: cornsilk;
 }
 
 .nombre{
-    color: white;
+    color: rgb(105, 112, 98)
 }
 
 .detallealbum{
@@ -250,7 +282,7 @@ footer{
     margin: 15px;
 }
 .artista{
-    color: white;
+    color: rgb(105, 112, 98);
     width: 17%;
     background-color:black;
     display: flex;
@@ -263,16 +295,13 @@ footer{
 }
 
 .fotobob{
-    border: 2px solid white;
+    border: 2px solid rgb(105, 112, 98);
     margin: 10px;
 }
 
 .bobtopfive{
-    color: white;
+    color: rgb(105, 112, 98);
     margin: 10px;
-}
-.acaja{
-    border: 3px solid rgb(49, 127, 218);
 }
 
 @keyframes cambio {
@@ -289,21 +318,20 @@ footer{
     100% {margin-left:-300%; }
 }
 .pag{
-    background-color: rgb(49, 127, 218);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    color: rgb(0, 255, 21);
 }
 .detallealbum{
-    background-color:rgb(49, 127, 218);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
 }
 .album{
-    color: white;
+    color: rgb(105, 112, 98);
     width: 17%;
     background-color:black;
     display: flex;
@@ -321,4 +349,8 @@ footer{
 }
 .listadetallealbum{
     background-color: black;
+}
+.detallestrack{
+    color:rgb(105, 112, 98);
+    margin: 50px;
 }
