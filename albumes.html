@@ -6,90 +6,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link  rel="icon"   href="img/logosoundnow.jpeg" type="image/png" />
-    <title>Albumes</title>
+    <title>Álbumes</title>
 </head>
 <body>
-    <header>
-        <article class="cajainicio">
-            <nav class="header-items">
-                <section class="BarraDeBusqueda">
-                        <div class="menu">
-                            <a href="index.html"><img class="logoheader" src="./img/logosoundnow.jpeg" alt="logo"></a>
-                            <h1><a href="index.html" class="sound-now">SOUND-NOW</a></h1>
-                                <a href="index.html" class="barratexto">Home</a>  
-                                <a href="artistas.html" class="barratexto">Artistas</a>
-                                <a href="albumes.html" class="barratexto">Albumes</a>
-                                <a href="generos.html" class="barratexto">Géneros</a>
-                                <a href="playlists.html" class="barratexto">Playlists</a>
-                                <div class="perfil-menu">
-                        <section class="icperfil">
-                                <a href="perfil.html"><i class="fas fa-user-circle icons" id="i"></i><h1 class="user">Log in</h1></a>
-                        </section>
-                </div>
+        <header>
+                <article class="cajainicio">
+                    <nav class="header-items">
+                        <section class="BarraDeBusqueda">
+                                <div class="menu">
+                                    <a href="index.html"><img class="logoheader" src="./img/logosoundnow.jpeg" alt="logo"></a>
+                                    <h1><a href="index.html" class="sound-now">SOUND-NOW</a></h1>
+                                        <a href="index.html" class="barratexto">Home</a>  
+                                        <a href="artistas.html" class="barratexto">Artistas</a>
+                                        <a href="albumes.html" class="barratexto">Álbumes</a>
+                                        <a href="generos.html" class="barratexto">Géneros</a>
+                                        <a href="playlists.html" class="barratexto">Playlists</a>
+                                        <div class="perfil-menu">
+                                <section class="icperfil">
+                                        <a href="perfil.html"><i class="fas fa-user-circle icons" id="i"></i><h1 class="user">Log in</h1></a>
+                                </section>
                         </div>
-                        <form action="search-results.html" method="GET" class="buscar">
-                            <input class= "b" id= "ba" type="text" name="search" placeholder = "Search">
-                            <button type="submit" class="button">Buscar</button>
-                    </form>
-                </section>
-        </nav>
-        </article>
-    </header>
-            <main>
-                <section class="acaja">
-                        <h2 class="pag">Álbumes</h2>
-                        <ul class="listas">
-
-                                <li class="caja">
-                                    <a href="./detail-album.html" class="names">x (Deluxe Version) - Ed Sheeran</a>
-                                    <a href="./detail-album.html"><img class="fotos" src="./img/x.jpg" alt=""></a>
-                                </li>
-                                <li class="caja">
-                                    <a href="./detail-album.html" class="names">Evolve - Imagine Dragons</a>
-                                    <a href="./detail-album.html"><img class="fotos" src="./img/evolve imagine dragons.jpg" alt=""></a>
-                                </li>
-                                <li class="caja">
-                                    <a href="./detail-album.html" class="names">Changes - Justin Bieber</a>
-                                    <a href="./detail-album.html"><img class="fotos" src="./img/changes.jpg" alt=""></a>
-                                </li>
-                                <li class="caja">
-                                    <a href="./detail-album.html" class="names">TINI TINI TINI - Tini</a>
-                                    <a href="./detail-album.html"><img class="fotos" src="./img/tini.jpg" alt=""></a>
-                                </li>
-                                <li class="caja">
-                                    <a href="./detail-album.html" class="names">Heathens - Twenty One Pilots</a>
-                                    <a href="./detail-album.html"><img class="fotos" src="./img/Heathens.jpg" alt=""></a>
-                                </li>
-                            </ul>
-                            <div class="slideralbum">
-                                <ul>
-                                        <li><img src="img/tini.jpg" alt=""></li>
-                                        <li><img src="img/x.jpg" alt=""></li>
-                                        <li><img src="img/evolve imagine dragons.jpg" alt=""></li>
-                                        <li><img src="img/changes.jpg" alt=""></li>
-                                        <li><img src="img/Heathens.jpg" alt=""></li>
-                                </ul>   
                                 </div>
-                </section>
-                    </main>
-            <footer> <div class="footer">
-                
-                <div class="instagram">
-                        <div class="seguinos">Seguinos:</div>
-                        <div>
-                        <a href="https://www.instagram.com/"><img src="./img/instagram-logo-3.png" alt="instagram" class="instagram"></a>
-                        </div>
+                                <form action="search-results.html" method="GET" class="buscar">
+                                    <input class= "b" id= "ba" type="text" name="search" placeholder = "Search">
+                                    <button type="submit" class="button">Buscar</button>
+                            </form>
+                        </section>
+                </nav>
+                </article>
+            </header>
+            <section class="acaja">
+                <h2 class="pag">Álbumes</h2>
+                <ul class="listas">
+                    <div class="album">
+                        <a href="./detail-album.html"><img class="fotos" src="./img/x.jpg" alt=""></a>
+                        <h2 class="texto"><a href="./detail-album.html" class="names">X</a>by<a href="./detail-artist.html" class="names">Ed Sheeran</a></h2>
+                        <p class="texto"> Lanzamiento: 20 de junio de 2014</p>
+                        <p class="texto">Generos: Pop, R&B y hip hop</p>
+                        <p>Canciones del Album</p>
+                        <ol class="listadetallealbum">
+                                <li>One</li>
+                                <li>I'm a Mess</li>
+                                <li>Sing</li>
+                                <li>Don't</li>
+                                <li>Nina</li>
+                                <li>Photograph</li>
+                                <li>Bloodstream</li>
+                                <li>Tenerife Sea</li>
+                                <li>Runaway</li>
+                                <li>The Man</li>
+                                <li>Thinking out Loud</li>
+                                <li>Afire Love</li>
+                                <li>Take It Back</li>
+                                <li>Shirtsleeves</li>
+                                <li>Even My Dad Does Sometimes</li>
+                                <li>I See Fire</li>
+                        </ol>      
                 </div>
-        
-                <div class="equipo">
-                        <h3>Equipo:</h3>
-                        <ul class="miembros">
-                            <li class="nombre">Hania Achaval</li>
-                            <li class="nombre">Justina Basombrio</li>
-                            <li class="nombre">Malena Bensadon</li>
-                        </ul>
+                <div class="album">
+                    <a href="./detail-album.html"><img class="fotos" src="./img/evolve imagine dragons.jpg" alt=""></a>
+                    <h2 class="texto"><a href="./detail-album.html" class="names">Evolve</a>by<a href="./detail-artist.html" class="names">Imagine Dragons</a></h2>
+                    <p class="texto"> Lanzamiento: 23 de junio de 2017</p>
+                    <p class="texto">Generos: Electro pop, Rock alternativo, Indie rock, Indie pop, Alternative dance, Synth pop, Indie electrónica</p>
+                    <p>Canciones del Album</p>
+                    <ul class="listadetallealbum">
+                            <li>I Don't Know Why</li>
+                            <li>Whatever It Takes</li>
+                            <li>Believer</li>
+                            <li>Walking the Wire</li>
+                            <li>Rise Up</li>
+                            <li>I'll Make It Up to You</li>
+                            <li>Yesterday</li>
+                            <li>Mouth of the River</li>
+                            <li>Thunder</li>
+                            <li>Start Over</li>
+                            <li>Dancing in the Dark</li>
+                    </ol>      
+            </div>
+            <div class="album">
+                <a href="./detail-album.html"><img class="fotos" src="./img/justin-bieber-justice.jpeg" alt=""></a>
+                <h2 class="texto"><a href="./detail-album.html" class="names">Justice</a>by<a href="./detail-artist.html" class="names">Justin Bieber</a></h2>
+                <p class="texto"> Lanzamiento: 19 de marzo, 2021</p>
+                <p class="texto">Generos: Pop, R&B contemporáneo, R&B alternativo</p>
+                 <p>Canciones del Album: </p>
+                 <ul class="listadetallealbum">
+                        <li>Much</li>
+                        <li>Deserve You</li>
+                        <li>As I Am</li>
+                        <li>Off My Face</li>
+                        <li>Holy</li>
+                        <li>Unstable</li>
+                        <li>MKL Interlude</li>
+                        <li>Die For You</li>
+                        <li>Hold On</li>
+                        <li>Somebody</li>
+                        <li>Ghost</li>
+                        <li>Peaches</li>
+                        <li>Love You Different</li>
+                        <li>Loved By You</li>
+                        <li>Anyone</li>
+                        <li>Loneley</li>
+                </ul>      
+        </div>
+        <div class="album">
+            <a href="./detail-album.html"><img class="fotos" src="./img/tini.jpg" alt=""></a>
+            <h2 class="texto"><a href="./detail-album.html" class="names">TINI TINI TINI</a>by<a href="./detail-artist.html" class="names">Tini</a></h2>
+            <p class="texto"> Lanzamiento: 3 de diciembre de 2020</p>
+            <p class="texto">Generos: Pop, reguetón, balada, trap</p>
+            <p>Canciones del Album</p>
+            <ul class="listadetallealbum">
+                    <li>Un beso en Madrid</li>
+                    <li>Fresa</li>
+                    <li>Si tú supieras</li>
+                    <li>Tuyo</li>
+                    <li>Te olvidaré</li>
+                    <li>Acércate</li>
+                    <li>Playa</li>
+                    <li>Ella Dice</li>
+                    <li>Duele</li>
+                    <li>Recuerdo</li>
+                    <li>Oye</li>
+                    <li>Diciembre</li>
+                    <li>Sueltate el pelo</li>
+                    <li>22</li>
+            </ol>      
+    </div>
+    <div class="album">
+        <a href="./detail-album.html"><img class="fotos" src="./img/Heathens.jpg" alt=""></a>
+        <h2 class="texto"><a href="./detail-album.html" class="names">Heathens</a>by<a href="./detail-artist.html" class="names">Twenty One Pilots</a></h2>
+        <p class="texto"> Lanzamiento: 16 de junio, 2016</p>
+        <p class="texto">Generos: Rap rock</p>
+        <p>Canciones del Album</p>
+        <ul class="listadetallealbum">
+                <l>Purple Lamborghini</li>
+                <li>Sucker for Pain</li>
+                <li>Heathens</li>
+                <li>Standing In The Rain </li>
+                <li>Gangsta</li>
+                <li>Know Better</li>
+                <li>You Don't Own Me</li>
+                <li>Without Me</li>
+                <li>Super Freak</li>
+                <li>Wreak Havoc</li>
+                <li>Medieval Warfare</li>
+                <li>Bohemian Rhapsody</li>
+                <li>Slippin' Into Darkness</li>
+                <li>Fortunate Son</li>
+                <li>Spirit In The Sky</li>
+                <li>I'd Rather Go Blind</li>
+                <li>FI Started a Joke</li>
+        </ol>      
+</div>
+                </ul>
+        </section>
+    </main>
+    <footer> <div class="footer">  
+        <div class="instagram">
+                <div class="names">Seguinos:</div>
+                <div>
+                <a href="https://www.instagram.com/"><img src="./img/instagram-logo-3.png" alt="instagram" class="instagram"></a>
                 </div>
         </div>
-                 </footer>
+
+        <div class="equipo">
+                <h3>Equipo:</h3>
+                <ul class="miembros">
+                    <li class="nombre">Hania Achaval</li>
+                    <li class="nombre">Justina Basombrio</li>
+                    <li class="nombre">Malena Bensadon</li>
+                </ul>
+        </div>
+</div>
+         </footer>
 </body>
 </html>

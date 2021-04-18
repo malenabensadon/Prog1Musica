@@ -101,17 +101,20 @@ body{
 }
 
 .listadetallealbum{
-    list-style-type: square;
-    color: cornsilk;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color: rgb(105, 112, 98);
     margin: 15px;
+    list-style-type:disc;
 }
 
 .listas{
-    background-color: yellow;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
+    margin-right: 20px;
 }
 
 a{
@@ -142,17 +145,15 @@ a{
    /* width: 180px;
     height: 180px;*/
     border-radius: 90%;
-    width: 100px;
+    width: auto;
     height: 250px;
 }
-
 footer{
    border:solid 8px black;
    background-color: black;
    color: rgb(105, 112, 98);
    text-align: center;
 }
-
 .containergenerosg{
     background-color: rgb(31, 138, 84);
     border: solid 3px rgb(216, 9, 9);
@@ -160,8 +161,6 @@ footer{
     margin-bottom: 20px;
 }
 .generosg{
-    background-color: yellow;
-    border: solid 3px black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -181,8 +180,6 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
-
 .nombreu{
     background-color: black;
     color:grey;
@@ -191,7 +188,6 @@ footer{
     border-radius: 10px;
     margin-bottom: 5px;
 }
-
 .mail{
     background-color: black;
     color:grey;
@@ -210,7 +206,6 @@ footer{
     margin-bottom: 5px;
 }
 .volverainicio{
-   
     color: black;
 }
 /*slider login*/
@@ -221,7 +216,6 @@ footer{
     height: 400px;
     overflow: hidden;
 }
-
 .slider ul{
     margin-top: 20px;
     width: 400%;
@@ -229,7 +223,6 @@ footer{
     height: 100%;
     animation: cambio 20s infinite alternate;
 }
-
 .slider li{
     width: 100%;
     list-style: none;
@@ -239,32 +232,7 @@ footer{
     width: 100%;
 }
 /*slideralbum*/
-.slideralbum{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 20px;
-    height: 400px;
-    overflow: hidden;
-}
 
-.slideralbum ul{
-    margin-top: 20px;
-    width: 400%;
-    display: flex;
-    height: 100%;
-    animation: cambio 20s infinite alternate;
-}
-
-.slideralbum li{
-    width: 100%;
-    list-style: none;
-    height: 100%;
-}
-.slideralbum li img{
-    width: 100%;
-}
 /*generales*/
 .justin{
     color: cornsilk;
@@ -272,11 +240,6 @@ footer{
 
 .nombre{
     color: rgb(105, 112, 98)
-}
-
-.detallealbum{
-    color: cornsilk;
-    margin: 20px;
 }
 .texto{
     margin: 15px;
@@ -325,10 +288,26 @@ footer{
     color: rgb(0, 255, 21);
 }
 .detallealbum{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
+    width: 800px;
+    height: 850px;
+    color:rgb(105, 112, 98) ;
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.detalleartista{
+    width: 800px;
+    height: 1100px;
+    color:rgb(105, 112, 98) ;
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .album{
     color: rgb(105, 112, 98);
@@ -343,14 +322,49 @@ footer{
     border-radius: 15px;
 }
 .fotoa{
-    width: 180px;
-    height: 180px;
     border-radius: 90%;
+    width: AUTO;
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .listadetallealbum{
     background-color: black;
 }
 .detallestrack{
-    color:rgb(105, 112, 98);
-    margin: 50px;
+    width: 800px;
+    height: 500px;
+    color:rgb(105, 112, 98) ;
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.detallegenero{
+    width: 800px;
+    height: 900px;
+    color:rgb(105, 112, 98) ;
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.fotoj{
+    width: 40%;
+    height: auto;
+    border-radius: 90%;
+    margin-top: 20px;
+}
+.videoj{
+    margin-top: 20px;
+}
+.fotoalbum{
+    border-radius: 90%;
+    width: auto;
+    height: 250px;
+
 }
