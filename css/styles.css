@@ -13,11 +13,11 @@ li{
     list-style-type: none;
 }
 
-.logoheader{
+.logo{
     border-radius: 90%;
-    width: 30%;
-    margin: 15px;
-    margin-bottom: 0%;
+    width: auto;
+    height: 170px;
+    margin-top: 20px;
 }
 
 .buscar{
