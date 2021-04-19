@@ -221,9 +221,6 @@ footer{
 .justin{
     color: cornsilk;
 }
-.nombre{
-    color: rgb(105, 112, 98)
-}
 .texto{
     margin: 15px;
 }
@@ -295,7 +292,18 @@ footer{
 }
 .playlist{
     width: 800px;
-    height: 1100px;
+    height: 800px;
+    color:rgb(105, 112, 98) ;
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.busqueda{
+    width: 800px;
+    height: 800px;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
     box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
@@ -362,3 +370,29 @@ footer{
     width: auto;
     height: 250px;
 }
+.detailx{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin-right: 20px;
+    justify-content: center;
+}
+.detail{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.namesx{
+    text-decoration: none;
+    color: rgb(105, 112, 98);
+    font-weight: bold;
+    margin-left: 55px;
+    margin-top: 20px;
+}
+.fotosd{
+    width: 180px;
+    height: 180px;
+    border-radius: 90%;
+    margin-top: 20px;
+}
+
