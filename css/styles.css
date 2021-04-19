@@ -309,6 +309,17 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.playlist{
+    width: 800px;
+    height: 1100px;
+    color:rgb(105, 112, 98) ;
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .album{
     color: rgb(105, 112, 98);
     width: 17%;
