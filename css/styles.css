@@ -215,8 +215,6 @@ footer{
 .slider li img{
     width: 100%;
 }
-/*slideralbum*/
-
 /*generales*/
 .justin{
     color: cornsilk;
@@ -227,6 +225,9 @@ footer{
 .button{
     width: auto;
     height: 22px;
+}
+.lupa{
+    height: 20px;
 }
 .artista{
     color: rgb(105, 112, 98);
@@ -395,4 +396,15 @@ footer{
     border-radius: 90%;
     margin-top: 20px;
 }
-
+.pag{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.fav{
+    width: 90px; 
+    height: 40px;
+}
+.favx{
+    width:100%
+/*slideralbum*/
+}
