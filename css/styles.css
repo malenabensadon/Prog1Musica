@@ -14,6 +14,7 @@ li{
     width: auto;
     height: 170px;
     margin-top: 20px;
+    margin-left: 20PX;
 }
 .buscar{
     margin: 20px;
@@ -225,6 +226,10 @@ footer{
 }
 .texto{
     margin: 15px;
+}
+.button{
+    width: auto;
+    height: 22px;
 }
 .artista{
     color: rgb(105, 112, 98);
