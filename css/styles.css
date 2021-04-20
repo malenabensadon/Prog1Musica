@@ -291,17 +291,6 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.playlist{
-    width: 800px;
-    height: 800px;
-    color:rgb(105, 112, 98) ;
-    border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
 .busqueda{
     width: 800px;
     height: 800px;
@@ -407,4 +396,47 @@ footer{
 .favx{
     width:100%
 /*slideralbum*/
+}
+/*playlist*/
+.playlist{
+    width: 800px;
+    color:rgb(105, 112, 98) ;
+    border-radius: 15px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.fotop{
+    width: 180px;
+    height: 180px;
+    border-radius: 10%;
+    margin-top: 20px;
+}
+.containerpl{
+    background-color: black;
+}
+.cajapl{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    border-color: chartreuse;
+}
+.fotopl{
+    width: 50%;
+    margin: auto;
+    align-items: center;
+}
+.infopl{
+    width: 50%;
+    margin: auto;
+    align-items: center;
+}
+.fotopla{
+    width: 160px;
+    height: 80px;
+    border-radius: 10%;
+    margin-top: 20px;
 }
