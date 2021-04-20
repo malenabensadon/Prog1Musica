@@ -313,9 +313,6 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.listadetallealbum{
-
-}
 .detallestrack{
     width: 800px;
     height: 500px;
@@ -389,9 +386,9 @@ footer{
 .favx{
     width: 40px; 
     height: 20px;
-    border-radius: 10%;
-    margin-top: 20px;
+    margin: 15px;
     align-items: center;
+    display: flex;
     flex-wrap: wrap;
 }
 /*playlist*/
