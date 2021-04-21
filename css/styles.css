@@ -61,13 +61,17 @@ li{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    margin: 20px; 
+    margin: 30px; 
 }
 .user{
     color: rgb(0, 255, 234);
     text-decoration: underline;
     font-weight: bold;
     margin-left: 20px;
+}
+.iniciars{
+    margin: 10px;
+
 }
 header{
     background-color: black;
