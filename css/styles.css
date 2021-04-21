@@ -314,7 +314,7 @@ footer{
 }
 .detallestrack{
     width: 800px;
-    height: 500px;
+    height: 600px;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
     box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
@@ -435,4 +435,9 @@ height: 35px;
     width: auto;
     height: 50px;
     margin-top: 20px;
+}
+.reproductor{
+    margin-top: 10px;
+    height: 25px;
+    background: chartreuse;
 }
