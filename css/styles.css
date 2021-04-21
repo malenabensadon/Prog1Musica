@@ -104,7 +104,7 @@ a{
     text-decoration: none;
     color: rgb(105, 112, 98);
     font-weight: bold;
-    margin: 10px;
+    margin: 20px;
     font-size: 1.2em;
 }
 .caja img{
@@ -125,13 +125,14 @@ a{
 
 /*footer*/
 .footer{
-   border:solid 8px black;
-   background-color: black;
-   color: rgb(105, 112, 98);
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: row;
+    color: rgb(105, 112, 98);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 .seguinos{
   width: 50%;
@@ -143,8 +144,8 @@ a{
 }
 
 .nombre{
-    width: 50%;
     margin-top: 30px;
+    margin-right:20px;
 }
 
 .containergenerosg{
@@ -329,7 +330,6 @@ a{
 }
 .detallestrack{
     width: 800px;
-    height: 600px;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
     box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
@@ -411,14 +411,13 @@ height: 35px;
 /*playlist*/
 .playlist{
     width: 650px;
-    height: 1100px;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
     box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
     text-align: center;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .fotop{
     width: 180px;
@@ -454,5 +453,4 @@ height: 35px;
 .reproductor{
     margin-top: 10px;
     height: 25px;
-    background: chartreuse;
 }
