@@ -371,7 +371,7 @@ footer{
 .fotosd{
     width: 180px;
     height: 180px;
-    border-radius: 90%;
+    border-radius: 20%;
     margin-top: 20px;
 }
 .pag{
@@ -393,7 +393,8 @@ footer{
 }
 /*playlist*/
 .playlist{
-    width: 800px;
+    width: 650px;
+    height: 1100px;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
     box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
@@ -429,8 +430,7 @@ footer{
     align-items: center;
 }
 .fotopla{
-    width: 100px;
+    width: auto;
     height: 50px;
-    border-radius: 10%;
     margin-top: 20px;
 }
