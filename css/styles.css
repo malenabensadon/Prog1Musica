@@ -82,8 +82,8 @@ input{
 }
 .iniciars{
     margin: 10px;
-
 }
+
 header{
     background-color: black;
     
@@ -143,6 +143,7 @@ a{
 }
 .playlist{
     background-color: black;
+    border: blanchedalmond;
     
 }
 
@@ -436,6 +437,7 @@ a{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .fotop{
     width: 180px;
     height: 180px;
