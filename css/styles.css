@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
 }
 ul,ol{
     padding: 0;
@@ -76,11 +77,6 @@ header{
 body{
     background-color: black;
 }
-.fotochanges{
-    height: 20%;
-    width: 20%;
-    margin: 15px;
-}
 .listas{
     display: flex;
     flex-wrap: wrap;
@@ -101,7 +97,6 @@ a{
     text-align: center;
 }
 .names{
-    text-decoration: none;
     color: rgb(105, 112, 98);
     font-weight: bold;
     margin: 20px;
@@ -111,8 +106,6 @@ a{
     width: 100%;
 }
 .fotos{
-   /* width: 180px;
-    height: 180px;*/
     border-radius: 90%;
     width: auto;
     height: 250px;
