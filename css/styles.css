@@ -225,10 +225,7 @@ a{
     margin: 15px;
     text-decoration: none;
 }
-.button{
-    width: auto;
-    height: 22px;
-}
+
 .artista{
     color: rgb(105, 112, 98);
     width: 17%;
@@ -455,12 +452,10 @@ height: 35px;
         width: 100%;
         text-align: center;
         margin-top: 0%;
-    
     }
     .caja{
         width:45%;
         margin:2.5%;
-        
     }
     .listas{
         justify-content: space-around;
@@ -478,10 +473,16 @@ height: 35px;
     .user{
         margin-left: 0px;
     }
-
+    .perfil-menu{
+    justify-content: right;
+}
  
 }
 /*diseño telefono*/
 @media(max-width: 450px){
    
+}
+
+.acaja{
+    width: 100%;
 }
