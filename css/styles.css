@@ -72,7 +72,7 @@ header{
     
 }
 .introhome{
-    width: 182vh;
+    width: 100%;
 }
 .cajainicio{
     background-color: black;
@@ -111,8 +111,8 @@ a{
 }
 .fotos{
     border-radius: 90%;
-    width: auto;
-    height: 250px;
+    width: 100%;
+   
 }
 .login{
     border-radius: 99%;
@@ -120,7 +120,7 @@ a{
     height: 50px;
 }
 .albumpic{
-    width: 182vh;
+    width: 100%;
     margin-bottom: 3%;
 }
 /*footer*/
@@ -134,7 +134,7 @@ a{
 }
 
 .footerpic{
-    width: 182vh;
+    width: 100%;
 }
 .seguinos{
   width: 50%;
@@ -473,7 +473,10 @@ height: 35px;
         justify-content: space-around;
     }
     .logo{
-        display: none;
+        width: auto;
+        height: 170px;
+        margin-top: 20px;
+        margin-left: 20PX;
     }
     
     .user{
@@ -484,13 +487,13 @@ height: 35px;
         margin-right: 0%;
     }
     .introhome{
-        width: 75vh;
+        width: 100%;
     }
     .footerpic{
-        width: 75vh;
+        width: 100%;
     }
     .albumpic{
-        width: 75vh;
+        width: 100%;
     }
     .album{
         width:45%;
@@ -514,16 +517,13 @@ height: 35px;
     .detallestrack{
         width: 70vh;
     }
-    
+    .fotos{
+        width: 100%;
+    }
+    .sound-now{
+        display: none;
+    }
   
 
  
-}
-/*diseño telefono*/
-@media(max-width: 450px){
-   
-}
-
-.acaja{
-    width: 100%;
 }
