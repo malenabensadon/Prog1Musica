@@ -71,6 +71,9 @@ header{
     background-color: black;
     
 }
+.introhome{
+    width: 182vh;
+}
 .cajainicio{
     background-color: black;
     margin-bottom: 20px;
@@ -116,7 +119,11 @@ a{
     width: auto;
     height: 50px;
 }
-
+.albumpic{
+    width: 182vh;
+    border: 1px solid chartreuse;
+    margin-bottom: 3%;
+}
 /*footer*/
 .footer{
     color: rgb(105, 112, 98);
@@ -127,7 +134,9 @@ a{
     align-items: center;
 }
 
-
+.footerpic{
+    width: 182vh;
+}
 .seguinos{
   width: 50%;
   margin-top: 30px;  
@@ -467,16 +476,48 @@ height: 35px;
     .logo{
         display: none;
     }
-    .buscar{
-        justify-content: space-around;
-        margin: 0%
-    }
+    
     .user{
-        margin-left: 0px;
+        margin-left: 0%;
     }
     .perfil-menu{
-    justify-content: right;
-}
+        justify-content: right;
+        margin-right: 0%;
+    }
+    .introhome{
+        width: 75vh;
+    }
+    .footerpic{
+        width: 75vh;
+    }
+    .albumpic{
+        width: 75vh;
+    }
+    .album{
+        width:45%;
+        margin:2.5%;
+    }
+    .formulario{
+        width: 65vh;
+    }
+    .detallesg{
+        width: 75vh;
+    }
+    .detallesg{
+        width: 75vh;
+    }
+    .detallegenero{
+        width: 70vh;
+    }
+    .detallealbum{
+        width: 70vh;
+    }
+    .detallestrack{
+        width: 70vh;
+    }
+    
+  
+
  
 }
 /*diseño telefono*/
