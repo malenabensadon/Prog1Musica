@@ -4,6 +4,8 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-decoration: none;
 }
+
+/*diseño computadora*/
 ul,ol{
     padding: 0;
     list-style: none;
@@ -19,6 +21,9 @@ li{
     height: 170px;
     margin-top: 20px;
     margin-left: 20PX;
+}
+.button{
+    background-color: chartreuse;
 }
 .buscar{
     margin: 20px;
@@ -124,10 +129,19 @@ a{
     width: 100%;
     margin-bottom: 3%;
 }
-
+.playlist{
+    background-color: black;
+    
+}
+.bodymyplaylist{
+    background-image: url(../img/collagedos.jpeg);
+    background-repeat: repeat;
+    
+}
 /*footer*/
 .footer{
     color: rgb(105, 112, 98);
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -138,8 +152,8 @@ a{
     width: 100%;
 }
 .seguinos{
-  width: 50%;
-  margin-top: 30px;  
+    width: 50%;
+    margin-top: 30px;  
 }
 .instagram{
     width: 70px;
@@ -385,8 +399,8 @@ a{
     align-items: center;
 }
 .fav2{
-width: auto;
-height: 35px;
+    width: auto;
+    height: 35px;
 }
 .favx{
     width: 100%; 
@@ -526,6 +540,4 @@ height: 35px;
         display: none;
     }
   
-
- 
 }
