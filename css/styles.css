@@ -11,6 +11,8 @@ ul,ol{
 li{
     list-style-type: none;
 }
+
+/*Header*/
 .logo{
     border-radius: 48%;
     width: auto;
@@ -44,10 +46,8 @@ li{
     text-decoration: none;
     margin: 15px;
 }
-
 .container{
     background-color: black;
-
 }
 .titulos{
     color: rgb(0, 255, 21);
@@ -81,6 +81,7 @@ header{
 body{
     background-color: black;
 }
+/*Body*/
 .listas{
     display: flex;
     flex-wrap: wrap;
@@ -123,6 +124,7 @@ a{
     width: 100%;
     margin-bottom: 3%;
 }
+
 /*footer*/
 .footer{
     color: rgb(105, 112, 98);
@@ -132,7 +134,6 @@ a{
     justify-content: space-between;
     align-items: center;
 }
-
 .footerpic{
     width: 100%;
 }
@@ -140,16 +141,13 @@ a{
   width: 50%;
   margin-top: 30px;  
 }
-
 .instagram{
     width: 70px;
 }
-
 .nombre{
     margin-top: 30px;
     margin-right:20px;
 }
-
 .containergenerosg{
     background-color: rgb(31, 138, 84);
     border: solid 3px rgb(216, 9, 9);
@@ -162,7 +160,8 @@ a{
     flex-direction: row;
     width: 100%;
 }
-/* pagina miperfil*/
+
+/* pagina miperfil (perfil.html)*/
 .formulario{
     color: black;
     background: rgba(0, 255, 21, 0.637);
@@ -203,6 +202,7 @@ a{
 .volverainicio{
     color: black;
 }
+
 /*slider login*/
 .slider{
     width: 100%;
@@ -226,6 +226,7 @@ a{
 .slider li img{
     width: 100%;
 }
+
 /*generales*/
 .justin{
     color: cornsilk;
@@ -254,19 +255,6 @@ a{
 .bobtopfive{
     color: rgb(105, 112, 98);
     margin: 10px;
-}
-@keyframes cambio {
-    0% {margin-left:0; }
-    20% {margin-left:0; }
-
-    25% {margin-left:-100%; }
-    45% {margin-left:-100%; }
-
-    50% {margin-left:-200%; }
-    75% {margin-left:-200%; }
-
-    80% {margin-left:-300%; }
-    100% {margin-left:-300%; }
 }
 .pag{
     display: flex;
@@ -407,7 +395,8 @@ height: 35px;
     display: flex;
     flex-wrap: wrap;
 }
-/*playlist*/
+
+/*playlist (playlist.html)*/
 .playlist{
     width: 650px;
     color:rgb(105, 112, 98) ;
@@ -452,6 +441,19 @@ height: 35px;
 .reproductor{
     margin-top: 10px;
     height: 25px;
+}
+@keyframes cambio {
+    0% {margin-left:0; }
+    20% {margin-left:0; }
+
+    25% {margin-left:-100%; }
+    45% {margin-left:-100%; }
+
+    50% {margin-left:-200%; }
+    75% {margin-left:-200%; }
+
+    80% {margin-left:-300%; }
+    100% {margin-left:-300%; }
 }
 
 /* diseño tablet */
