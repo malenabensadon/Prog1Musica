@@ -23,12 +23,24 @@ li{
     margin-left: 20PX;
 }
 .button{
-    background-color: chartreuse;
+  background-color: black;
+  color: rgb(105, 112, 98);
+    border-radius: 10px;
+    border:solid 3px chartreuse;
 }
 .buscar{
     margin: 20px;
     margin-top: 20px;
 }
+input{
+    border-radius: 10px;
+    border-bottom: solid 3px chartreuse;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
 .sound-now{
     text-decoration: none;
     font-size:40px;
@@ -161,7 +173,6 @@ a{
 
 .containergenerosg{
     background-color: rgb(31, 138, 84);
-    border: solid 3px rgb(216, 9, 9);
     width: 100%;
     margin-bottom: 20px;
 }
@@ -175,43 +186,50 @@ a{
 /* pagina miperfil (perfil.html)*/
 .formulario{
     color: black;
-    background: rgba(0, 255, 21, 0.637);
+    background-color:rgb(0, 255, 21);
     border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    box-shadow: -4px 0 15px rgb(0, 255, 21);    
     margin-top: 6%;
     width: 800px;
-    height: 600px;
     text-align: center;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 .nombreu{
-    background-color: black;
-    color:grey;
+    border-color: black;
+    color:black;
     width: 60%;
     height: 30px;
     border-radius: 10px;
     margin-bottom: 5px;
 }
 .mail{
-    background-color: black;
-    color:grey;
+    border-color: black;
+    color:black;
     width: 60%;
     height: 30px;
     border-radius: 10px;
     margin-bottom: 5px;
 }
 .contrasena{
-    background-color: black;
-    color:grey;
+   border-color: black;
+    color:black;
     width: 60%;
     height: 30px;
     border-radius: 10px;
     margin-bottom: 5px;
 }
+.iniciars{
+    background-color: black;
+    color:chartreuse;
+    border-radius: 10px;
+    border: solid 3px chartreuse;
+}
 .volverainicio{
     color: black;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /*slider login*/
@@ -433,10 +451,11 @@ a{
     flex-direction: row;
     width: 100%;
     border-color: chartreuse;
+    margin-bottom: 10px;
 }
 .fotopl{
     width: 50%;
-    margin: auto;
+    margin-bottom: 20px;
     align-items: center;
 }
 .infopl{
