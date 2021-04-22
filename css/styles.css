@@ -476,7 +476,8 @@ a{
 }
 .bodymyplaylist{
     background-image: url(../img/collagedos.jpeg); 
-    background-repeat: repeat;
+    
+
 }
 
 @keyframes cambio {
@@ -562,5 +563,6 @@ a{
     .sound-now{
         display: none;
     }
+    
   
 }
