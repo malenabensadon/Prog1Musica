@@ -118,8 +118,8 @@ a{
 .fotos{
     border-radius: 90%;
     width: 100%;
-   
 }
+
 .login{
     border-radius: 99%;
     width: auto;
@@ -133,11 +133,7 @@ a{
     background-color: black;
     
 }
-.bodymyplaylist{
-    background-image: url(../img/collagedos.jpeg);
-    background-repeat: repeat;
-    
-}
+
 /*footer*/
 .footer{
     color: rgb(105, 112, 98);
@@ -456,6 +452,11 @@ a{
     margin-top: 10px;
     height: 25px;
 }
+.bodymyplaylist{
+    background-image: url(../img/collagedos.jpeg); 
+    background-repeat: repeat;
+}
+
 @keyframes cambio {
     0% {margin-left:0; }
     20% {margin-left:0; }
