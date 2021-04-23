@@ -23,8 +23,8 @@ li{
     margin-left: 20PX;
 }
 .button{
-  background-color: black;
-  color: rgb(105, 112, 98);
+    background-color: black;
+    color: rgb(105, 112, 98);
     border-radius: 10px;
     border:solid 3px chartreuse;
 }
@@ -52,7 +52,6 @@ input{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-end;
     justify-content: space-between;
     align-items: center;
     margin-right: 40px;
@@ -518,7 +517,6 @@ a{
         margin-top: 20px;
         margin-left: 20PX;
     }
-    
     .user{
         margin-left: 0%;
     }
