@@ -24,17 +24,19 @@ li{
 }
 .button{
     background-color: black;
-    color: rgb(105, 112, 98);
+    color: chartreuse;
     border-radius: 10px;
     border:solid 3px chartreuse;
 }
 .buscar{
     margin: 20px;
     margin-top: 20px;
+    color: chartreuse;
 }
 input{
     border-radius: 10px;
     border-bottom: solid 3px chartreuse;
+    color: chartreuse;
     background-color: transparent;
     border-top: none;
     border-left: none;
@@ -189,7 +191,6 @@ a{
     background-color:rgb(0, 255, 21);
     border-radius: 15px;
     box-shadow: -4px 0 15px rgb(0, 255, 21);    
-    margin-top: 6%;
     width: 800px;
     text-align: center;
     margin: auto;
