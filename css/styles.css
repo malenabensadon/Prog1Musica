@@ -393,11 +393,10 @@ a{
     margin-left: 30px;
 }
 .namesx{
-    text-decoration: none;
     color: rgb(105, 112, 98);
     font-weight: bold;
-    margin-left: 55px;
-    margin-top: 20px;
+    margin: 20px;
+    font-size: 1.2em;
 }
 .fotosd{
     width: 180px;
