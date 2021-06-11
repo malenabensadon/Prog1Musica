@@ -8,16 +8,18 @@ fetch(urlAlbum)
     })
 
     .then(function(data){
-        let album = data.results[0];
+        let album = data.results;
      //destinos
         let texto = document.querySelector('.texto');
         let fotos = document.querySelector('.fotos');
         let listadetallealbum = document.querySelector('.listadetallealbum');
+        
 
         texto.innerHTML += album.pag;
         listadetallealbum.innerHTML += `${album.listas.last}. ${album.listas.first}. ${album.listas.last}`;
         fotos.src = album.picture.medium;
     })
     .catch( function(error){
-   
+
+        console.log = error
     })
