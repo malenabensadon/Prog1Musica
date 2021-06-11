@@ -7,18 +7,26 @@
 
 //capturamos el elemento y recibimos string
 //let bucar = document.querySelector();
-let search = document.querySelector('input')
+let buscar = document.querySelector('form')
+let campoBuscar = document.querySelector('[name="search"]')
 
 //creamos un evento
-search.addEventListener('submit', function(e){
+buscar.addEventListener('submit', function(event){
+    event.preventDefault();
     //condicinales
-    if(search == ''){
+    if(campoBuscar.value == ""){
         //hago un alert
         alert('El buscador esta vacio');
+    }else{
+        this.submit()
     }
-    e.preventDefault();
+    
 })
 
+//limpiar el mensaje de error cuando el usuario modifique el contenido del campo input. 
+campoBuscar.addEventListener('input', function(){
+    alert.innerText = "";
+})
 
 
 
