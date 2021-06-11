@@ -21,8 +21,10 @@ fetch( url )
         let arrayInfo = data.data
         let lista = document.querySelector('.lista');
         let contenidoLista =''; //poner el contenido a mostrar dentro de la lista.
+        
 
         for(let i=0; i<arrayInfo.length; i++){
+       
             contenidoLista += `<li> 
                                     <a href="detalle.html?id=${arrayInfo[i].id}">
                                      ${arrayInfo[i].title}
@@ -38,11 +40,10 @@ fetch( url )
         console.log(error);
     })
 
-    // con body 
-    <h2>Buscador de gifs</h2>
-    <form action="resultados.html" method="GET">
-    <input type="text" name="milanesa" value="">
-    <button type="submit">Buscar</button>
+//<h2>Buscador de gifs</h2>
+<form action="resultados.html" method="GET">
+<input type="text" name="milanesa" value="">
+<button type="submit">Buscar</button>
 </form>
 
 
@@ -54,3 +55,6 @@ fetch( url )
 
 <script src="./js/index.js"> </script>
 </body>
+
+
+    
