@@ -1,25 +1,27 @@
-//ejemplo con un solo dato.
-let urlAlbum = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/302127";
+//url + proxy de albumes
+let proxyAlbumes = 'https://cors-anywhere.herokuapp.com/'
+let AlbumesPage = 'https://api.deezer.com/chart/0/albums'
+let urlAlbumes = proxyAlbumes+AlbumesPage
 
+fetch(urlAlbumes)
+.then(function(response){
+    return response.json()
 
-fetch(urlAlbum)
-    .then(function(response){
-        return response.json();
-    })
+})
+.then(function(data){
+    let info = data.data
+    console.log(info);
+    let albumesPageContainer= document.querySelector('.listas');
+    let contenidoAlbumesPage= '';
 
-    .then(function(data){
-        let album = data.results;
-     //destinos
-        let texto = document.querySelector('.texto');
-        let fotos = document.querySelector('.fotos');
-        let listadetallealbum = document.querySelector('.listadetallealbum');
-        
+    for(let i=0; i<info.length; i++){
 
-        texto.innerHTML += album.pag;
-        listadetallealbum.innerHTML += `${album.listas.last}. ${album.listas.first}. ${album.listas.last}`;
-        fotos.src = album.picture.medium;
-    })
-    .catch( function(error){
-
-        console.log = error
-    })
+        contenidoAlbumesPage +=   `<article class="album">
+                    <a href="./detail-album.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}" alt=""></a>
+                    <h2 class="texto"><a href="./detail-album.html" class="names">${info[i].title}</a></h2>
+                    <h4><a href="./detail-artist.html" class="names">by ${info[i].artist.name}</a></h4> 
+            
+                    </article>`
+    }
+    albumesPageContainer.innerHTML += contenidoAlbumesPage
+})   
