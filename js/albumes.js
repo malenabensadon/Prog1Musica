@@ -25,3 +25,6 @@ fetch(urlAlbumes)
     }
     albumesPageContainer.innerHTML += contenidoAlbumesPage
 })   
+.catch( function(error){
+    console.log(error);
+})
