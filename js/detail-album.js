@@ -1,33 +1,31 @@
 window.addEventListener('load', function() {
     
-   //creo variables con urls 
-let proxyAlbumes = 'https://cors-anywhere.herokuapp.com/';
-let AlbumesPage = 'https://api.deezer.com/album/${id}/tracks';
-let urlDetalleAlbum = proxyAlbumes+AlbumesPage;
-    
-    //creo un fetch que busca info de la api
-fetch(url)
-    .then(function (response){
-        return response.json();
-    })
-    .then (function(data){
-        console.log(data);
-        let albumCompleto = data;
-        let albumDetalle = document.querySelector('.detallealbum');
-        let albumesTracks ='';
+    //creo variables con urls 
+ let proxyDAlbum = 'https://cors-anywhere.herokuapp.com/';
+ let Dalbum = `https://api.deezer.com/chart/album/${id}`;
+ let url = proxyDAlbum + Dalbum;
+     
+     //creo un fetch que busca info de la api
+ fetch(url)
+     .then(function (response){
+         return response.json();
+     })
+     .then (function(data){
+         console.log(data);
+         //nos quedamos solo el el array de datos
+         let image = document.querySelector('.img');
+         let title = document.querySelector('.title')
+         let artist = document.querySelector('.artist');
 
-//recorremos el array de canciones del album
-    for(i=0; i<albumesTracks.length; i++){
-        albumesTracks += 
-         `<h1> ${albumCompleto[i].title}</h1>
-            <img src=" ${albumCompleto[i].md5_image}" alt="" class="fotoj"> 
-            <p> ${albumCompleto[i].preview}</p>`
-            
-    }
-    albumDetalle.innerHTML += albumesTracks
+        image.src = data.cover_medium;
+        title.innetText = data.title;
+        artist.innerText = data.artist.name;
+  
+     })
 
-    })
-    .catch(function(error){
-        console.log (error);
-    })
-})
+     .catch(function(error){
+         console.log (error);
+     })
+ })
+  
+ 
