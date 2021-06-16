@@ -1,3 +1,6 @@
+//hacer formulario
+
+
 let proxy = 'https://cors-anywhere.herokuapp.com/'
 let topTracks = 'https://api.deezer.com/chart/0/tracks'
 let url = proxy+topTracks
@@ -10,7 +13,7 @@ fetch(url)
     .then(function(data){
         let info = data.data
         console.log(info);
-        let trackContainer= document.querySelector('.track');
+        let trackContainer= document.querySelector('.listas');
         let contenidoTrack= '';
 
         for(let i=0; i<info.length; i++){

@@ -7,8 +7,8 @@ window.addEventListener('load', function() {
 
     //creo variables con urls 
  let proxyDAlbum = 'https://cors-anywhere.herokuapp.com/';
- let Dalbum = `https://api.deezer.com//album/${id}`;
- let urlDAlbum = proxyDAlbum + Dalbum;
+ let dAlbum = `https://api.deezer.com/album/${id}`;
+ let urlDAlbum = proxyDAlbum+dAlbum;
      
      //creo un fetch que busca info de la api
  fetch(urlDAlbum)
@@ -17,6 +17,7 @@ window.addEventListener('load', function() {
      })
      .then (function(data){
          console.log(data);
+
          //nos quedamos solo el el array de datos
          let image = document.querySelector('.fotoj');
          let title = document.querySelector('.title');
