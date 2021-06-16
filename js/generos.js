@@ -18,7 +18,7 @@ fetch(urlGeneros)
 
         contenidoGenerosPage +=  `<article class="genero">
                                 <a href="./detail-genres.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}" alt=""></a>
-                                <h2 class="texto"><a href="./detail-genres.html" class="names">${info[i].title}</a></h2>
+                                <h2 class="texto"><a href="./detail-genres.html?id=${info[i].id}" class="names">${info[i].title}</a></h2>
                                 </article>`
                
     }
