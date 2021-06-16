@@ -11,7 +11,7 @@ fetch(urlArtistas)
         .then(function(data){
             let info = data.data
             console.log(info);
-            let ArtistasPageContainer= document.querySelector('.caja');
+            let ArtistasPageContainer= document.querySelector('.listas');
             let ArtistasPage= '';
 
     for(let i=0; i<info.length; i++){
