@@ -18,7 +18,7 @@ fetch(urlDetalleG)
     for(let i=0; i<info.length; i++){
 
         contenidoGenerosDetPage +=   `<h1 class="pag">${info[i].name}</h1>
-                                        <img src="${info[i].picture}" alt="" class="fotoa">`
+                                        <img src="${info[i].picture_medium}" alt="" class="fotoaa">`
     }
     generosDetPageContainer.innerHTML += contenidoGenerosDetPage
 })  

@@ -346,6 +346,11 @@ a{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.fotoaa{
+    border-radius: 90%;
+    width: AUTO;
+    
+}
 .detallestrack{
     width: 800px;
     color:rgb(105, 112, 98) ;
