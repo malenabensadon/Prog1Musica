@@ -9,26 +9,28 @@ fetch( url )
         return response.json();
     })
     .then(function(data){
-        
+        console.log(data);
+
         let cancion = document.querySelector('.track'); 
-        cancion.innerText += `<h2 class="track">${data.title}</h2>`;
+        cancion.innerText += data.title;
     
-        let img= document.querySelector(".fotos");
-        img.innerHTML += `<img class="fotos">${data.track.cover_small}</img>`;
+        let img = document.querySelector(".fotos");
+        img.src += data.artist.picture_small;
             
         let artista = document.querySelector(".names");
-        artista.innerHTML += `<h3 class="names">Artista: <a href="./detail-artist.html?id=${data.artist.id}" class="names">${data.artist.name}</a></h3>`;
+        artista.innerText += data.artist.name;
         
         let album = document.querySelector(".instajustin");
-        album.innerHTML += `<h3>Álbum: <a href="detail-album.html?id=${data.album.id}" class="instajustin">${data.album.title}</a></h3>`;
+        album.innerText += data.album;
 
         let player = document.querySelector(".videoj");
-        player.src +=`https://widget.deezer.com/widget/auto/playlist/${id}`
+        player.src += data.id;
  
     })
 
     .catch(function(error){
         console.log(error);
+    })
 
 
 //Agregar a playlist.
@@ -75,4 +77,4 @@ fav.addEventListener("click", function(e){
    
     
 
-    })})
+    })
