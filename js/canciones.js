@@ -3,80 +3,34 @@ let queryString = location.search //Caputramso qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
 let id = queryStringToObject.get('id');
 
-let url = `https://api.giphy.com/v1/gifs/${id}?api_key=PuhlljnIs04eW2ezoSHpJ6Fov6102e4T`
+//url + proxy de albumes
+let proxyCancion = 'https://cors-anywhere.herokuapp.com/';
+let CancionesPage = 'https://api.deezer.com/chart/0/tracks';
+let urlCanciones = proxyCancion+CancionesPage;
 
-fetch( url )
-    .then( function(response){
-        return response.json();
-    })
-    .then( function(data){
-        //Aca muestro código
-        // console.log(data);
-        let section = document.querySelector('.detalle')
-
-        section.innerHTML += `<article>
-                                <h2>${data.data.title}</h2>
-                                <img src="${data.data.images.original.url}">
-                            </article>`        
-    })
-    .catch( function(error){
-        console.log(error);
-    })
-
-
-//Agregar gif a lista de favoritos.
-let favoritos = [];
-
-//REcuperar datos del storage
-let recuperoStorage = localStorage.getItem('favoritos');
-
-//Chequear y agregar la información de local storage en el array
-if(recuperoStorage != null){
-    favoritos = JSON.parse(recuperoStorage);
-}
-
-//Chequear que el id esté en el array para cambiar el texto al usuario.
-if(favoritos.includes(id)){
-    document.querySelector('.fav').innerText = "Quitar de favoritos";
-}
-
-
-
-//Cuando el usuario haga click en "agregar a favoritos _> Agregar id del gif dentro del array.
-let fav = document.querySelector('.fav');
-console.log(fav);
-
-fav.addEventListener("click", function(e){
-    e.preventDefault();
-
-    //Chequear si el id está en el array
-    if(favoritos.includes(id)){
-        let idASacar = favoritos.indexOf(id);
-        favoritos.splice(idASacar, 1);
-        document.querySelector('.fav').innerText = "Agregar a favoritos";
-    } else {
-        //Guardamos el id en el array
-        favoritos.push(id);
-        console.log(favoritos);
-        document.querySelector('.fav').innerText = "Quitar de favoritos";
-    }
-
-
-    //Armamos un string
-    let favParaStorage = JSON.stringify(favoritos);
-    //Lo guardamos dentro de localStorage
-    localStorage.setItem('favoritos', favParaStorage);
-    console.log(localStorage);
+fetch(urlCanciones)
+.then(function(response){
+    return response.json()
 
 })
-// con body <body>
-    <h1>Detalle del gif</h1>
-    <p><a href="index.html">Home</a></p>
-    <p><a class="fav" href="">agregar a favoritos </a></p>
-    <p><a href="favoritos.html">Mis gifs favoritos</a></p>
-    
-    <section class='detalle'>
-    </section>
+.then(function(data){
+    let info = data.data
+    console.log(info);
+    let CancionesPageContainer= document.querySelector('.listas');
+    let CancionesPage= '';
 
-    <script src="./js/detalle.js"> </script>
-</body>
+    for(let i=0; i<info.length; i++){
+
+        CancionesPage +=   ` <article class="caja"> 
+                            <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"alt=""></a> 
+                            <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a>
+                            <a href="./detail-artist.html"class="names">by ${info[i].artist.name} </a>
+                            <a href="./playlists.html"><img class="favx"src="./img/fav.jpg" alt=""></a>
+                            </article>`
+       
+    }
+    CancionesPageContainer.innerHTML += CancionesPage
+})   
+.catch( function(error){
+    console.log(error);
+})

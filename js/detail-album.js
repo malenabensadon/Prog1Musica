@@ -2,12 +2,12 @@ window.addEventListener('load', function() {
  
     
     let queryString = location.search;
-    let queyStringToObject = new URLSearchParams(queryString);
+    let queryStringToObject = new URLSearchParams(queryString);
     let id = queryStringToObject.get('id');
 
     //creo variables con urls 
  let proxyDAlbum = 'https://cors-anywhere.herokuapp.com/';
- let Dalbum = 'https://api.deezer.com/album/302127';
+ let Dalbum = `https://api.deezer.com//album/${id}`;
  let urlDAlbum = proxyDAlbum + Dalbum;
      
      //creo un fetch que busca info de la api
@@ -32,4 +32,5 @@ window.addEventListener('load', function() {
      })
  })
   
+
  
