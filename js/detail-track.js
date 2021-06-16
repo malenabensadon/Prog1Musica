@@ -64,6 +64,7 @@ fav.addEventListener("click", function(e){
         agregar.push(id);
         console.log(playlist);
         document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
+    }
         
     //Armamos un string
     let agregarParaStorage = JSON.stringify(playlist);
@@ -74,4 +75,4 @@ fav.addEventListener("click", function(e){
    
     
 
-}}
+    })})
