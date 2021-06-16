@@ -13,12 +13,14 @@ fetch(urlDetalleG)
     let generosPageContainer= document.querySelector('.listas');
     let contenidoGenerosPage= '';
 
-    for(let i=0; i<12; i++){
+    for(let i=0; i<10; i++){
 
-        contenidoGenerosPage +=   ` <li> 
+        contenidoGenerosPage +=   ` <article class="caja"> 
+                                    <li> 
                                      <a href="./detail-genres.html" class="names">${info[i].name}</a> 
                                      <a href="./detail-genres.html"><img class="fotoaa" src="${info[i].picture_medium}" alt="FOTO GENERO LATINO"></a>
-                                    </li>`
+                                    </li>
+                                    </article>`
              
     }
 
