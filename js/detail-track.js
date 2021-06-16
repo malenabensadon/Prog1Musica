@@ -1,83 +1,77 @@
-// detalle gif
-let queryString = location.search //Caputramso qs
+let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
 let id = queryStringToObject.get('id');
 
-let url = `acavalinkcon${id}`;
+let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`;
 
 fetch( url )
     .then( function(response){
         return response.json();
     })
-    .then( function(data){
-        //Aca muestro código
-        // console.log(data);
-        let section = document.querySelector('.detalle')
+    .then(function(data){
+        
+        let cancion = document.querySelector('.track'); 
+        cancion.innerText += `<h2 class="track">${data.title}</h2>`;
+    
+        let img= document.querySelector(".fotos");
+        img.innerHTML += `<img class="fotos">${data.track.cover_small}</img>`;
+            
+        let artista = document.querySelector(".names");
+        artista.innerHTML += `<h3 class="names">Artista: <a href="./detail-artist.html?id=${data.artist.id}" class="names">${data.artist.name}</a></h3>`;
+        
+        let album = document.querySelector(".instajustin");
+        album.innerHTML += `<h3>Álbum: <a href="detail-album.html?id=${data.album.id}" class="instajustin">${data.album.title}</a></h3>`;
 
-        section.innerHTML += `<article>
-                                <h2>${data.data.title}</h2>
-                                <img src="${data.data.images.original.url}">
-                            </article>`        
+        let player = document.querySelector(".videoj");
+        player.src +=`https://widget.deezer.com/widget/auto/playlist/${id}`
+ 
     })
-    .catch( function(error){
+
+    .catch(function(error){
         console.log(error);
-    })
 
 
-//Agregar gif a lista de favoritos.
-let favoritos = [];
+//Agregar a playlist.
+let playlist = [];
 
-//REcuperar datos del storage
-let recuperoStorage = localStorage.getItem('favoritos');
+//Recuperar datos del storage
+let recuperoStorage = localStorage.getItem('playlist');
 
 //Chequear y agregar la información de local storage en el array
 if(recuperoStorage != null){
-    favoritos = JSON.parse(recuperoStorage);
+    agregar = JSON.parse(recuperoStorage);
 }
 
 //Chequear que el id esté en el array para cambiar el texto al usuario.
-if(favoritos.includes(id)){
-    document.querySelector('.fav').innerText = "Quitar de favoritos";
+if(playlist.includes(id)){
+    document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
 }
 
-
-
-//Cuando el usuario haga click en "agregar a favoritos _> Agregar id del gif dentro del array.
-let fav = document.querySelector('.fav');
-console.log(fav);
+//Cuando el usuario haga click en "agregar a playlist" Agregar id de track dentro del array.
+let agregar = document.querySelector('.agregar');
+console.log(agregar);
 
 fav.addEventListener("click", function(e){
     e.preventDefault();
 
     //Chequear si el id está en el array
-    if(favoritos.includes(id)){
-        let idASacar = favoritos.indexOf(id);
-        favoritos.splice(idASacar, 1);
-        document.querySelector('.fav').innerText = "Agregar a favoritos";
+    if(playlist.includes(id)){
+        let idASacar = agregar.indexOf(id);
+        playlist.splice(idASacar, 1);
+        document.querySelector('.agregar').innerText = "Agregar a mi playlist";
     } else {
         //Guardamos el id en el array
-        favoritos.push(id);
-        console.log(favoritos);
-        document.querySelector('.fav').innerText = "Quitar de favoritos";
-    }
-
-
+        agregar.push(id);
+        console.log(playlist);
+        document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
+        
     //Armamos un string
-    let favParaStorage = JSON.stringify(favoritos);
+    let agregarParaStorage = JSON.stringify(playlist);
     //Lo guardamos dentro de localStorage
-    localStorage.setItem('favoritos', favParaStorage);
+    localStorage.setItem('playlist', agregarParaStorage);
     console.log(localStorage);
-
-})
-// con body 
-<body>
-    <h1>Detalle del gif</h1>
-    <p><a href="index.html">Home</a></p>
-    <p><a class="fav" href="">agregar a favoritos </a></p>
-    <p><a href="favoritos.html">Mis gifs favoritos</a></p>
     
-    <section class='detalle'>
-    </section>
+   
+    
 
-    <script src="./js/detalle.js"> </script>
-</body>
+}}
