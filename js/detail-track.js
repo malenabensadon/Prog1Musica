@@ -14,8 +14,8 @@ fetch( url )
         let cancion = document.querySelector('.track'); 
         cancion.innerText += data.title;
     
-        let img = document.querySelector(".fotoa");
-        img.src += data.artist.picture;
+        let img = document.querySelector(".fotoaa");
+        img.src += data.artist.picture_medium;
             
         let artista = document.querySelector(".names");
         artista.innerText += data.artist.name;
@@ -24,7 +24,7 @@ fetch( url )
         album.innerText += data.album.title;
 
         let player = document.querySelector(".videoj");
-        player.src += data.id;
+        player.src += data.preview;
  
     })
 
