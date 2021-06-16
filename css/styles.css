@@ -125,6 +125,7 @@ a{
     margin: 20px;
     font-size: 1.2em;
     text-align: center;
+    margin-bottom: 10px;
 }
 .caja img{
     width: 100%;
@@ -564,6 +565,7 @@ a{
     }
     .fotos{
         width: 100%;
+        margin-top: 10px;
     }
     .sound-now{
         display: none;

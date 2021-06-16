@@ -18,7 +18,7 @@ fetch(urlDetalleG)
         contenidoGenerosPage +=   ` <article class="caja"> 
                                     <li> 
                                      <a href="./detail-genres.html" class="names">${info[i].name}</a> 
-                                     <a href="./detail-genres.html"><img class="fotoaa" src="${info[i].picture_medium}" alt="FOTO GENERO LATINO"></a>
+                                     <a href="./detail-genres.html"><img class="fotos" src="${info[i].picture_medium}" alt="FOTO GENERO LATINO"></a>
                                     </li>
                                     </article>`
              
