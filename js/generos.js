@@ -13,7 +13,7 @@ fetch(urlDetalleG)
     let generosPageContainer= document.querySelector('.listas');
     let contenidoGenerosPage= '';
 
-    for(let i=0; i<10; i++){
+    for(let i=0; i<info.length; i++){
 
         contenidoGenerosPage +=   ` <article class="caja"> 
                                     <li> 
