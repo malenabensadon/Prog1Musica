@@ -1,6 +1,6 @@
 //url + proxy de generos
-let proxyAlbumes = 'https://cors-anywhere.herokuapp.com/'
-let GenerosPage = 'https://api.deezer.com/genre/'
+let proxyGeneros = 'https://cors-anywhere.herokuapp.com/'
+let GenerosPage = 'https://api.deezer.com/genre'
 let urlGeneros = proxyGeneros+GenerosPage
 
 fetch(urlGeneros)
@@ -16,7 +16,7 @@ fetch(urlGeneros)
 
     for(let i=0; i<info.length; i++){
 
-        contenidoGenerosPage +=  `<article class="genero">
+        contenidoGenerosPage +=  `<article class="listas">
                                 <a href="./detail-genres.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}" alt=""></a>
                                 <h2 class="texto"><a href="./detail-genres.html?id=${info[i].id}" class="names">${info[i].title}</a></h2>
                                 </article>`
@@ -27,3 +27,4 @@ fetch(urlGeneros)
 .catch( function(error){
     console.log(error);
 })
+
