@@ -1,8 +1,3 @@
-// detalle gif
-let queryString = location.search //Caputramso qs
-let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
-let id = queryStringToObject.get('id');
-
 //url + proxy de albumes
 let proxyCancion = 'https://cors-anywhere.herokuapp.com/';
 let CancionesPage = 'https://api.deezer.com/chart/0/tracks';
