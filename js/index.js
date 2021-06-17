@@ -1,33 +1,32 @@
 //Formulario
 
-//creo variables
-let formulario = document.querySelector('.buscar');
-let buscador = document.querySelector('[name="search"]');
+//Capturamos el formulario
+let formulario = document.querySelector('form');
+let buscador = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
 
-//creamos un evento
-formulario.addEventListener('submit', function(event){
-    event.preventDefault();
+//creamos la variable del campo
+let aviso = document.querySelector('.aviso')
 
-    //condicionales
-    if(buscador.value == ''){
+//creamos un evento con evenListener
+formulario.addEventListener('submit', function(e){
+    e.preventDefault();//prevenimos el comportamiento default
 
+    //condicionales chequeamos el contenido
+    if( buscador.value == ""){
         //le aviso al usuario con alert
-        alert.innerText = 'Por favor reyenar el buscador';
-
-    }else if(buscador.value.length < 3){
-
+        aviso.innerText = 'El buscador no puede estar vacío';
+    } else if( buscador.value.length < 3){
         //otro alert que avise que necesita mas caracteres
-        alert.innerText = 'Por favor ingrese mas de tres caracteres';
-
-    }else{
-        this.submit()
+        aviso.innerText = 'Por favor ingrese más de tres caracteres';
+    } else {
+        this.submit();//enviamos el formulario
     }
 
 })
 
 //limpiamos el mensaje de error cuando el usuario modifica el contenido
 buscador.addEventListener('input', function(){
-    alert.innerText= '';
+    aviso.innerText= '';
 
 })
 

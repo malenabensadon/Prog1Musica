@@ -37,27 +37,26 @@ window.addEventListener('load', function() {
 
          let publicacion = document.querySelector('.date')= 'Publicacion:';
          //fecha de publicacion 
-         publicacion.innerText = data.date 
+         publicacion.innerText = data.genres.release_date; 
 
-         //creamos lista d tracks dentro el album
-         let info = data.data
-         let albumesContainer= document.querySelector('.tracks');
-         let DetalleTracks= '';
+         let canciones = document.querySelector('.tracks')='Canciones:'
+         //variables para guardar los datos que encontremos 
+        let info = data.data
+        let albumesContainer= document.querySelector('.tracks');
+        let DetalleTracks= '';
+        
+ //hacemos for que recorra las canciones 
+    for(let i=0; i<10; i++){
+ 
+        DetalleTracks +=   ` <li>${info[i].tracks} </li>`
 
-         //creamos un for que recorra las canciones del album
-             for(let i=0; i<10; i++){
-                    DetalleTracks +=   `<li>${info[i].tracks} </li>`
-                    }
-                    
-            albumesContainer.innerHTML += DetalleTracks
-            })
+    }
+    albumesContainer.innerHTML += DetalleTracks
+        })
 
-  
      })
+
      .catch( function(error){
          console.log (error);
      })
-
-  
-
- 
+    

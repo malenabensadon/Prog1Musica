@@ -574,6 +574,8 @@ a{
   
 }
 /*javascript*/
-.alert{
-    color: red;
+.aviso{
+    color:chartreuse ;
+    margin-top: 20px;
+    border: solid 3px chartreuse;
 }
