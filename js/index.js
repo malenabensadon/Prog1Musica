@@ -73,7 +73,7 @@ fetch(url3)
 
         contenidoArtists += `<li class="caja">
                                  <a href="./detail-artist.html" class="names">${info[i].name}</a>
-                                 <a href="./detail-artist.html"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
+                                 <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
                             </li>`
     }
     artistsContainer.innerHTML += contenidoArtists
