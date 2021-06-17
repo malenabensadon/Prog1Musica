@@ -1,8 +1,8 @@
 window.addEventListener('load', function() {
  
     
-    let queryString = location.search;
-    let queryStringToObject = new URLSearchParams(queryString);
+    let queryString = location.search //Caputramos queryString
+    let queryStringToObject = new URLSearchParams(queryString); //La transformamos en Objeto Literal
     let id = queryStringToObject.get('id');
 
     //creo variables con urls 
@@ -20,12 +20,20 @@ window.addEventListener('load', function() {
 
          //nos quedamos solo el el array de datos
          let image = document.querySelector('.fotoj');
-         let title = document.querySelector('.title');
-         let artist = document.querySelector('.artist');
+         //creamos ruta hacia la foto del album
+         image.src = data.contributors.cover_medium;
 
-        image.src = data.cover_medium;
-        title.innetText = data.title;
-        artist.innerText = data.artist.name;
+         let title = document.querySelector('.title');
+         //creamos ruta hacia el nombre del artista
+         title.innetText = data.genres.data.title;
+
+         let artist = document.querySelector('.artist') = "Artista:";
+         //creamos ruta hacia el nombre del artista
+         artist.innerText = data.artist.name;
+
+         let genero = document.querySelector('.genre');
+         //creamos ruta hacia el nombre del genero
+         genero.innerText = data.genres.data.name;
   
      })
      .catch( function(error){

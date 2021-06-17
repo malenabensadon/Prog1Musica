@@ -1,6 +1,37 @@
-//hacer formulario
+//Formulario
 
+//creo variables
+let formulario = document.querySelector('.buscar');
+let buscador = document.querySelector('[name="search"]');
 
+//creamos un evento
+formulario.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    //condicionales
+    if(buscador.value == ''){
+
+        //le aviso al usuario con alert
+        alert.innerText = 'Por favor reyenar el buscador';
+
+    }else if(buscador.value.length < 3){
+
+        //otro alert que avise que necesita mas caracteres
+        alert.innerText = 'Por favor ingrese mas de tres caracteres';
+
+    }else{
+        this.submit()
+    }
+
+})
+
+//limpiamos el mensaje de error cuando el usuario modifica el contenido
+buscador.addEventListener('input', function(){
+    alert.innerText= '';
+
+})
+
+//creamos variables con urls
 let proxy = 'https://cors-anywhere.herokuapp.com/'
 let topTracks = 'https://api.deezer.com/chart/0/tracks'
 let url = proxy+topTracks
