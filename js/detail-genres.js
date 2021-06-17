@@ -1,29 +1,27 @@
-//detalle de genros, un solo dato
+let queryString = location.search //Caputramos qs
+let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
+let id = queryStringToObject.get('id');
+
+let proxy = 'https://cors-anywhere.herokuapp.com/';
+let detalleGeneros = `https://api.deezer.com/genre/${id}`;
+let urlDetGenero = proxy + detalleGeneros;
 
 
-// let proxyDetGenero = 'https://cors-anywhere.herokuapp.com/';
-// let GenerosDetPage = 'https://api.deezer.com/genre';
-// let urlDetalleG = proxyDetGenero+GenerosDetPage;
+fetch( urlDetGenero )
+    .then( function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data);
 
-// fetch(urlDetalleG)
-// .then(function(response){
-//     return response.json()
+        let genero = document.querySelector('.pag'); 
+        genero.innerText += data.name;
+    
+        let foto = document.querySelector(".fotoaa");
+        foto.src = data.picture_medium;
+ 
+    })
 
-// })
-// .then(function(data){
-//     let info = data.data;
-//     console.log(info);
-//     let generosDetPageContainer= document.querySelector('.detallegenero');
-//     let contenidoGenerosDetPage= '';
-
-//     for(let i=0; i<info.length; i++){
-
-//         contenidoGenerosDetPage +=   `<h1 class="pag">${info[i].name}</h1>
-//                                         <img src="${info[i].picture_medium}" alt="" class="fotoaa">`
-//     }
-//     generosDetPageContainer.innerHTML += contenidoGenerosDetPage
-// })  
-// .catch( function(error){
-//     console.log(error);
-// })
-
+    .catch(function(error){
+        console.log(error);
+    })

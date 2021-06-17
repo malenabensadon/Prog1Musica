@@ -11,18 +11,18 @@ fetch(urlArtistas)
         .then(function(data){
             let info = data.data
             console.log(info);
-            let ArtistasPageContainer= document.querySelector('.listas');
-            let ArtistasPage= '';
+            let artistasPageContainer= document.querySelector('.listas');
+            let artistasPage= '';
 
     for(let i=0; i<info.length; i++){
 
-        ArtistasPage +=   ` <article class="caja"> 
+        artistasPage +=   `  <article class="caja"> 
                             <a href="./detail-artist.html" class="names">${info[i].name}</a>
-                            <a href="./detail-artist.html"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
+                            <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
                             </article>`
        
     }
-    ArtistasPageContainer.innerHTML += ArtistasPage
+    artistasPageContainer.innerHTML += artistasPage
 })   
 .catch( function(error){
     console.log(error);
