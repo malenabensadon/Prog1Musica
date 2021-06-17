@@ -18,6 +18,7 @@ fetch( url )
 
         let fotito = document.querySelector(".fotoj");
         fotito.src = data.picture_medium;
+
  
     })
 

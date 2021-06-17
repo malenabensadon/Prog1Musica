@@ -50,7 +50,7 @@ fetch(url)
         for(let i=0; i<info.length; i++){
             contenidoTrack += `<li class="caja"> 
                                         <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"
-                                        alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html"class="names">${info[i].artist.name}</a>
+                                        alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].id}"class="names">${info[i].artist.name}</a>
                                         <a href="./playlists.html"><img class="favx"src="./img/fav.jpg"alt=""></a>
                                 </li>`
         }
@@ -78,7 +78,7 @@ fetch(url2)
         contenidoAlbum += `<li class="caja">
                              <a href="./detail-album.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}"></a>
                              <a href="./detail-album.html" class="names">${info[i].title}</a>
-                             <a href="./detail-artist.html"class="names">by ${info[i].artist.name}</a>
+                             <a href="./detail-artist.html?id=${info[i].id}"class="names">by ${info[i].artist.name}</a>
                            </li>`
     }
     albumContainer.innerHTML += contenidoAlbum
@@ -103,7 +103,7 @@ fetch(url3)
     for(let i=0; i<info.length; i++){
 
         contenidoArtists += `<li class="caja">
-                                 <a href="./detail-artist.html" class="names">${info[i].name}</a>
+                                 <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a>
                                  <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
                             </li>`
     }
