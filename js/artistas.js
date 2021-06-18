@@ -48,8 +48,10 @@ fetch(urlArtistas)
 
     for(let i=0; i<info.length; i++){
 
-        ArtistasPage +=   ` <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a>
-                            <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>`
+        ArtistasPage +=   ` <article class="caja"> 
+                            <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a>
+                            <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
+                            </article>`
        
     }
     ArtistasPageContainer.innerHTML += ArtistasPage

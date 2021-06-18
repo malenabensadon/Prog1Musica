@@ -76,6 +76,7 @@ fetch( urlDetGenero )
                 generosPageContainer.innerHTML += contenidoGenerosPage
             
                 })
+        
 
     .catch(function(error){
         console.log(error);

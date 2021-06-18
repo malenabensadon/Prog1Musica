@@ -51,6 +51,30 @@ fetch( url )
         let fotito = document.querySelector(".fotoj");
         fotito.src = data.picture_medium;
 
+        let urlGenerosTop = `https://api.deezer.com/artist/${id}/albums`;
+        let urlGenerosTop2 = proxy + urlGenerosTop;
+
+        fetch(urlGenerosTop2)
+        .then(function(response){
+            return response.json()
+
+            })
+            .then(function(data){
+                let info = data.data;
+                console.log(info);
+                let generosPageContainer= document.querySelector('.topalbumss');
+                let contenidoGenerosPage= '';
+
+                for(let i=0; i<5; i++){
+
+                    contenidoGenerosPage +=   `<li>${info[i].title} </li>`
+                        
+                }
+
+                generosPageContainer.innerHTML += contenidoGenerosPage
+            
+                })
+
  
     })
 
