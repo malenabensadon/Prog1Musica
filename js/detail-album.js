@@ -1,3 +1,35 @@
+//Formulario
+
+//Capturamos el formulario
+let formulario = document.querySelector('form');
+let buscador = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
+
+//creamos la variable del campo
+let aviso = document.querySelector('.aviso')
+
+//creamos un evento con evenListener
+formulario.addEventListener('submit', function(e){
+    e.preventDefault();//prevenimos el comportamiento default
+
+    //condicionales chequeamos el contenido
+    if( buscador.value == ""){
+        //le aviso al usuario con alert
+        aviso.innerText = 'El buscador no puede estar vacío';
+    } else if( buscador.value.length < 3){
+        //otro alert que avise que necesita mas caracteres
+        aviso.innerText = 'Por favor ingrese más de tres caracteres';
+    } else {
+        this.submit();//enviamos el formulario
+    }
+
+})
+//limpiamos el mensaje de error cuando el usuario modifica el contenido
+buscador.addEventListener('input', function(){
+    aviso.innerText= '';
+
+})
+
+
 window.addEventListener('load', function() {
  
     
@@ -42,18 +74,31 @@ window.addEventListener('load', function() {
         //recorremos el array de tracks
 
         //canciones de tracks 
-        let info = data.data
-        console.log(info);
-        let albumestracks = document.querySelector('.tracks');
-        let contenidoAlbum = '';
+        let urlAlbumT = `https://api.deezer.com/album/${id}/tracks`;
+        let urlAlbumTrack = proxyDAlbum + urlAlbumT;
 
-        for(let i=0; i<info.length; i++){
+        fetch(urlAlbumTrack)
+        .then(function(response){
+            return response.json()
 
-            contenidoAlbum +=   `<li class="cancion">${info[i].data.tracks.data}</li>`
-    }
-    albumestracks.innerHTML += contenidoAlbum;
-})   
+            })
+            .then(function(data){
+                let info = data.data;
+                console.log(info);
+                let albumDContainer= document.querySelector('.tracks');
+                let contenidoGenerosD= '';
+
+                for(let i=0; i<info.length; i++){
+
+                    contenidoGenerosD +=   `<li>${info[i].info.title}</li>`
+                        
+                }
+
+                albumDContainer.innerHTML += contenidoGenerosD
+            
+                })
        .catch(function(error){
         console.log(error);
     })
+})
 })
