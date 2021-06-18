@@ -25,7 +25,7 @@ window.addEventListener('load', function() {
  
           let title = document.querySelector('.title');
           //creamos ruta hacia el nombre del disco
-          title.innetText = data.title;
+          title.innerText = data.title;
  
           let artist = document.querySelector('.artist');
           //creamos ruta hacia el nombre del artista
@@ -33,12 +33,26 @@ window.addEventListener('load', function() {
 
          let genero = document.querySelector('.genre');
          //creamos ruta hacia el nombre del genero
-         genero.innerText = data.genres.name;
+         genero.innerText = data.genres.data[0].name;
 
          publicacion = document.querySelector('.date');
          //fecha de publicacion 
-         publicacion.innerText = data.release_date; 
-      })
+         publicacion.innerText = data.release_date;
+         
+        //recorremos el array de tracks
+
+        //canciones de tracks 
+        let info = data.data
+        console.log(info);
+        let albumestracks = document.querySelector('.tracks');
+        let contenidoAlbum = '';
+
+        for(let i=0; i<info.length; i++){
+
+            contenidoAlbum +=   `<li class="cancion">${info[i].data.tracks.data}</li>`
+    }
+    albumestracks.innerHTML += contenidoAlbum;
+})   
        .catch(function(error){
         console.log(error);
     })

@@ -35,8 +35,8 @@ buscador.addEventListener('input', function(){
 
 window.addEventListener("load", function(){ //controlar que todo el html esté cargado en el navegador 
 
-    let loader = document.querySelector(".gif");
-    loader.style.display = "none"; //esconderlo, si no estoy escribiendo una variable
+  //  let loader = document.querySelector(".gif");
+   // loader.style.display = "none"; //esconderlo, si no estoy escribiendo una variable
     
     let queryString = location.search //Caputramso qs
     let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
@@ -71,15 +71,4 @@ fetch( url )
     .catch( function(error){
         console.log(error);
     })
-
-    // con body 
-    <h2>Resultados de busqueda para: </h2>
-    <p class="datoBuscado"></p>
-    
-    <section class="lista">
-        
-    </section>
-
-    
-    <script src="./js/resultados.js"> </script>
-</body>
+})
