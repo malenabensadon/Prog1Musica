@@ -29,6 +29,8 @@ buscador.addEventListener('input', function(){
     aviso.innerText= '';
 
 })
+
+
 // resultados de busqueda
 
 window.addEventListener("load", function(){ //controlar que todo el html esté cargado en el navegador 

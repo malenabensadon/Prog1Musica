@@ -21,42 +21,25 @@ window.addEventListener('load', function() {
          //nos quedamos solo el el array de datos
          let image = document.querySelector('.fotoj');
          //creamos ruta hacia la foto del album
-         image.src = data.contributors.cover_medium;
+         image.src = data.cover_medium;
 
          let title = document.querySelector('.title');
          //creamos ruta hacia el nombre del disco
-         title.innetText = data.genres.data.title;
+         title.innetText += data.title;
 
-         let artist = document.querySelector('.artist') = 'Artista:';
+         let artist = document.querySelector('.artist');
          //creamos ruta hacia el nombre del artista
-         artist.innerText = data.artist.name;
+         artist.innerText += data.name;
 
-         let genero = document.querySelector('.genre')='Genero:'
+         let genero = document.querySelector('.genre');
          //creamos ruta hacia el nombre del genero
-         genero.innerText = data.genres.data.name;
+         genero.innerText += data.genres.data.name;
 
-         let publicacion = document.querySelector('.date')= 'Publicacion:';
+         let publicacion = document.querySelector('.date');
          //fecha de publicacion 
-         publicacion.innerText = data.genres.release_date; 
-
-         let canciones = document.querySelector('.tracks')='Canciones:'
-         //variables para guardar los datos que encontremos 
-        let info = data.data
-        let albumesContainer= document.querySelector('.tracks');
-        let DetalleTracks= '';
-        
- //hacemos for que recorra las canciones 
-    for(let i=0; i<10; i++){
- 
-        DetalleTracks +=   ` <li>${info[i].tracks} </li>`
-
-    }
-    albumesContainer.innerHTML += DetalleTracks
-        })
-
-     })
-
-     .catch( function(error){
-         console.log (error);
-     })
-    
+         publicacion.innerText += data.genres.release_date; 
+      })
+       .catch(function(error){
+        console.log(error);
+    })
+})
