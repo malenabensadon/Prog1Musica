@@ -14,7 +14,7 @@ fetch( url )
         console.log(data);
 
         let artista = document.querySelector('.instagramj'); 
-        artista.innerText += data.name;
+        artista.innerText = data.name;
 
         let fotito = document.querySelector(".fotoj");
         fotito.src = data.picture_medium;
