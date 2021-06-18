@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
           //nos quedamos solo el el array de datos
           let image = document.querySelector('.fotoj');
           //creamos ruta hacia la foto del album
-          image.src = data.cover_medium;
+          image.src = data.cover_big;
  
           let title = document.querySelector('.title');
           //creamos ruta hacia el nombre del disco
@@ -85,18 +85,20 @@ window.addEventListener('load', function() {
             .then(function(data){
                 let info = data.data;
                 console.log(info);
-                let albumDContainer= document.querySelector('.tracks');
-                let contenidoGenerosD= '';
+                let albumDetContainer= document.querySelector('.tracks');
+                let contenidoAlbumDet= '';
+                albumDetContainer.style.fontSize = "20px";
 
                 for(let i=0; i<info.length; i++){
 
-                    contenidoGenerosD +=   `<li>${info[i].info.title}</li>`
+                    contenidoAlbumDet +=   `<li>${info[i].title} </li>`
                         
                 }
 
-                albumDContainer.innerHTML += contenidoGenerosD
+                albumDetContainer.innerHTML += contenidoAlbumDet
             
                 })
+
        .catch(function(error){
         console.log(error);
     })

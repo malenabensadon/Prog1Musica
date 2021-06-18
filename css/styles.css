@@ -376,7 +376,7 @@ a{
 .fotoj{
     width: 40%;
     height: auto;
-    border-radius: 90%;
+    border-radius: 20%;
     margin-top: 20px;
 }
 .videoj{
@@ -581,4 +581,23 @@ a{
 }
 .cancion{
     color: white;
+}
+.tracks{
+    margin: 20px;
+    margin-top: 80px;
+}
+.dalbum{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+
+}
+.jsdalbum{
+    justify-content: flex-start;
+}
+.jsdalbum2{
+    justify-content: flex-end;
 }
