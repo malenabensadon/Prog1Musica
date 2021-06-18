@@ -19,9 +19,32 @@ fetch( urlDetGenero )
     
         let foto = document.querySelector(".fotoaa");
         foto.src = data.picture_medium;
- 
-    })
+
+      
+        let urlGeneros1 = `https://api.deezer.com/genre/${id}/artists`;
+        let urlGeneros2 = proxy + urlGeneros1;
+
+        fetch(urlGeneros2)
+        .then(function(response){
+            return response.json()
+
+            })
+            .then(function(data){
+                let info = data.data;
+                console.log(info);
+                let generosPageContainer= document.querySelector('.artistasg');
+                let contenidoGenerosPage= '';
+
+                for(let i=0; i<30; i++){
+
+                    contenidoGenerosPage +=   `<li>${info[i].name} </li>`
+                        
+                }
+
+                generosPageContainer.innerHTML += contenidoGenerosPage
+            
+                })
 
     .catch(function(error){
         console.log(error);
-    })
+    })  })
