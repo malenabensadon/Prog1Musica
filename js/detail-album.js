@@ -18,26 +18,26 @@ window.addEventListener('load', function() {
      .then (function(data){
          console.log(data);
 
-         //nos quedamos solo el el array de datos
-         let image = document.querySelector('.fotoj');
-         //creamos ruta hacia la foto del album
-         image.src = data.cover_medium;
-
-         let title = document.querySelector('.title');
-         //creamos ruta hacia el nombre del disco
-         title.innetText += data.title;
-
-         let artist = document.querySelector('.artist');
-         //creamos ruta hacia el nombre del artista
-         artist.innerText += data.name;
+          //nos quedamos solo el el array de datos
+          let image = document.querySelector('.fotoj');
+          //creamos ruta hacia la foto del album
+          image.src = data.cover_medium;
+ 
+          let title = document.querySelector('.title');
+          //creamos ruta hacia el nombre del disco
+          title.innetText = data.title;
+ 
+          let artist = document.querySelector('.artist');
+          //creamos ruta hacia el nombre del artista
+          artist.innerText = data.artist.name;
 
          let genero = document.querySelector('.genre');
          //creamos ruta hacia el nombre del genero
-         genero.innerText += data.genres.data.name;
+         genero.innerText = data.genres.name;
 
-         let publicacion = document.querySelector('.date');
+         publicacion = document.querySelector('.date');
          //fecha de publicacion 
-         publicacion.innerText += data.genres.release_date; 
+         publicacion.innerText = data.release_date; 
       })
        .catch(function(error){
         console.log(error);
