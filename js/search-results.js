@@ -40,6 +40,35 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
     let aBuscar  = queryStringToObject.get('search'); //obtener la informacion que esta dentro de nuestro form
     //ponemos el name del campo input del formulario porque sino no funciona. 
 
+//creamos variables con urls
+let proxy2 = 'https://cors-anywhere.herokuapp.com/'
+let topTracks = `https://api.deezer.com/search/track?q=${aBuscar}`
+let url2 = proxy2+topTracks
+
+//buscamos info de la api
+fetch(url2)
+    .then(function(response){
+        return response.json()//convertimos la info en formato json
+
+    })
+    .then(function(data){
+        let info = data.data
+        console.log(info);
+        let trackContainer= document.querySelector('.detailx');
+        let contenidoTrack= '';
+
+        //recorremos la info
+        for(let i=0; i<info.length; i++){
+            contenidoTrack += `<li class="caja"> 
+                                        <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"
+                                        alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="names">${info[i].artist.name}</a>
+                                        <a href="./playlists.html"><img class="favx"src="./img/fav.jpg"alt=""></a>
+                                </li>`
+        }
+        //editamos nuestro html
+        trackContainer.innerHTML += contenidoTrack
+    })
+
     //creo variables con url
     let proxy = 'https://cors-anywhere.herokuapp.com/';
     let url = `https://api.deezer.com/search/album?q=${aBuscar}`;//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
@@ -59,16 +88,24 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
  
          //recorremos la info
          for(let i=0; i<info.length; i++){
-             resultados += `<li class="caja"> 
-                                <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].cover_medium}"
-                                alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="names">${info[i].artist.name}</a>
-                            </li>`//los corchetes i son para estar adentro del array
+             resultados += `<li class="caja">
+             <a href="./detail-album.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}"></a>
+             <a href="./detail-album.html?id=${info[i].id}" class="names">${info[i].title}</a>
+             <a href="./detail-artist.html?id=${info[i].artist.id}"class="names">by ${info[i].artist.name}</a>
+           </li>`//los corchetes i son para estar adentro del array
          }
 
          //editamos nuestro html con los resultados
          section.innerHTML += resultados
      })
  
+
+// FALTAN ARTSITAS
+//FALTAN GENEROS
+// FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
+// FALTAN RELACIONADAS
+
+
  
 
 
