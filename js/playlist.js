@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
 
 //Recupero el storage.
 let recuperoStorage = localStorage.getItem('playlist');
@@ -76,3 +77,4 @@ function buscarYMostrarPlaylist(id){
         console.log(e);
     })
 }
+})

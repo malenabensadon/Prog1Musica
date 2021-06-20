@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
 let proxyDetGenero = 'https://cors-anywhere.herokuapp.com/';
 let GenerosDetPage = 'https://api.deezer.com/genre';
@@ -62,5 +63,5 @@ fetch(urlDetalleG)
     console.log(error);
 })
 
-
+})
 

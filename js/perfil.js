@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
 
 let queryString = location.search;
 let datos = new URLSearchParams(queryString);
@@ -71,3 +72,5 @@ if(recuperoUserMail == null){
     let login = document.querySelector('.iniciars');
    iniciars.innerHTML = recuperoUserMail;
 }
+
+})

@@ -29,7 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
-
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 //url + proxy de albumes
 let proxyArtistas = 'https://cors-anywhere.herokuapp.com/';
 let ArtistasPage = 'https://api.deezer.com/chart/0/artists';
@@ -58,4 +58,5 @@ fetch(urlArtistas)
 })   
 .catch( function(error){
     console.log(error);
+})
 })

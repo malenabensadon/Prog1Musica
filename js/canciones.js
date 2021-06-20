@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
 //url + proxy de albumes
 let proxyCancion = 'https://cors-anywhere.herokuapp.com/';
@@ -60,4 +61,5 @@ fetch(urlCanciones)
 })   
 .catch( function(error){
     console.log(error);
+})
 })

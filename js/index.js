@@ -30,6 +30,8 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
+
 //creamos variables con urls
 let proxy = 'https://cors-anywhere.herokuapp.com/'
 let topTracks = 'https://api.deezer.com/chart/0/tracks'
@@ -108,3 +110,4 @@ fetch(url3)
     }
     artistsContainer.innerHTML += contenidoArtists
 })   
+})

@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
 let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
@@ -87,3 +88,4 @@ fetch( urlDetGenero )
     .catch(function(error){
         console.log(error);
     })  })
+})
