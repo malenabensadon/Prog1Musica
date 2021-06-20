@@ -35,11 +35,11 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
     
     let queryString = location.search //Caputramos queryString
     let queryStringToObject = new URLSearchParams(queryString); //La transformamos en Objeto Literal
-    let id = queryStringToObject.get('id');
+    let id = queryStringToObject.get('id'); //obtener la informacion de la posicion id
 
     //creo variables con urls 
  let proxyDAlbum = 'https://cors-anywhere.herokuapp.com/';
- let dAlbum = `https://api.deezer.com/album/${id}`;
+ let dAlbum = `https://api.deezer.com/album/${id}`; 
  let urlDAlbum = proxyDAlbum+dAlbum;
      
      //creo un fetch que busca info de la api
@@ -86,7 +86,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
             .then(function(data){
                 let info = data.data;
                 console.log(info);
-                let albumDetContainer= document.querySelector('.tracks');
+                let albumDetContainer= document.querySelector('.tracks'); //dentro de esta section queremos traer los datos
                 let contenidoAlbumDet= '';
                 albumDetContainer.style.fontSize = "20px";
 
