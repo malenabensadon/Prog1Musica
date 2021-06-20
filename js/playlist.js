@@ -51,9 +51,10 @@ for (let i=0; i<favoritos.length; i++){
 function buscarYMostrarPlaylist(id){
     let url = `algoooooooo${id}`
     
+    //buscamos info de la api
     fetch(url)
     .then( function(response){
-        return response.json();
+        return response.json();//convertimos la info en formato json
     })
     .then(function(data){
         //procesar

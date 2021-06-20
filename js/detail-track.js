@@ -37,13 +37,15 @@ let id = queryStringToObject.get('id');
 
 let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`;
 
+//buscamos info de la api
 fetch( url )
     .then( function(response){
-        return response.json();
+        return response.json();//convertimos la info en formato json
     })
     .then(function(data){
         console.log(data);
 
+        //usamos innerText para cambiar lo que esta dentro de las etiquetas del html
         let cancion = document.querySelector('.track'); 
         cancion.innerText += data.title;
     

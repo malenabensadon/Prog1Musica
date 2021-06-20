@@ -40,6 +40,7 @@ let detalleGeneros = `https://api.deezer.com/genre/${id}`;
 let urlDetGenero = proxy + detalleGeneros;
 
 
+//buscamos info de la api
 fetch( urlDetGenero )
     .then( function(response){
         return response.json();
@@ -57,9 +58,10 @@ fetch( urlDetGenero )
         let urlGeneros1 = `https://api.deezer.com/genre/${id}/artists`;
         let urlGeneros2 = proxy + urlGeneros1;
 
+        //buscamos info
         fetch(urlGeneros2)
         .then(function(response){
-            return response.json()
+            return response.json()//convertimos la info en formato json
 
             })
             .then(function(data){
@@ -68,6 +70,7 @@ fetch( urlDetGenero )
                 let generosPageContainer= document.querySelector('.listas');
                 let contenidoGenerosPage= '';
 
+                //recorremos el array de datos
                 for(let i=0; i<10; i++){
 
                     contenidoGenerosPage +=  `<article class="caja2"> 
@@ -80,6 +83,7 @@ fetch( urlDetGenero )
                         
                 }
 
+                //cambiamos estructura del html
                 generosPageContainer.innerHTML += contenidoGenerosPage
             
                 })

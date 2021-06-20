@@ -36,9 +36,10 @@ let proxyCancion = 'https://cors-anywhere.herokuapp.com/';
 let CancionesPage = 'https://api.deezer.com/chart/0/tracks';
 let urlCanciones = proxyCancion+CancionesPage;
 
+//buscamos info de la api con un fetch
 fetch(urlCanciones)
 .then(function(response){
-    return response.json()
+    return response.json()//convertimos la info en formato json
 
 })
 .then(function(data){
@@ -47,6 +48,7 @@ fetch(urlCanciones)
     let CancionesPageContainer= document.querySelector('.listas');
     let CancionesPage= '';
 
+//for que recorra la info
     for(let i=0; i<info.length; i++){
 
         CancionesPage +=   ` <article class="caja"> 
@@ -57,6 +59,7 @@ fetch(urlCanciones)
                             </article>`
        
     }
+//usamos innerHTML para editar nuestro html desde js
     CancionesPageContainer.innerHTML += CancionesPage
 })   
 .catch( function(error){

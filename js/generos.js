@@ -35,8 +35,10 @@ let proxyDetGenero = 'https://cors-anywhere.herokuapp.com/';
 let GenerosDetPage = 'https://api.deezer.com/genre';
 let urlDetalleG = proxyDetGenero+GenerosDetPage;
 
+//buscamos info
 fetch(urlDetalleG)
 .then(function(response){
+    //convertimos la info en formato json
     return response.json()
 
 })
@@ -46,6 +48,7 @@ fetch(urlDetalleG)
     let generosPageContainer= document.querySelector('.listas');
     let contenidoGenerosPage= '';
 
+    //recorremos el array de datos
     for(let i=0; i<info.length; i++){
 
         contenidoGenerosPage +=   ` <article class="caja"> 
@@ -57,6 +60,7 @@ fetch(urlDetalleG)
              
     }
 
+    //editamos nuestro html
     generosPageContainer.innerHTML += contenidoGenerosPage
 })  
 .catch( function(error){
