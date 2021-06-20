@@ -64,12 +64,18 @@ fetch( urlDetGenero )
             .then(function(data){
                 let info = data.data;
                 console.log(info);
-                let generosPageContainer= document.querySelector('.artistasg');
+                let generosPageContainer= document.querySelector('.listas');
                 let contenidoGenerosPage= '';
 
-                for(let i=0; i<30; i++){
+                for(let i=0; i<10; i++){
 
-                    contenidoGenerosPage +=   `<li>${info[i].name} </li>`
+                    contenidoGenerosPage +=  ` <article class="caja2"> 
+                                                <li class="pequena"> 
+                                                <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a> 
+                                                <img class="fotos" src="${info[i].picture_medium}"></img>
+                                                </li>
+                                              </article>`
+                                                
                         
                 }
 

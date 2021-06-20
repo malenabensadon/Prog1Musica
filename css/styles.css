@@ -348,8 +348,9 @@ a{
     margin-bottom: 20px;
 }
 .fotoaa{
-    border-radius: 90%;
+    border-radius: 20%;
     width: AUTO;
+    margin-bottom: 0px;
     
 }
 .detallestrack{
@@ -363,11 +364,8 @@ a{
     margin-bottom: 30px;
 }
 .detallegenero{
-    width: 800px;
-    height: 900px;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
     text-align: center;
     margin: auto;
     margin-top: 20px;
@@ -600,4 +598,91 @@ a{
 }
 .jsdalbum2{
     justify-content: flex-end;
+}
+.detallesfotos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+
+}
+.fotogen{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20%;
+
+}
+.listageneros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+.listagen1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;;
+    width: 100%;
+    align-items: center;
+}
+
+.listagen{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.artistasg{
+    width: 100%;
+
+}
+.caja2{
+    width: 20%;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    text-align: center;
+}
+
+
+/*.otro1{
+    justify-content: flex-start;
+    margin-left: 250px;
+}
+.otro2{
+    justify-content: flex-end;
+    margin-right: 250px;
+}
+.dgenero{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.jsdgenero{
+    justify-content: flex-start;
+    margin-left: 250px;
+}
+.jsdgenero2{
+    justify-content: flex-end;
+    margin-right: 250px;
+}
+.acaja{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+
 }
