@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
 let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
@@ -36,13 +37,15 @@ let id = queryStringToObject.get('id');
 
 let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`;
 
+//buscamos info de la api
 fetch( url )
     .then( function(response){
-        return response.json();
+        return response.json();//convertimos la info en formato json
     })
     .then(function(data){
         console.log(data);
 
+        //usamos innerText para cambiar lo que esta dentro de las etiquetas del html
         let cancion = document.querySelector('.track'); 
         cancion.innerText += data.title;
     
@@ -63,7 +66,7 @@ fetch( url )
     .catch(function(error){
         console.log(error);
     })
-
+})
 
 // //Agregar a playlist.
 // let playlist = [];

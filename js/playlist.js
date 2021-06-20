@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
 
 //Recupero el storage.
 let recuperoStorage = localStorage.getItem('playlist');
@@ -50,9 +51,10 @@ for (let i=0; i<favoritos.length; i++){
 function buscarYMostrarPlaylist(id){
     let url = `algoooooooo${id}`
     
+    //buscamos info de la api
     fetch(url)
     .then( function(response){
-        return response.json();
+        return response.json();//convertimos la info en formato json
     })
     .then(function(data){
         //procesar
@@ -76,3 +78,4 @@ function buscarYMostrarPlaylist(id){
         console.log(e);
     })
 }
+})

@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
 let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
@@ -38,6 +39,7 @@ let proxy = 'https://cors-anywhere.herokuapp.com/';
 let artistDet = `https://api.deezer.com/artist/${id}`;
 let url = proxy + artistDet;
 
+//buscamos info 
 fetch( url )
     .then( function(response){
         return response.json();
@@ -54,9 +56,10 @@ fetch( url )
         let urlGenerosTop = `https://api.deezer.com/artist/${id}/albums`;
         let urlGenerosTop2 = proxy + urlGenerosTop;
 
+        //buscamos info
         fetch(urlGenerosTop2)
         .then(function(response){
-            return response.json()
+            return response.json()//convertimos la info en formato json
 
             })
             .then(function(data){
@@ -65,6 +68,7 @@ fetch( url )
                 let generosPageContainer= document.querySelector('.topalbumss');
                 let contenidoGenerosPage= '';
 
+                //recorremos el array de datos
                 for(let i=0; i<5; i++){
 
                     contenidoGenerosPage +=   `<li>${info[i].title} </li>`
@@ -81,3 +85,4 @@ fetch( url )
     .catch(function(error){
         console.log(error);
     })
+})

@@ -29,6 +29,7 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
 let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
@@ -39,6 +40,7 @@ let detalleGeneros = `https://api.deezer.com/genre/${id}`;
 let urlDetGenero = proxy + detalleGeneros;
 
 
+//buscamos info de la api
 fetch( urlDetGenero )
     .then( function(response){
         return response.json();
@@ -56,9 +58,10 @@ fetch( urlDetGenero )
         let urlGeneros1 = `https://api.deezer.com/genre/${id}/artists`;
         let urlGeneros2 = proxy + urlGeneros1;
 
+        //buscamos info
         fetch(urlGeneros2)
         .then(function(response){
-            return response.json()
+            return response.json()//convertimos la info en formato json
 
             })
             .then(function(data){
@@ -79,6 +82,7 @@ fetch( urlDetGenero )
                         
                 }
 
+                //cambiamos estructura del html
                 generosPageContainer.innerHTML += contenidoGenerosPage
             
                 })
@@ -87,3 +91,4 @@ fetch( urlDetGenero )
     .catch(function(error){
         console.log(error);
     })  })
+})

@@ -307,8 +307,8 @@ a{
     margin-bottom: 20px;
 }
 .detalleartista{
-    width: 800px;
-    height: 1100px;
+    width: 850px;
+    height: 800pxpx;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
     box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
@@ -357,11 +357,12 @@ a{
     width: 800px;
     color:rgb(105, 112, 98) ;
     border-radius: 15px;
-    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
     text-align: center;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 30px;
+    box-shadow: -4px 0 15px rgba(0, 255, 21, 0.637);    
+    height: 450px;
 }
 .detallegenero{
     color:rgb(105, 112, 98) ;

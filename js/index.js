@@ -30,14 +30,17 @@ buscador.addEventListener('input', function(){
 
 })
 
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
+
 //creamos variables con urls
 let proxy = 'https://cors-anywhere.herokuapp.com/'
 let topTracks = 'https://api.deezer.com/chart/0/tracks'
 let url = proxy+topTracks
 
+//buscamos info de la api
 fetch(url)
     .then(function(response){
-        return response.json()
+        return response.json()//convertimos la info en formato json
 
     })
     .then(function(data){
@@ -46,6 +49,7 @@ fetch(url)
         let trackContainer= document.querySelector('.listas');
         let contenidoTrack= '';
 
+        //recorremos la info
         for(let i=0; i<info.length; i++){
             contenidoTrack += `<li class="caja"> 
                                         <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"
@@ -53,6 +57,7 @@ fetch(url)
                                         <a href="./playlists.html"><img class="favx"src="./img/fav.jpg"alt=""></a>
                                 </li>`
         }
+        //editamos nuestro html
         trackContainer.innerHTML += contenidoTrack
     })
 
@@ -61,9 +66,10 @@ let proxy2 = 'https://cors-anywhere.herokuapp.com/'
 let topAlbums = 'https://api.deezer.com/chart/0/albums'
 let url2 = proxy2+topAlbums
 
+//buscamos info de la api
 fetch(url2)
 .then(function(response){
-    return response.json()
+    return response.json()//convertimos la info en formato json
 
 })
 .then(function(data){
@@ -72,6 +78,7 @@ fetch(url2)
     let albumContainer= document.querySelector('.albumes');
     let contenidoAlbum= '';
 
+    //recorremos el array de datos
     for(let i=0; i<info.length; i++){
 
         contenidoAlbum += `<li class="caja">
@@ -80,6 +87,7 @@ fetch(url2)
                              <a href="./detail-artist.html?id=${info[i].artist.id}"class="names">by ${info[i].artist.name}</a>
                            </li>`
     }
+    //editamos nuestro html
     albumContainer.innerHTML += contenidoAlbum
 })   
 
@@ -88,9 +96,10 @@ let proxy3 = 'https://cors-anywhere.herokuapp.com/'
 let topArtists = 'https://api.deezer.com/chart/0/artists'
 let url3 = proxy3+topArtists
 
+//buscamos info de la api
 fetch(url3)
 .then(function(response){
-    return response.json()
+    return response.json()//convertimos la info en formato json
 
 })
 .then(function(data){
@@ -99,6 +108,7 @@ fetch(url3)
     let artistsContainer= document.querySelector('.artistas');
     let contenidoArtists= '';
 
+    //recorremos el array de datos
     for(let i=0; i<info.length; i++){
 
         contenidoArtists += `<li class="caja">
@@ -106,5 +116,7 @@ fetch(url3)
                                  <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
                             </li>`
     }
+    //editamos el html
     artistsContainer.innerHTML += contenidoArtists
 })   
+})
