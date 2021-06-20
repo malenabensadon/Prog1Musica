@@ -34,81 +34,42 @@ buscador.addEventListener('input', function(){
 
 window.addEventListener("load", function(){ //controlar que todo el html esté cargado en el navegador 
 
+    let queryString = location.search //Caputramos queryString
+    let queryStringToObject = new URLSearchParams(queryString); //La transformamos en Objeto Literal
+    //como es un objeto literal usamos el metodo get para obtener los datos
+    let aBuscar  = queryStringToObject.get('search'); //obtener la informacion que esta dentro de nuestro form
+    //ponemos el name del campo input del formulario porque sino no funciona. 
 
-let queryString = location.search; 
-let queryStringObj = new URLSearchParams(queryString);
-
-console.log(queryString); 
-console.log(queryStringObj); 
-
-let buscar = queryStringObj.get('search'); 
-console.log(buscar); 
-
-let proxy = 'https://cors-anywhere.herokuapp.com/'
-let url = proxy + 'https://api.deezer.com/search/track?q=' + buscar; 
-
-fetch(url)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(datos){
-        console.log(datos);
-        let lista = document.querySelector('.resultadosTracks');
-        let resultados = datos.data; 
-
-        resultados.forEach(function(resultado) {
-            lista.innerHTML += '<li style="padding: 10px;"><a href="trackDetail.html?id=' + resultado.id + '"' + ' class="tracks1"><div class="columna"><img src="' + resultado.album.cover_medium + '" alt="' + resultado.title + '<br>' + resultado.name + '"><p>' + resultado.title + '<br>' + resultado.artist.name + '</p></div></a></li>'
-            
-        });
-        console.log(datos)
-    })
-.catch(function(error){
-    return console.log(error);
-  })
+    //creo variables con url
+    let proxy = 'https://cors-anywhere.herokuapp.com/';
+    let url = `https://api.deezer.com/search/album?q=${aBuscar}`;//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
+    let urlResultadoalbum = proxy+url
+     
+     //creo un fetch que busca info 
+     fetch(urlResultadoalbum)
+     .then(function(response){
+         return response.json()//convertimos la info en formato json
  
-
-urlArtista= proxy + 'https://api.deezer.com/search/artist?q=' + buscar; 
-
-fetch(urlArtista)
-    .then(function(response){
-        return response.json(); 
-    })
-    .then(function(datos){
-        console.log(datos);
-        let lista = document.querySelector('.resultadosArtist');
-        let resultados = datos.data; 
-
-        resultados.forEach(function(resultado) {
-            lista.innerHTML += '<li style="padding: 10px;"><a href="artistsDetail.html?id=' + resultado.id + '"' + ' class="tracks1"><div class="columna"><img src="' + resultado.picture_big + '" alt="' + resultado.name + '"class="fotoArtistasBusqueda"><p>' + resultado.name + '</p></div></a></li>'
-        });
-        console.log(datos)
-    })
-.catch(function(error){
-    return console.log(error);
-  })
+     })
+     .then(function(data){
+         let info = data.data
+         console.log(info);
+         let section = document.querySelector('.detailx');
+         let resultados= '';
  
+         //recorremos la info
+         for(let i=0; i<info.length; i++){
+             resultados += `<li class="caja"> 
+                                <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].cover_medium}"
+                                alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="names">${info[i].artist.name}</a>
+                            </li>`//los corchetes i son para estar adentro del array
+         }
 
-
-urlAlbum = proxy + 'https://api.deezer.com/search/album?q=' + buscar; 
-
-  fetch(urlAlbum)
-      .then(function(response){
-          return response.json(); 
-      })
-      .then(function(datos){
-          console.log(datos);
-          let lista = document.querySelector('.resultadosAlbums');
-          let resultados = datos.data; 
-  
-          resultados.forEach(function(resultado) {
-              lista.innerHTML += '<li style="padding: 10px;"><a href="albumDetail.html?id=' + resultado.id + '"' + ' class="tracks1"><div class="columna"><img src="' + resultado.cover_medium + '" alt="' + resultado.title + '"class="fotoArtistasBusqueda"><p>' + resultado.title + '</p></div></a></li>'
-          });
-          console.log(datos)
-      })
-  .catch(function(error){
-      return console.log(error);
-    })
-
+         //editamos nuestro html con los resultados
+         section.innerHTML += resultados
+     })
+ 
+ 
 
 
   //  let loader = document.querySelector(".gif");
