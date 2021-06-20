@@ -69,7 +69,7 @@ fetch( urlDetGenero )
 
                 for(let i=0; i<10; i++){
 
-                    contenidoGenerosPage +=  ` <article class="caja2"> 
+                    contenidoGenerosPage +=  `<article class="caja2"> 
                                                 <li class="pequena"> 
                                                 <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a> 
                                                 <img class="fotos" src="${info[i].picture_medium}"></img>
