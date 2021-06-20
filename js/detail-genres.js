@@ -67,12 +67,12 @@ fetch( urlDetGenero )
                 let generosPageContainer= document.querySelector('.listas');
                 let contenidoGenerosPage= '';
 
-                for(let i=0; i<10; i++){
+                for(let i=0; i<info.length; i++){
 
                     contenidoGenerosPage +=  `<article class="caja2"> 
                                                 <li class="pequena"> 
                                                 <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a> 
-                                                <img class="fotos" src="${info[i].picture_medium}"></img>
+                                                <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}"></img></a> 
                                                 </li>
                                               </article>`
                                                 
