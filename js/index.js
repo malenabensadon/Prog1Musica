@@ -76,7 +76,7 @@ fetch(url2)
 
         contenidoAlbum += `<li class="caja">
                              <a href="./detail-album.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}"></a>
-                             <a href="./detail-album.html" class="names">${info[i].title}</a>
+                             <a href="./detail-album.html?id=${info[i].id}" class="names">${info[i].title}</a>
                              <a href="./detail-artist.html?id=${info[i].artist.id}"class="names">by ${info[i].artist.name}</a>
                            </li>`
     }
