@@ -51,7 +51,7 @@ for (let i=0; i<playlist.length; i++){
 
 
 function buscarYMostrarPlaylist(id){
-    let url = `algoooooooo${id}`
+    let url = `https://api.deezer.com/tracks${id}`
     
     //buscamos info de la api
     fetch(url)
@@ -64,15 +64,11 @@ function buscarYMostrarPlaylist(id){
         let resultados = '';
         containerpl.innerHTML += `<article class="cajapl">
                             <article class="fotopl">
-                                <a href="./detail-track.html"><img class="fotop" src="./img/peaches.jpeg" alt=""></a>
+                                <a href="./detail-track.html"><img class="fotop" src="${info[i].data.picture_medium}" alt=""></a>
                             </article>
                             <article class="infopl">
-                                <h2> <a href="./detail-track.html">Peaches</a> <a href="./playlists.html"></a></h2>
-                                <h4><a href="./detail-artist.html"> Justin Bieber </a></h4>
-                                <a href="./detail-track.html"><img class="fotopla" src="./img/play.jpg" alt=""></a>
-                                <audio class="reproductor"src="musica/ musik.mp3" preload="Cancion" controls></audio>
-                                <audio src="musica/ musik.mp3" autoplay loop></audio>
-                            </article>
+                                <h2> <a href="./detail-track.html">${info[i].data.title}</a> <a href="./playlists.html"></a></h2>
+                                <h4><a href="./detail-artist.html"> ${info[i].data.artist.name} </a></h4>
                         </article>` 
     
     })
