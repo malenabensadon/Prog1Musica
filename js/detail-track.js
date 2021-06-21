@@ -60,7 +60,7 @@ buscador.addEventListener('input', function(){
             let playlist1 = document.querySelector('.containerpl');
 
             let player = document.querySelector(".player");
-            player.innerHTML+=`<iframe class="player" title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${id}" width="100%" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>`;
+            player.innerHTML+=`<iframe class="player" title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${id}" width="90%" margin="40px" height="300"frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>`;
 
         })
     
