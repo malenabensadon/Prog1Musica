@@ -50,7 +50,7 @@ buscador.addEventListener('input', function(){
             cancion.innerText += data.title;
         
             let img = document.querySelector(".fotoaa");
-            img.src += data.artist.picture_medium;
+            img.src += data.album.cover_medium;
                 
             let artista = document.querySelector(".names");
             artista.innerText += data.artist.name; 
@@ -59,10 +59,9 @@ buscador.addEventListener('input', function(){
             album.innerText += data.album.title;
             let playlist1 = document.querySelector('.containerpl');
 
-            let info = data.data;
-            console.log(info);
-            let tracksPageContainer= document.querySelector('.detallestrack');
-            let contenidoTracksPage= '';
+            let player = document.querySelector(".player");
+            player.innerHTML+=`<iframe class="player" title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${id}" width="80%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>`;
+
         })
     
         .catch(function(error){
