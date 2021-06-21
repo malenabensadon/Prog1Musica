@@ -40,39 +40,10 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
     let aBuscar  = queryStringToObject.get('search'); //obtener la informacion que esta dentro de nuestro form
     //ponemos el name del campo input del formulario porque sino no funciona. 
 
-//creamos variables con urls
-let proxy2 = 'https://cors-anywhere.herokuapp.com/'
-let topTracks = `https://api.deezer.com/search/track?q=${aBuscar}`
-let url2 = proxy2+topTracks
-
-//buscamos info de la api
-fetch(url2)
-    .then(function(response){
-        return response.json()//convertimos la info en formato json
-
-    })
-    .then(function(data){
-        let info = data.data
-        console.log(info);
-        let trackContainer= document.querySelector('.detailx');
-        let contenidoTrack= '';
-
-        //recorremos la info
-        for(let i=0; i<info.length; i++){
-            contenidoTrack += `<li class="caja"> 
-                                        <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"
-                                        alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="names">${info[i].artist.name}</a>
-                                        <a href="./playlists.html"><img class="favx"src="./img/fav.jpg"alt=""></a>
-                                </li>`
-        }
-        //editamos nuestro html
-        trackContainer.innerHTML += contenidoTrack
-    })
-
-    //creo variables con url
+    //ALBUMS
     let proxy = 'https://cors-anywhere.herokuapp.com/';
-    let url = `https://api.deezer.com/search/album?q=${aBuscar}`;//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
-    let urlResultadoalbum = proxy+url
+    let url4 = `https://api.deezer.com/search/album?q=${aBuscar}`;//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
+    let urlResultadoalbum = proxy+url4
      
      //creo un fetch que busca info 
      fetch(urlResultadoalbum)
@@ -98,13 +69,70 @@ fetch(url2)
          //editamos nuestro html con los resultados
          section.innerHTML += resultados
      })
+//TRACKS
+//creamos variables con urls
+let proxy2 = 'https://cors-anywhere.herokuapp.com/'
+let topTracks = `https://api.deezer.com/search/track?q=${aBuscar}`//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
+let url2 = proxy2+topTracks
+
+//buscamos info de la api
+fetch(url2)
+    .then(function(response){
+        return response.json()//convertimos la info en formato json
+
+    })
+    .then(function(data){
+        let info = data.data
+        console.log(info);
+        let trackContainer= document.querySelector('.detailx');
+        let contenidoTrack= '';
+
+        //recorremos la info
+        for(let i=0; i<info.length; i++){
+            contenidoTrack += `<li class="caja"> 
+                                        <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"
+                                        alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="names">${info[i].artist.name}</a>
+                                        <a href="./playlists.html"><img class="favx"src="./img/fav.jpg"alt=""></a>
+                                </li>`
+        }
+        //editamos nuestro html
+        trackContainer.innerHTML += contenidoTrack
+    })
+// ARTSITAS
+ //creamos variables con urls
+ let proxy3 = 'https://cors-anywhere.herokuapp.com/'
+ let topArtists = `https://api.deezer.com/search/artist?q=${aBuscar}`//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
+ let url3 = proxy3+topArtists
  
+ //buscamos info de la api
+ fetch(url3)
+ .then(function(response){
+     return response.json()//convertimos la info en formato json
+ 
+ })
+ .then(function(data){
+     let info = data.data
+     console.log(info);
+     let artistsContainer= document.querySelector('.detailx');
+     let contenidoArtists= '';
+ 
+     //recorremos el array de datos
+     for(let i=0; i<info.length; i++){
+ 
+         contenidoArtists += `<li class="caja">
+                                  <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a>
+                                  <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
+                             </li>`
+     }
+     //editamos el html
+     artistsContainer.innerHTML += contenidoArtists
+ })   
+ })
+
 //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
-
-
 //Capturamos el formulario
 let busqueda = document.querySelector('form');
-let buscador = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
+let buscador1 = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
 
 //creamos la variable del campo
 let errordebusqueda = document.querySelector('.oops')
@@ -114,7 +142,7 @@ busqueda.addEventListener('submit', function(e){
     e.preventDefault();//prevenimos el comportamiento default
 
     //condicionales chequeamos el contenido
-    if( buscador.value !== ""){
+    if( buscador1.value !== ""){
         //le aviso al usuario 
         errordebusqueda.innerHTML = `<h2 class= "titulos">Oops! No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="titulos">Búsqueda relacionada:</h2>`;
@@ -125,55 +153,12 @@ busqueda.addEventListener('submit', function(e){
 })
 
 //limpiamos el mensaje de error cuando el usuario modifica el contenido
-buscador.addEventListener('input', function(){
+buscador1.addEventListener('input', function(){
     aviso.innerText= '';
 
 })
 
-// FALTAN ARTSITAS
+
 //FALTAN GENEROS
 
 // FALTAN RELACIONADAS
-
-
- 
-
-
-  //  let loader = document.querySelector(".gif");
-   // loader.style.display = "none"; //esconderlo, si no estoy escribiendo una variable
-    
-    //let queryString = location.search //Caputramso qs
-    /* let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
-    let aBuscar = queryStringToObject.get('.......................'); //Acá va el name del campo input del formulario.
-
-    let datoBuscado = document.querySelector('.datoBuscado'); 
-    datoBuscado.innerText = `Resultados para ${formulario}`;
-
-let url = `unlink con ${aBuscar}`;
-
-fetch( url )
-    .then( function(response){
-        return response.json();
-    })
-    .then( function(data){
-        //Aca muestro código
-        console.log(data);
-        let info = data.data;
-        let section = document.querySelector('.lista');
-        let resultados = '';
-
-        for(let i=0; i<info.length; i++){
-            resultados+= `<article>
-                            <h2>${info[i].title}</h2>
-                            <img src="${info[i].images.original.url}">
-                        </article>`
-        }
-        section.innerHTML += resultados
-        
-
-    })
-    .catch( function(error){
-        console.log(error);
-    })
-*/
-})
