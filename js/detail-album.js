@@ -93,7 +93,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 //recorremos la info con un for
                 for(let i=0; i<info.length; i++){
 
-                    contenidoAlbumDet +=   `<li>${info[i].title} </li>`
+                    contenidoAlbumDet +=   `<li>${info[i].title} <p> <a class="namesagregar" href="">Agregar a mí playlist</a> </p> </li>`
                         
                 }
 //editamos el Html
