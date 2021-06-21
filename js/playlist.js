@@ -74,7 +74,7 @@ function buscarYMostrarPlaylist(id){
                             <article class="infopl">
                                 <h2> <a href="./detail-track.html?id=${data.id}">${data.title}</a></h2>
                                 <h4> <a href="./detail-artist.html?id=${data.artist.id}"> ${data.artist.name} </a></h4>
-                                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${data.preview}" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+                                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${id}" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
                                 </article>` 
     
     })

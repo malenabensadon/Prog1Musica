@@ -53,13 +53,16 @@ buscador.addEventListener('input', function(){
             img.src += data.artist.picture_medium;
                 
             let artista = document.querySelector(".names");
-            artista.innerText += data.artist.name;
+            artista.innerText += data.artist.name; 
             
             let album = document.querySelector(".instajustin");
             album.innerText += data.album.title;
-    
-           
-     
+            let playlist1 = document.querySelector('.containerpl');
+
+            let info = data.data;
+            console.log(info);
+            let tracksPageContainer= document.querySelector('.detallestrack');
+            let contenidoTracksPage= '';
         })
     
         .catch(function(error){
