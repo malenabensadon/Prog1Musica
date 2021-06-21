@@ -58,8 +58,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
             let album = document.querySelector(".instajustin");
             album.innerText += data.album.title;
     
-            let player = document.querySelector(".videoj");
-            player.src += data.preview;
+           
      
         })
     
@@ -71,65 +70,44 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 // //Agregar a playlist.
 let playlist = [];
 
+ //Recuperar datos del storage
+ let recuperoStorage = localStorage.getItem('playlist');
+
+//Chequear y agregar la información de local storage en el array
+if(recuperoStorage != null){ //distinto de null entonces agrego a playlist
+    playlist = JSON.parse(recuperoStorage);// si me devolvio algo o parseo y meto en playlist
+}
+
+//Chequear que el id esté en el array para cambiar el texto al usuario.
+if(playlist.includes(id)){
+ document.querySelector('.namesagregar').innerText = "Eliminar de mi playlist";
+}
+
+
  //Cuando el usuario haga click en "agregar a playlist" Agregar id de track dentro del array.
 let namesagregar = document.querySelector('.namesagregar');
 console.log(namesagregar);
 
 namesagregar.addEventListener("click", function(e){
-     e.preventDefault();
-    //hasta aca paramos el evento
-    //hacemos push para agregar lo nuestro id al array de playlist
-    //guardamos id en array
-      playlist.push(id);
-      console.log(playlist);
+    e.preventDefault();
 
-      //armamos string
-      let playlistParaStorage = JSON.stringify(playlist);
-      
-      //lo guarfamos dentro del local storage
-      //set.item permite guardar en storage
-      localStorage.setItem('playlist', playlistParaStorage);
-      console.log(localStorage);
+    //Chequear si el id está en el array
+    if(playlist.includes(id)){
+        let idASacar = playlist.indexOf(id);
+        playlist.splice(idASacar, 1);
+        document.querySelector('.namesagregar').innerText = "Agregar a mi playlist";
+    } else {
+        //Guardamos el id en el array
+        playlist.push(id);
+        console.log(playlist);
+        document.querySelector('.namesagregar').innerText = "Eliminar de mi playlist";
+    }
+
+
+    //Armamos un string
+    let namesagregarParaStorage = JSON.stringify(playlist);
+    //Lo guardamos dentro de localStorage
+    localStorage.setItem('playlist', namesagregarParaStorage);
+    console.log(localStorage);
+
 })
-      
-
-
-
-
-//  //Recuperar datos del storage
-//  let recuperoStorage = localStorage.getItem('playlist');
-
-// // //Chequear y agregar la información de local storage en el array
-//  if(recuperoStorage != null){
-//        agregar = JSON.parse(recuperoStorage);
-//  }
-
-// //Chequear que el id esté en el array para cambiar el texto al usuario.
-//  if(playlist.includes(id)){
-//     document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
-// }
-
-// \
-
-// //     //Chequear si el id está en el array
-// //     if(playlist.includes(id)){
-// //         let idASacar = agregar.indexOf(id);
-// //         playlist.splice(idASacar, 1);
-// //         document.querySelector('.agregar').innerText = "Agregar a mi playlist";
-// //     } else {
-// //         //Guardamos el id en el array
-// //         agregar.push(id);
-// //         console.log(playlist);
-// //         document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
-// //     }
-        
-// //     //Armamos un string
-// //     let agregarParaStorage = JSON.stringify(playlist);
-// //     //Lo guardamos dentro de localStorage
-// //     localStorage.setItem('playlist', agregarParaStorage);
-// //     console.log(localStorage);
-    
-   
-    
-
-// //     })
