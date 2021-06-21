@@ -31,69 +31,66 @@ buscador.addEventListener('input', function(){
 
 window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
-let queryString = location.search //Caputramos qs
-let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
-let id = queryStringToObject.get('id');
-
-let url = `https://api.deezer.com/track/${id}`;
-let proxy = 'https://cors-anywhere.herokuapp.com/';
-let urltracks = url+proxy;
-
-
-//buscamos info de la api
-fetch( urltracks )
-    .then( function(response){
-        return response.json();//convertimos la info en formato json
-    })
-    .then(function(data){
-        console.log(data);
-
-        //usamos innerText para cambiar lo que esta dentro de las etiquetas del html
-        let cancion = document.querySelector('.track'); 
-        cancion.innerText += data.title;
+    let queryString = location.search //Caputramos qs
+    let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
+    let id = queryStringToObject.get('id');
     
-        let img = document.querySelector(".fotoaa");
-        img.src += data.artist.picture_medium;
-            
-        let artista = document.querySelector(".names");
-        artista.innerText += data.artist.name;
+    let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`;
+    
+    //buscamos info de la api
+    fetch( url )
+        .then( function(response){
+            return response.json();//convertimos la info en formato json
+        })
+        .then(function(data){
+            console.log(data);
+    
+            //usamos innerText para cambiar lo que esta dentro de las etiquetas del html
+            let cancion = document.querySelector('.track'); 
+            cancion.innerText += data.title;
         
-        let album = document.querySelector(".instajustin");
-        album.innerText += data.album.title;
-
-        let player = document.querySelector(".videoj");
-        player.src += data.preview;
- 
+            let img = document.querySelector(".fotoaa");
+            img.src += data.artist.picture_medium;
+                
+            let artista = document.querySelector(".names");
+            artista.innerText += data.artist.name;
+            
+            let album = document.querySelector(".instajustin");
+            album.innerText += data.album.title;
+    
+            let player = document.querySelector(".videoj");
+            player.src += data.preview;
+     
+        })
+    
+        .catch(function(error){
+            console.log(error);
+        })
     })
 
-    .catch(function(error){
-        console.log(error);
-    })
-})
+// //Agregar a playlist.
+let playlist = [];
 
-// // //Agregar a playlist.
-// let playlist = [];
+ //Cuando el usuario haga click en "agregar a playlist" Agregar id de track dentro del array.
+let namesagregar = document.querySelector('.namesagregar');
+console.log(namesagregar);
 
-//  //Cuando el usuario haga click en "agregar a playlist" Agregar id de track dentro del array.
-// let namesagregar = document.querySelector('.namesagregar');
-// console.log(namesagregar);
+namesagregar.addEventListener("click", function(e){
+     e.preventDefault();
+    //hasta aca paramos el evento
+    //hacemos push para agregar lo nuestro id al array de playlist
+    //guardamos id en array
+      playlist.push(id);
+      console.log(playlist);
 
-// namesagregar.addEventListener("click", function(e){
-//      e.preventDefault();
-//     //hasta aca paramos el evento
-//     //hacemos push para agregar lo nuestro id al array de playlist
-//     //guardamos id en array
-//       playlist.push(id);
-//       console.log(playlist);
-
-//       //armamos string
-//       let playlistParaStorage = JSON.stringify(playlist);
+      //armamos string
+      let playlistParaStorage = JSON.stringify(playlist);
       
-//       //lo guarfamos dentro del local storage
-//       //set.item permite guardar en storage
-//       localStorage.setItem('playlist', playlistParaStorage);
-//       console.log(localStorage);
-// })
+      //lo guarfamos dentro del local storage
+      //set.item permite guardar en storage
+      localStorage.setItem('playlist', playlistParaStorage);
+      console.log(localStorage);
+})
       
 
 
