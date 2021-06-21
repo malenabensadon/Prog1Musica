@@ -35,10 +35,13 @@ let queryString = location.search //Caputramos qs
 let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
 let id = queryStringToObject.get('id');
 
-let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`;
+let url = `https://api.deezer.com/track/${id}`;
+let proxy = 'https://cors-anywhere.herokuapp.com/';
+let urltracks = url+proxy;
+
 
 //buscamos info de la api
-fetch( url )
+fetch( urltracks )
     .then( function(response){
         return response.json();//convertimos la info en formato json
     })
@@ -68,48 +71,68 @@ fetch( url )
     })
 })
 
-// //Agregar a playlist.
+// // //Agregar a playlist.
 // let playlist = [];
 
-// //Recuperar datos del storage
-// let recuperoStorage = localStorage.getItem('playlist');
+//  //Cuando el usuario haga click en "agregar a playlist" Agregar id de track dentro del array.
+// let namesagregar = document.querySelector('.namesagregar');
+// console.log(namesagregar);
 
-// //Chequear y agregar la información de local storage en el array
-// if(recuperoStorage != null){
-//     agregar = JSON.parse(recuperoStorage);
-// }
+// namesagregar.addEventListener("click", function(e){
+//      e.preventDefault();
+//     //hasta aca paramos el evento
+//     //hacemos push para agregar lo nuestro id al array de playlist
+//     //guardamos id en array
+//       playlist.push(id);
+//       console.log(playlist);
+
+//       //armamos string
+//       let playlistParaStorage = JSON.stringify(playlist);
+      
+//       //lo guarfamos dentro del local storage
+//       //set.item permite guardar en storage
+//       localStorage.setItem('playlist', playlistParaStorage);
+//       console.log(localStorage);
+// })
+      
+
+
+
+
+//  //Recuperar datos del storage
+//  let recuperoStorage = localStorage.getItem('playlist');
+
+// // //Chequear y agregar la información de local storage en el array
+//  if(recuperoStorage != null){
+//        agregar = JSON.parse(recuperoStorage);
+//  }
 
 // //Chequear que el id esté en el array para cambiar el texto al usuario.
-// if(playlist.includes(id)){
+//  if(playlist.includes(id)){
 //     document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
 // }
 
-// //Cuando el usuario haga click en "agregar a playlist" Agregar id de track dentro del array.
-// let agregar = document.querySelector('.agregar');
-// console.log(agregar);
+// \
 
-// fav.addEventListener("click", function(e){
-//     e.preventDefault();
-
-//     //Chequear si el id está en el array
-//     if(playlist.includes(id)){
-//         let idASacar = agregar.indexOf(id);
-//         playlist.splice(idASacar, 1);
-//         document.querySelector('.agregar').innerText = "Agregar a mi playlist";
-//     } else {
-//         //Guardamos el id en el array
-//         agregar.push(id);
-//         console.log(playlist);
-//         document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
-//     }
+// //     //Chequear si el id está en el array
+// //     if(playlist.includes(id)){
+// //         let idASacar = agregar.indexOf(id);
+// //         playlist.splice(idASacar, 1);
+// //         document.querySelector('.agregar').innerText = "Agregar a mi playlist";
+// //     } else {
+// //         //Guardamos el id en el array
+// //         agregar.push(id);
+// //         console.log(playlist);
+// //         document.querySelector('.agregar').innerText = "Eliminar de mi playlist";
+// //     }
         
-//     //Armamos un string
-//     let agregarParaStorage = JSON.stringify(playlist);
-//     //Lo guardamos dentro de localStorage
-//     localStorage.setItem('playlist', agregarParaStorage);
-//     console.log(localStorage);
+// //     //Armamos un string
+// //     let agregarParaStorage = JSON.stringify(playlist);
+// //     //Lo guardamos dentro de localStorage
+// //     localStorage.setItem('playlist', agregarParaStorage);
+// //     console.log(localStorage);
     
    
     
 
-//     })
+// //     })

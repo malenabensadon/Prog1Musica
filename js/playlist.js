@@ -31,6 +31,8 @@ buscador.addEventListener('input', function(){
 
 window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
 
+//PLAYLISTTT
+
 //Recupero el storage.
 let recuperoStorage = localStorage.getItem('playlist');
 //Obtengo el array 
@@ -42,7 +44,7 @@ let playlist = document.querySelector('.containerpl');
 //Opcional avisar al usuario que no hay gifs en su lista.
 
 //Necesitamos recorrer el array de playlist
-for (let i=0; i<favoritos.length; i++){
+for (let i=0; i<playlist.length; i++){
     //buscarYMostrarPlaylist
    buscarYMostrarPlaylist(playlist[i]);
 }
