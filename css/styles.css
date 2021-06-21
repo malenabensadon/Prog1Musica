@@ -476,8 +476,9 @@ a{
 }
 .infopl{
     width: 50%;
-    margin: auto;
-    align-items: center;
+    padding-right: 30px;
+    padding-top: 20px;
+    align-items: left;
 }
 .fotopla{
     width: auto;
