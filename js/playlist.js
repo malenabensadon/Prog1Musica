@@ -33,12 +33,14 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 
 //PLAYLISTTT
 
+
+
 //Recupero el storage.
 let recuperoStorage = localStorage.getItem('playlist');
 //Obtengo el array 
 let playlist = JSON.parse(recuperoStorage);
 //destino de los datos en el html
-let playlist = document.querySelector('.containerpl');
+let playlist1 = document.querySelector('.containerpl');
 
 
 //Opcional avisar al usuario que no hay gifs en su lista.
@@ -51,25 +53,29 @@ for (let i=0; i<playlist.length; i++){
 
 
 function buscarYMostrarPlaylist(id){
-    let url = `https://api.deezer.com/tracks${id}`
+    let proxy3 = 'https://cors-anywhere.herokuapp.com/'
+    let url = `https://api.deezer.com/track/${id}`
+    let playlist3= proxy3+url
     
     //buscamos info de la api
-    fetch(url)
+    fetch(playlist3)
     .then( function(response){
         return response.json();//convertimos la info en formato json
     })
     .then(function(data){
         //procesar
-        let info = data.data;
-        let resultados = '';
-        containerpl.innerHTML += `<article class="cajapl">
+        // let info = data.data;
+        console.log(data)
+        // let resultados = '';
+        playlist1.innerHTML += `<article class="cajapl">
                             <article class="fotopl">
-                                <a href="./detail-track.html"><img class="fotop" src="${info[i].data.picture_medium}" alt=""></a>
+                                <a href="./detail-track.html?id=${data.id}"><img class="fotop" src="${data.album.cover_medium}" alt=""></a>
                             </article>
                             <article class="infopl">
-                                <h2> <a href="./detail-track.html">${info[i].data.title}</a> <a href="./playlists.html"></a></h2>
-                                <h4><a href="./detail-artist.html"> ${info[i].data.artist.name} </a></h4>
-                        </article>` 
+                                <h2> <a href="./detail-track.html?id=${data.id}">${data.title}</a></h2>
+                                <h4> <a href="./detail-artist.html?id=${data.artist.id}"> ${data.artist.name} </a></h4>
+                                <iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${data.preview}" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+                                </article>` 
     
     })
     .catch( function(e){
