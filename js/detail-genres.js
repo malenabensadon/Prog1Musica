@@ -55,7 +55,7 @@ fetch( urlDetGenero )
         foto.src = data.picture_medium;
 
       
-        let urlGeneros1 = `https://api.deezer.com/genre/${id}/artists`;
+        let urlGeneros1 = `https://api.deezer.com/genre/${id}/artists`; //aca hay algo que esta maaaaaalllll
         let urlGeneros2 = proxy + urlGeneros1;
 
         //buscamos info
