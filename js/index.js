@@ -30,7 +30,7 @@ buscador.addEventListener('input', function(){
 
 })
 
-window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
+// window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
 
 //creamos variables con urls
 let proxy = 'https://cors-anywhere.herokuapp.com/'
@@ -60,6 +60,7 @@ fetch(url)
         //editamos nuestro html
         trackContainer.innerHTML += contenidoTrack
     })
+    
 
 //url + proxy
 let proxy2 = 'https://cors-anywhere.herokuapp.com/'
@@ -119,4 +120,4 @@ fetch(url3)
     //editamos el html
     artistsContainer.innerHTML += contenidoArtists
 })   
-})
+
