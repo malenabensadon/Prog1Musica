@@ -76,7 +76,9 @@ fetch( urlDetGenero )
                                                 <li class="pequena"> 
                                                 <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a> 
                                                 <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}"></img></a> 
+                                                <p class="names">Estos son los mejores artistas del genero:</p>
                                                 </li>
+
                                               </article>`
                                                 
                         
