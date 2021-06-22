@@ -130,8 +130,7 @@ fetch(url2)
  })
 
 //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
-
-let urltodos = url3+url2+urlResultadoalbum;
+ 
 
 //Capturamos el formulario
 let busqueda = document.querySelector('form');
@@ -145,7 +144,7 @@ busqueda.addEventListener('submit', function(e){
     e.preventDefault();//prevenimos el comportamiento default
 
     //condicionales chequeamos el contenido
-    if( buscador1.value != urltodos){
+    if( buscador1.value != ""){
         //le aviso al usuario 
         errordebusqueda.innerHTML = `<h2 class= "titulos">Oops! No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="titulos">Búsqueda relacionada:</h2>`;
