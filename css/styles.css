@@ -178,6 +178,7 @@ a{
 }
 .instagram{
     width: 70px;
+    align-items: center;
     
 }
 .extra{
@@ -301,6 +302,10 @@ a{
 .bobtopfive{
     color: rgb(105, 112, 98);
     margin: 10px;
+}
+.otraclase{
+    width: 170px;
+    align-items: center;
 }
 .pag{
     display: flex;
