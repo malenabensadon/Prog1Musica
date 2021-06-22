@@ -61,7 +61,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
  
           let artist = document.querySelector('.artist');
           //creamos ruta hacia el nombre del artista
-          artist.innerText = data.artist.name;
+          artist.innerHTML = `<a href="./detail-artist.html?id=${data.artist.id}"> ${data.artist.name} </a>`;
 
          let genero = document.querySelector('.genre');
          //creamos ruta hacia el nombre del genero
@@ -93,7 +93,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 //recorremos la info con un for
                 for(let i=0; i<info.length; i++){
 
-                    contenidoAlbumDet +=   `<li>${info[i].title} <p> <a class="namesagregar" href="">Agregar a mí playlist</a> </p> </li>`
+                    contenidoAlbumDet +=   `<li><a href="./detail-track.html?id=${info[i].id}"> ${info[i].title}</a> <p> <a class="namesagregar" href="">Agregar a mí playlist</a> </p> </li>`
                         
                 }
 //editamos el Html

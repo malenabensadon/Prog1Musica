@@ -45,7 +45,7 @@ buscador.addEventListener('input', function(){
         .then(function(data){
             console.log(data);
     
-            //usamos innerText para cambiar lo que esta dentro de las etiquetas del html
+            //usamos innerText e innerHTML para cambiar lo que esta dentro de las etiquetas del html
             let cancion = document.querySelector('.track'); 
             cancion.innerText += data.title;
         
@@ -53,11 +53,10 @@ buscador.addEventListener('input', function(){
             img.src += data.album.cover_medium;
                 
             let artista = document.querySelector(".names");
-            artista.innerText += data.artist.name; 
+            artista.innerHTML +=  `<a href="./detail-artist.html?id=${data.artist.id}"> ${data.artist.name} </a>`; 
             
             let album = document.querySelector(".instajustin");
-            album.innerText += data.album.title;
-            let playlist1 = document.querySelector('.containerpl');
+            album.innerHTML +=  `<a href="./detail-album.html?id=${data.album.id}"> ${data.album.title} </a>`; 
 
             let player = document.querySelector(".player");
             player.innerHTML+=`<iframe class="player" title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${id}" width="90%" margin="40px" height="300"frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>`;

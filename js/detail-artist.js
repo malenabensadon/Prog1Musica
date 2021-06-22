@@ -71,8 +71,8 @@ fetch( url )
                 //recorremos el array de datos
                 for(let i=0; i<5; i++){
 
-                    contenidoGenerosPage +=   `<li>${info[i].title} </li>`
-                        
+                    contenidoGenerosPage +=   `<li><a href="./detail-album.html?id=${info[i].id}"> ${info[i].title}</a></li>`;
+                    
                 }
 
                 generosPageContainer.innerHTML += contenidoGenerosPage
