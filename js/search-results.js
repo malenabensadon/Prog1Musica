@@ -59,10 +59,10 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
  
          //recorremos la info
          for(let i=0; i<info.length; i++){
-             resultados += `<li class="caja">
-             <a href="./detail-album.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}"></a>
-             <a href="./detail-album.html?id=${info[i].id}" class="names">${info[i].title}</a>
-             <a href="./detail-artist.html?id=${info[i].artist.id}"class="names">by ${info[i].artist.name}</a>
+             resultados += `<li class="caja5">
+             <a href="./detail-album.html?id=${info[i].id}" class="names5">${info[i].title}</a>
+             <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">by ${info[i].artist.name}</a>
+              <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_small}"></a>
            </li>`//los corchetes i son para estar adentro del array
          }
 
@@ -89,10 +89,10 @@ fetch(url2)
 
         //recorremos la info
         for(let i=0; i<info.length; i++){
-            contenidoTrack += `<li class="caja"> 
-                                        <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"
-                                        alt=""></a> <a href="./detail-track.html?id=${info[i].id}"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="names">${info[i].artist.name}</a>
-                                        <a href="./detail-track.html?id=${info[i].id}"><img class="favx"src="./img/fav.jpg"alt=""></a>
+            contenidoTrack += `<li class="caja5"> 
+                                        <a href="./detail-track.html?id=${info[i].id}"class="names5">${info[i].title}</a> 
+                                        <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">${info[i].artist.name}</a>
+                                        <a href="./detail-track.html?id=${info[i].id }"><img class="fotos5" src="${info[i].album.cover_small}"alt=""></a> 
                                 </li>`
         }
         //editamos nuestro html
@@ -119,9 +119,10 @@ fetch(url2)
      //recorremos el array de datos
      for(let i=0; i<info.length; i++){
  
-         contenidoArtists += `<li class="caja">
-                                  <a href="./detail-artist.html?id=${info[i].id}" class="names">${info[i].name}</a>
-                                  <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos" src="${info[i].picture_medium}" alt=""></a>
+         contenidoArtists += `<li class="caja5">
+                                <a href="./detail-artist.html?id=${info[i].id}" class="5">ARTISTA</a>
+                                <a href="./detail-artist.html?id=${info[i].id}" class="cosa5">${info[i].name}</a>
+                                <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos5" src="${info[i].picture_small}" alt=""></a>
                              </li>`
      }
      //editamos el html
@@ -131,7 +132,7 @@ fetch(url2)
 
 //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
 
-let urltodos = url3+url2+urlResultadoalbum;
+let urltodos = topArtists+topTracks+url4+proxy;
 
 //Capturamos el formulario
 let busqueda = document.querySelector('form');
@@ -145,7 +146,7 @@ busqueda.addEventListener('submit', function(e){
     e.preventDefault();//prevenimos el comportamiento default
 
     //condicionales chequeamos el contenido
-    if( buscador1.value != urltodos){
+    if( buscador1.value !== urltodos){
         //le aviso al usuario 
         errordebusqueda.innerHTML = `<h2 class= "titulos">Oops! No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="titulos">Búsqueda relacionada:</h2>`;

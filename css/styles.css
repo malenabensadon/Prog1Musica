@@ -407,14 +407,7 @@ a{
     width: auto;
     height: 250px;
 }
-.detailx{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    margin-right: 20px;
-    justify-content: center;
-}
+
 .detail{
     margin-right: 30px;
     margin-left: 30px;
@@ -671,41 +664,49 @@ a{
     padding: 1%;
     text-align: center;
 }
-
-
-/*.otro1{
-    justify-content: flex-start;
-    margin-left: 250px;
+.section5{
+    width: 20%;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    text-align: center;
 }
-.otro2{
-    justify-content: flex-end;
-    margin-right: 250px;
-}
-.dgenero{
+.detailx{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: space-between;
-
+    justify-content: center;
 }
-.jsdgenero{
-    justify-content: flex-start;
-    margin-left: 250px;
-}
-.jsdgenero2{
-    justify-content: flex-end;
-    margin-right: 250px;
-}
-.acaja{
+.oops{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    margin-bottom: 10px;
+    justify-content: center;
+}
+.caja5{
+    width: 100%;
+    background-color:black;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 1%;
+    text-align: center;
     justify-content: space-between;
+}
+.names5{
+    align-items: center;
+}
+
+.fotos5{
+    align-items: center;
+    justify-content: flex-end ;
+
+}
+.cosa5{
+    align-items: center;
 
 }
