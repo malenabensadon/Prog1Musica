@@ -1,16 +1,16 @@
 //Formulario
-
+ 
 //Capturamos el formulario
 let formulario = document.querySelector('form');
 let buscador = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
-
+ 
 //creamos la variable del campo
 let aviso = document.querySelector('.aviso')
-
+ 
 //creamos un evento con evenListener
 formulario.addEventListener('submit', function(e){
     e.preventDefault();//prevenimos el comportamiento default
-
+ 
     //condicionales chequeamos el contenido
     if( buscador.value == ""){
         //le aviso al usuario con alert
@@ -21,25 +21,25 @@ formulario.addEventListener('submit', function(e){
     } else {
         this.submit();//enviamos el formulario
     }
-
+ 
 })
-
+ 
 //limpiamos el mensaje de error cuando el usuario modifica el contenido
 buscador.addEventListener('input', function(){
     aviso.innerText= '';
-
+ 
 })
-
+ 
 // resultados de busqueda
-
+ 
 window.addEventListener("load", function(){ //controlar que todo el html esté cargado en el navegador 
-
+ 
     let queryString = location.search //Caputramos queryString
     let queryStringToObject = new URLSearchParams(queryString); //La transformamos en Objeto Literal
     //como es un objeto literal usamos el metodo get para obtener los datos
     let aBuscar  = queryStringToObject.get('search'); //obtener la informacion que esta dentro de nuestro form
     //ponemos el name del campo input del formulario porque sino no funciona. 
-
+ 
     //ALBUMS
     let proxy = 'https://cors-anywhere.herokuapp.com/';
     let url4 = `https://api.deezer.com/search/album?q=${aBuscar}`;//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
@@ -53,12 +53,12 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
      })
      .then(function(data){
          let info = data.data
-
+ 
                 //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
-
+ 
         //creamos la variable del campo
         let oops = document.querySelector('.oops')
-
+ 
         //condicionales chequeamos el contenido
         if(info.length == 0){
             oops.style.display = "block";
@@ -66,9 +66,9 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
             oops.innerText= '';
-
+ 
         })
-
+ 
          console.log(info);
          let section = document.querySelector('.detailx');
          let resultados= '';
@@ -81,7 +81,7 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
               <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_small}"></a>
            </li>`//los corchetes i son para estar adentro del array
          }
-
+ 
          //editamos nuestro html con los resultados
          section.innerHTML += resultados
      })
@@ -90,21 +90,21 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
 let proxy2 = 'https://cors-anywhere.herokuapp.com/'
 let topTracks = `https://api.deezer.com/search/track?q=${aBuscar}`//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
 let url2 = proxy2+topTracks
-
+ 
 //buscamos info de la api
 fetch(url2)
     .then(function(response){
         return response.json()//convertimos la info en formato json
-
+ 
     })
     .then(function(data){
         let info = data.data
-
+ 
                 //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
-
+ 
         //creamos la variable del campo
         let oops = document.querySelector('.oops')
-
+ 
         //condicionales chequeamos el contenido
         if(info.length == 0){
             oops.style.display = "block";
@@ -112,13 +112,13 @@ fetch(url2)
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
             oops.innerText= '';
-
+ 
         })
-
+ 
         console.log(info);
         let trackContainer= document.querySelector('.detailx');
         let contenidoTrack= '';
-
+ 
         //recorremos la info
         for(let i=0; i<info.length; i++){
             contenidoTrack += `<li class="caja5"> 
@@ -144,12 +144,12 @@ fetch(url2)
  })
  .then(function(data){
      let info = data.data
-
+ 
             //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
-
+ 
         //creamos la variable del campo
         let oops = document.querySelector('.oops')
-
+ 
         //condicionales chequeamos el contenido
         if(info.length == 0){
             oops.style.display = "block";
@@ -157,9 +157,9 @@ fetch(url2)
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
             oops.innerText= '';
-
+ 
         })
-
+ 
      console.log(info);
      let artistsContainer= document.querySelector('.detailx');
      let contenidoArtists= '';
@@ -177,39 +177,5 @@ fetch(url2)
      artistsContainer.innerHTML += contenidoArtists
  })   
  })
-
-//FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
  
-
-//Capturamos el formulario
-let busqueda = document.querySelector('form');
-let buscador1 = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
-
-//creamos la variable del campo
-let errordebusqueda = document.querySelector('.oops')
-
-//creamos un evento con evenListener
-busqueda.addEventListener('submit', function(e){
-    e.preventDefault();//prevenimos el comportamiento default
-
-    //condicionales chequeamos el contenido
-    if( buscador1.value != ""){
-        //le aviso al usuario 
-        errordebusqueda.innerHTML = `<h2 class= "titulos">Oops! No se encontaron resultados para tu búsqueda</h2>
-                            <h2 class="titulos">Búsqueda relacionada:</h2>`;
-    } else {
-        this.submit();//enviamos el formulario
-    }
-
-})
-
-//limpiamos el mensaje de error cuando el usuario modifica el contenido
-buscador1.addEventListener('input', function(){
-    aviso.innerText= '';
-
-})
-
-
-//FALTAN GENEROS
-
-// FALTAN RELACIONADAS
+ 
