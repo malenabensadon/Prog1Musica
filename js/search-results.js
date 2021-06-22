@@ -53,6 +53,22 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
      })
      .then(function(data){
          let info = data.data
+
+                //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
+
+        //creamos la variable del campo
+        let oops = document.querySelector('.oops')
+
+        //condicionales chequeamos el contenido
+        if(info.length == 0){
+            oops.style.display = "block";
+        }
+                //limpiamos el mensaje de error cuando el usuario modifica el contenido
+        buscador.addEventListener('input', function(){
+            oops.innerText= '';
+
+        })
+
          console.log(info);
          let section = document.querySelector('.detailx');
          let resultados= '';
@@ -83,6 +99,22 @@ fetch(url2)
     })
     .then(function(data){
         let info = data.data
+
+                //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
+
+        //creamos la variable del campo
+        let oops = document.querySelector('.oops')
+
+        //condicionales chequeamos el contenido
+        if(info.length == 0){
+            oops.style.display = "block";
+        }
+                //limpiamos el mensaje de error cuando el usuario modifica el contenido
+        buscador.addEventListener('input', function(){
+            oops.innerText= '';
+
+        })
+
         console.log(info);
         let trackContainer= document.querySelector('.detailx');
         let contenidoTrack= '';
@@ -112,6 +144,22 @@ fetch(url2)
  })
  .then(function(data){
      let info = data.data
+
+            //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
+
+        //creamos la variable del campo
+        let oops = document.querySelector('.oops')
+
+        //condicionales chequeamos el contenido
+        if(info.length == 0){
+            oops.style.display = "block";
+        }
+                //limpiamos el mensaje de error cuando el usuario modifica el contenido
+        buscador.addEventListener('input', function(){
+            oops.innerText= '';
+
+        })
+
      console.log(info);
      let artistsContainer= document.querySelector('.detailx');
      let contenidoArtists= '';
@@ -130,39 +178,5 @@ fetch(url2)
  })   
  })
 
-//FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
-
-let urltodos = topArtists+topTracks+url4+proxy;
-
-//Capturamos el formulario
-let busqueda = document.querySelector('form');
-let buscador1 = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
-
-//creamos la variable del campo
-let errordebusqueda = document.querySelector('.oops')
-
-//creamos un evento con evenListener
-busqueda.addEventListener('submit', function(e){
-    e.preventDefault();//prevenimos el comportamiento default
-
-    //condicionales chequeamos el contenido
-    if( buscador1.value !== urltodos){
-        //le aviso al usuario 
-        errordebusqueda.innerHTML = `<h2 class= "titulos">Oops! No se encontaron resultados para tu búsqueda</h2>
-                            <h2 class="titulos">Búsqueda relacionada:</h2>`;
-    } else {
-        this.submit();//enviamos el formulario
-    }
-
-})
-
-//limpiamos el mensaje de error cuando el usuario modifica el contenido
-buscador1.addEventListener('input', function(){
-    aviso.innerText= '';
-
-})
-
-
-//FALTAN GENEROS
 
 // FALTAN RELACIONADAS

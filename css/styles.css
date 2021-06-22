@@ -680,13 +680,6 @@ a{
     width: 100%;
     justify-content: center;
 }
-.oops{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-}
 .caja5{
     width: 100%;
     background-color:black;
@@ -708,5 +701,18 @@ a{
 }
 .cosa5{
     align-items: center;
+
+}
+.oops{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+.tito{
+    color:chartreuse ;
+    margin-top: 20px;
+    border: solid 3px chartreuse;
 
 }
