@@ -149,11 +149,15 @@ fetch(url2)
  
         //creamos la variable del campo
         let oops = document.querySelector('.oops')
+        let nada = '';
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            oops.style.display = "block";
+            nada+= `<h2 class= "tito">Oops! No se encontaron resultados para tu búsqueda</h2>
+                            <h2 class="tito">Búsqueda relacionada:</h2>`;
         }
+        oops.innerHTML += nada
+
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
             oops.innerText= '';

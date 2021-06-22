@@ -709,6 +709,7 @@ a{
     flex-direction: column;
     width: 100%;
     justify-content: center;
+    margin-left: 1300px;
 }
 .tito{
     color:chartreuse ;
