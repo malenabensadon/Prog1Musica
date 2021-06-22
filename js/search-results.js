@@ -43,10 +43,10 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
     //ALBUMS
     let proxy = 'https://cors-anywhere.herokuapp.com/';
     let url4 = `https://api.deezer.com/search/album?q=${aBuscar}`;//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
-    let urlResultadoalbum = proxy+url4
+    let url1 = proxy+url4
      
      //creo un fetch que busca info 
-     fetch(urlResultadoalbum)
+     fetch(url1)
      .then(function(response){
          return response.json()//convertimos la info en formato json
  
@@ -130,6 +130,9 @@ fetch(url2)
  })
 
 //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
+
+let urltodos = url3+url2+urlResultadoalbum;
+
 //Capturamos el formulario
 let busqueda = document.querySelector('form');
 let buscador1 = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
@@ -142,7 +145,7 @@ busqueda.addEventListener('submit', function(e){
     e.preventDefault();//prevenimos el comportamiento default
 
     //condicionales chequeamos el contenido
-    if( buscador1.value !== ""){
+    if( buscador1.value != urltodos){
         //le aviso al usuario 
         errordebusqueda.innerHTML = `<h2 class= "titulos">Oops! No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="titulos">Búsqueda relacionada:</h2>`;
