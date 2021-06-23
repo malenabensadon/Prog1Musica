@@ -596,10 +596,6 @@ a{
 .cancion{
     color: white;
 }
-.tracks{
-    margin: 20px;
-    margin-top: 80px;
-}
 .dalbum{
     display: flex;
     flex-wrap: wrap;
@@ -665,7 +661,7 @@ a{
     text-align: center;
 }
 .section5{
-    width: 20%;
+    width: 100%;
     background-color:black;
     display: flex;
     flex-direction: column;
@@ -675,12 +671,11 @@ a{
 }
 
 .caja5{
-    width: 50%;
+    width: 100%;
     background-color:black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 40px;
     margin: 20px;
 }
 .names5{
@@ -689,21 +684,30 @@ a{
 
 .fotos5{
     align-items: center;
-    justify-content: flex-end ;
-    border-radius: 90%;
+    justify-content: flex-start ;
+    border-radius: 30%;
 
 }
 .cosa5{
     align-items: center;
 
 }
+.resdebus7{
+    width: 100%;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 300px;
+    text-align: center;
+}
+
 .resultadosArtist{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
-    margin: 40px;
+    justify-content: space-between;
     padding: 20px;
 
     
@@ -714,7 +718,7 @@ a{
     flex-direction: column;
     width: 100%;
     justify-content: space-between;
-    margin: 40px;
+    padding: 20px;
     
 }
 .resultadosTracks{
@@ -723,7 +727,7 @@ a{
     flex-direction: column;
     width: 100%;
     justify-content: space-between;
-    margin: 40px;
+    padding: 20px;
     
 }
 .tito{
@@ -734,4 +738,31 @@ a{
 }
 .resultadobusq{
     margin: 1180px;;
+}
+.tracks{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.artists{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.albums{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.resultado7{
+    color: rgb(0, 255, 21);
 }

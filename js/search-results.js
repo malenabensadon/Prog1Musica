@@ -38,6 +38,9 @@ buscador.addEventListener('input', function(){
     let aBuscar  = queryStringToObject.get('search'); //obtener la informacion que esta dentro de nuestro form
     //ponemos el name del campo input del formulario porque sino no funciona. 
 
+    let infobuscada = document.querySelector('.resultado7')
+    infobuscada.innerText = `"Resultados de busqueda para ${aBuscar}"`;
+
 //TRACKS
 //creamos variables con urls
 let proxy2 = 'https://cors-anywhere.herokuapp.com/'
@@ -76,7 +79,7 @@ fetch(url2)
         for(let i=0; i<info.length; i++){
             contenidoTrack += `<li class="caja5"> 
                                         <a href="./detail-track.html?id=${info[i].id}"class="names5">${info[i].title}</a> 
-                                        <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">${info[i].artist.name}</a>
+                                        <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">${info[i].artist.name}</a>
                                         <a href="./detail-track.html?id=${info[i].id }"><img class="fotos5" src="${info[i].album.cover_small}"alt=""></a> 
                                 </li>`
         }
@@ -188,3 +191,5 @@ fetch(url2)
      //editamos el html
      albumsContainer.innerHTML += contenidoAlbums
  }) 
+
+
