@@ -12,7 +12,7 @@ formulario.addEventListener('submit', function(e){
     e.preventDefault();//prevenimos el comportamiento default
 
     //condicionales chequeamos el contenido
-    if( buscador.value == ""){
+    if( buscador.value === ""){
         //le aviso al usuario con alert
         aviso.innerText = 'El buscador no puede estar vacío';
     } else if( buscador.value.length < 3){
