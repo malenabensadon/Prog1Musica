@@ -50,8 +50,8 @@ fetch(urlAlbumes)
 
         contenidoAlbumesPage +=   `<article class="album">
                                         <a href="./detail-album.html?id=${info[i].id}"><img class="fotos" src="${info[i].cover_medium}" alt=""></a>
-                                        <h2 class="texto"><a href="./detail-album.html?id=${info[i].id}" class="names">${info[i].title}</a></h2>
-                                        <h4><a href="./detail-artist.html" class="names">by ${info[i].artist.name}</a></h4> 
+                                        <h3 class="texto"><a href="./detail-album.html?id=${info[i].id}" class="names">${info[i].title}</a></h3>
+                                        <h4><a href="./detail-artist.html" class="names"> ${info[i].artist.name}</a></h4> 
                                   </article>`
     }
     albumesPageContainer.innerHTML += contenidoAlbumesPage

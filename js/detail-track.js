@@ -1,3 +1,4 @@
+window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 //Formulario
 
 //Capturamos el formulario
@@ -29,22 +30,23 @@ buscador.addEventListener('input', function(){
 
 })
 
-// window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
 
-    let queryString = location.search //Caputramos qs
-    let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL
-    let id = queryStringToObject.get('id');
+/////detail trackkkk
+
+    let queryString = location.search //Caputro del url toda la qs
+    let queryStringToObject = new URLSearchParams(queryString); //La transformamos en OL por new url..
+    let id = queryStringToObject.get('id');//obtengo el id y lo pongo en url
     
     let url = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`;
     
-    //buscamos info de la api
+    //buscamos info de la api, proceso en fetch
     fetch( url )
         .then( function(response){
             return response.json();//convertimos la info en formato json
         })
         .then(function(data){
             console.log(data);
-    
+            //devuelve info de 1 track en innerText/HTML
             //usamos innerText e innerHTML para cambiar lo que esta dentro de las etiquetas del html
             let cancion = document.querySelector('.track'); 
             //creamos ruta hacia nombre track
@@ -71,49 +73,48 @@ buscador.addEventListener('input', function(){
         .catch(function(error){
             console.log(error);
         })
-    
 
-        // //Agregar a playlist.
-        let playlist = [];
+    // //Agregar a playlist. creo array donde va a ir la playlist
+    let playlist = [];
 
-        //Recuperar datos del storage
-        let recuperoStorage = localStorage.getItem('playlist');
+    //Recuperar datos del storage cn propiedad playlist
+    let recuperoStorage = localStorage.getItem('playlist');
 
-        //Chequear y agregar la información de local storage en el array
-        if(recuperoStorage != null){ //distinto de null entonces agrego a playlist
-            playlist = JSON.parse(recuperoStorage);// si me devolvio algo o parseo y meto en playlist
+    //Chequear y agregar la información de local storage en el array
+    if(recuperoStorage != null){ //distinto de null entonces 
+        playlist = JSON.parse(recuperoStorage);// me devolvio algo q lo parseo y meto en playlist
+    }
+
+    //Chequear que el id esté en el array para cambiar el texto al usuario.
+    if(playlist.includes(id)){ //uso method de arry nuevo
+    document.querySelector('.namesagregar').innerText = "Eliminar de mi playlist";
+    }
+
+
+    //Cuando el usuario haga click en "agregar a playlist" quiero q el id de track se guarde en mi array
+    let namesagregar = document.querySelector('.namesagregar');
+    console.log(namesagregar);
+
+    namesagregar.addEventListener("click", function(e){ //click comportamiento default
+         e.preventDefault();// parametro e para detener el default
+
+        //Chequear si el id está en el array
+        if(playlist.includes(id)){//si si
+            let idASacar = playlist.indexOf(id);//pido posicion
+            playlist.splice(idASacar, 1);//desde posic saco 1
+            document.querySelector('.namesagregar').innerText = "Agregar a mi playlist";
+        } else {// el if da falso osea q no esta guardado
+            //Guardamos el id en el array
+            playlist.push(id);
+            console.log(playlist);
+            document.querySelector('.namesagregar').innerText = "Eliminar de mi playlist";
         }
 
-        //Chequear que el id esté en el array para cambiar el texto al usuario.
-        if(playlist.includes(id)){
-        document.querySelector('.namesagregar').innerText = "Eliminar de mi playlist";
-        }
-
-
-        //Cuando el usuario haga click en "agregar a playlist" Agregar id de track dentro del array.
-        let namesagregar = document.querySelector('.namesagregar');
-        console.log(namesagregar);
-
-        namesagregar.addEventListener("click", function(e){
-            e.preventDefault();
-
-            //Chequear si el id está en el array
-            if(playlist.includes(id)){
-                let idASacar = playlist.indexOf(id);
-                playlist.splice(idASacar, 1);
-                document.querySelector('.namesagregar').innerText = "Agregar a mi playlist";
-            } else {
-                //Guardamos el id en el array
-                playlist.push(id);
-                console.log(playlist);
-                document.querySelector('.namesagregar').innerText = "Eliminar de mi playlist";
-            }
-
-
-        //Armamos un string
-        let namesagregarParaStorage = JSON.stringify(playlist);
-        //Lo guardamos dentro de localStorage
-        localStorage.setItem('playlist', namesagregarParaStorage);
-        console.log(localStorage);
+    //Stringifeamos array de playlist
+    let namesagregarParaStorage = JSON.stringify(playlist);
+    //Lo guardamos dentro de localStorage
+    localStorage.setItem('playlist', namesagregarParaStorage);
+    console.log(localStorage);
 
     })
+})

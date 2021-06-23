@@ -613,6 +613,8 @@ a{
     justify-content: flex-start;
 }
 .jsdalbum2{
+    margin-top: 40px;
+    margin-right: 50px;
     justify-content: flex-end;
 }
 .detallesfotos{
