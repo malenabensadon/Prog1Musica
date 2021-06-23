@@ -64,16 +64,20 @@ fetch(url2)
                 //FALTA IF NO HAY NADA PARA LA BUSQUEDA TRACKS
  
         //creamos la variable del campo
-        let tracks = document.querySelector('.tracks')
+        let tracks = document.querySelector('.oops')
+        let nada = '';
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            tracks.style.display = "block";
+            nada+= `<h2 class= "tito"> No se encontaron resultados para tu búsqueda</h2>
+                            <h2 class="tito">Búsqueda relacionada:</h2>`;
         }
+        tracks.innerHTML += nada
+
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
             tracks.innerText= '';
- 
+
         })
  
         console.log(info);
@@ -110,12 +114,12 @@ fetch(url2)
             //FALTA IF NO HAY NADA PARA LA BUSQUEDA ARTISTS
  
         //creamos la variable del campo
-        let artists = document.querySelector('.artists')
+        let artists = document.querySelector('.oops')
         let nada = '';
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            nada+= `<h2 class= "tito">artists> No se encontaron resultados para tu búsqueda</h2>
+            nada+= `<h2 class= "tito"> No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="tito">Búsqueda relacionada:</h2>`;
         }
         artists.innerHTML += nada
@@ -164,12 +168,12 @@ fetch(url2)
             //FALTA IF NO HAY NADA PARA LA BUSQUEDA ALBUMS
  
         //creamos la variable del campo
-        let albums = document.querySelector('.albums')
+        let albums = document.querySelector('.oops')
         let nada = '';
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            nada+= `<h2 class= "tito">albums> No se encontaron resultados para tu búsqueda</h2>
+            nada+= `<h2 class= "tito"> No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="tito">Búsqueda relacionada:</h2>`;
         }
         albums.innerHTML += nada

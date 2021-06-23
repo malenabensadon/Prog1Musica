@@ -729,9 +729,8 @@ a{
     
 }
 .tito{
-    color:chartreuse ;
+    color:black ;
     margin-top: 20px;
-    border: solid 3px chartreuse;
 
 }
 .resultadobusq{
@@ -760,4 +759,7 @@ a{
 }
 .resultado7{
     color: rgb(0, 255, 21);
+}
+.oops{
+    background-color: chartreuse;
 }
