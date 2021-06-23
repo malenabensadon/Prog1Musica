@@ -40,6 +40,11 @@ buscador.addEventListener('input', function(){
 
     let infobuscada = document.querySelector('.resultado7')
     infobuscada.innerText = `"Resultados de busqueda para ${aBuscar}"`;
+    //limpiamos el mensaje cuando el usuario modifica el contenido
+        buscador.addEventListener('input', function(){
+            infobuscada.innerText= '';
+ 
+            })
 
 //TRACKS
 //creamos variables con urls
@@ -192,4 +197,19 @@ fetch(url2)
      albumsContainer.innerHTML += contenidoAlbums
  }) 
 
+ //editando el css desde java (detalles copados)
+ 
+ //capturamos el elemento y lo metemos dentro de una variable
+ let elementolista = document.querySelector(".caja5")
+ 
+ //hacemos un evento en la variable ya asignada
+ elementolista.addEventListener('mouseover', function(){
+    e.preventDefault()
+    //lo que sucede cuando pasa el mouse
+    elementolista.style.backgroundColor = "dimgrey";
+ })
+ elementolista.addEventListener('mouseout', function(){
+     //lo que sucede cuando retira el mouse
+    elementolista.style.backgroundColor = "black";
+ })
 
