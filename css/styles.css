@@ -760,3 +760,17 @@ a{
 .oops{
     background-color: chartreuse;
 }
+.cajaextra{
+    width: 20%;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    text-align: center;
+}
+.spinner{
+    border-radius: 100%;
+    width: auto;
+    height: 170px;
+}

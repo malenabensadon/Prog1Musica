@@ -86,7 +86,7 @@ fetch(url2)
  
         //recorremos la info
         for(let i=0; i<info.length; i++){
-            contenidoTrack += `<li class="caja"> 
+            contenidoTrack += `<li class="cajaextra"> 
                                          <a href="./detail-track.html?id=${info[i].id }"><img class="fotos5" src="${info[i].album.cover_medium}"alt=""></a> 
                                         <a href="./detail-track.html?id=${info[i].id}"class="names5">${info[i].title}</a> 
                                         <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">${info[i].artist.name}</a>
@@ -138,7 +138,7 @@ fetch(url2)
      //recorremos el array de datos
      for(let i=0; i<info.length; i++){
  
-         contenidoArtists += `<li class="caja">
+         contenidoArtists += `<li class="cajaextra">
                                 <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos5" src="${info[i].picture_medium}" alt=""></a>
                                 <a href="./detail-artist.html?id=${info[i].id}" class="cosa5">${info[i].name}</a>
                                 </li>`
@@ -192,7 +192,7 @@ fetch(url2)
      //recorremos el array de datos
      for(let i=0; i<info.length; i++){
  
-         contenidoAlbums += `<li class="caja">
+         contenidoAlbums += `<li class="cajaextra">
                                 <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_medium}"></a>                 
                                 <a href="./detail-album.html?id=${info[i].id}" class="names5">${info[i].title}</a>
                                 <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">by ${info[i].artist.name}</a>
@@ -201,6 +201,23 @@ fetch(url2)
      //editamos el html
      albumsContainer.innerHTML += contenidoAlbums
  }) 
+
+
+ //SPINNERRRRRR CUANDO CAGA LA PAG (AREGLARLO)
+ let spinner = document.querySelector('.spinner')
+    let mispinner = '';
+ 
+formulario.addEventListener('submit', function(e){
+    e.preventDefault();//prevenimos el comportamiento default
+         
+    //condicionales chequeamos el contenido
+    if(spinner.onload){
+                //aparece la rosquita
+                mispinner.src += "./img/attente.gif";
+    }
+
+
+
 
  //editando el css desde java (detalles copados)
  
@@ -221,7 +238,7 @@ fetch(url2)
  //OTRO EVENT 
 
   //capturamos el elemento y lo metemos dentro de una variable
-  let elementolista = document.querySelector(".caja")
+  let elementolista = document.querySelector(".cajaextra")
  
   //hacemos un evento en la variable ya asignada
   elementolista.addEventListener('mouseover', function(e){
@@ -234,3 +251,4 @@ fetch(url2)
      elementolista.style.backgroungColor = "black";
   })
 
+})
