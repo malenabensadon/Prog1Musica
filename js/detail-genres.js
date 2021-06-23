@@ -1,5 +1,4 @@
 //Formulario
-
 //Capturamos el formulario
 let formulario = document.querySelector('form');
 let buscador = document.querySelector('[name="search"]'); //capturamos el campo que queremos chequear
@@ -84,7 +83,7 @@ fetch( urlDetGenero )
                 }
 
                 //cambiamos estructura del html
-                generosPageContainer.innerHTML += contenidoGenerosPage
+                generosPageContainer.innerHTML += contenidoGenerosPage;
             
                 })
         
