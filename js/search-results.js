@@ -119,7 +119,7 @@ fetch(url2)
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            nada+= `<h2 class= "tito"> No se encontaron resultados para tu búsqueda</h2>
+            nada+= `<h2 class= "tito"> No se encontaron resultados para ${aBuscar}</h2>
                             <h2 class="tito">Búsqueda relacionada:</h2>`;
 
                             let proxy = 'https://cors-anywhere.herokuapp.com/'
