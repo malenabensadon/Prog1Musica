@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {//Formulario
+
  
 //Capturamos el formulario
 let formulario = document.querySelector('form');
@@ -263,7 +263,7 @@ fetch(url2)
   })
 
 // // //SPINNERRRRRR CUANDO CARGA LA PAG (AREGLARLO)
-// let spinner = document.querySelector('.spinner9')
+// let spinner = document.querySelector('.spinner')
 
 // spinner.addEventListener('submit', function(e){
 // e.preventDefault();//prevenimos el comportamiento default
@@ -273,7 +273,7 @@ fetch(url2)
 //         //aparece la rosquita
 //         spinner.innerText = '';
 
-})
+
 
 // })
 // })
