@@ -32,8 +32,6 @@ buscador.addEventListener('input', function(){
  
 // resultados de busqueda
  
-window.addEventListener("load", function(){ //controlar que todo el html esté cargado en el navegador 
- 
     let queryString = location.search //Caputramos queryString
     let queryStringToObject = new URLSearchParams(queryString); //La transformamos en Objeto Literal
     //como es un objeto literal usamos el metodo get para obtener los datos
@@ -58,15 +56,37 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
  
         //creamos la variable del campo
         let oops = document.querySelector('.oops')
-        let resultado7 = document.querySelector('.resultado7')
+        let proxyRelated = 'https://cors-anywhere.herokuapp.com/'
+        let RelatedPage = 'https://api.deezer.com/chart/0/albums'
+        let urlRelacionado = proxyRelated+RelatedPage;
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
             oops.style.display = "block";
-        }else if (buscador.value !== ""){
-            resultado7.innerText = `Los resultados para tu busqueda: ${input}`;
-        
+            fetch(urlAlbumes)
+            .then(function(response){
+            return response.json()
+
+                })
+            .then(function(data){
+                let info = data.data
+                console.log(info);
+                let relatedPageContainer= document.querySelector('.listas');
+                let contenidoRelatedPage= '';
+
+                for(let i=0; i<info.length; i++){
+
+                    contenidoRelatedPage +=   ``
+                }
+                relatedPageContainer.innerHTML += contenidoRelatedPage
+            })   
+.catch( function(error){
+    console.log(error);
+})
+
         }
+        
+        
         //limpiamos el mensaje de error cuando el usuario modifica el contenido
            buscador.addEventListener('input', function(){
                oops.innerText = '';
@@ -193,6 +213,6 @@ fetch(url2)
      //editamos el html
      artistsContainer.innerHTML += contenidoArtists
  })   
- })
+ 
  
  
