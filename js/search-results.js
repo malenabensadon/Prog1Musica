@@ -86,10 +86,11 @@ fetch(url2)
  
         //recorremos la info
         for(let i=0; i<info.length; i++){
-            contenidoTrack += `<li class="caja5"> 
+            contenidoTrack += `<li class="caja"> 
+                                         <a href="./detail-track.html?id=${info[i].id }"><img class="fotos5" src="${info[i].album.cover_medium}"alt=""></a> 
                                         <a href="./detail-track.html?id=${info[i].id}"class="names5">${info[i].title}</a> 
                                         <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">${info[i].artist.name}</a>
-                                        <a href="./detail-track.html?id=${info[i].id }"><img class="fotos5" src="${info[i].album.cover_small}"alt=""></a> 
+                                        
                                 </li>`
         }
         //editamos nuestro html
@@ -137,10 +138,10 @@ fetch(url2)
      //recorremos el array de datos
      for(let i=0; i<info.length; i++){
  
-         contenidoArtists += `<li class="caja5">
+         contenidoArtists += `<li class="caja">
+                                <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos5" src="${info[i].picture_medium}" alt=""></a>
                                 <a href="./detail-artist.html?id=${info[i].id}" class="cosa5">${info[i].name}</a>
-                                <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos5" src="${info[i].picture_small}" alt=""></a>
-                             </li>`
+                                </li>`
 
 
                              
@@ -191,10 +192,10 @@ fetch(url2)
      //recorremos el array de datos
      for(let i=0; i<info.length; i++){
  
-         contenidoAlbums += `<li class="caja5">
+         contenidoAlbums += `<li class="caja">
+                                <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_medium}"></a>                 
                                 <a href="./detail-album.html?id=${info[i].id}" class="names5">${info[i].title}</a>
                                 <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">by ${info[i].artist.name}</a>
-                                <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_small}"></a>
                             </li>`
      }
      //editamos el html
@@ -220,7 +221,7 @@ fetch(url2)
  //OTRO EVENT 
 
   //capturamos el elemento y lo metemos dentro de una variable
-  let elementolista = document.querySelector(".caja5")
+  let elementolista = document.querySelector(".caja")
  
   //hacemos un evento en la variable ya asignada
   elementolista.addEventListener('mouseover', function(e){

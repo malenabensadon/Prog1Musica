@@ -398,6 +398,7 @@ a{
     height: auto;
     border-radius: 20%;
     margin-top: 20px;
+    
 }
 .videoj{
     margin-top: 20px;
@@ -602,7 +603,7 @@ a{
     flex-direction: row;
     width: 100%;
     margin-bottom: 10px;
-    align-items: center;
+    justify-content: space-around;
 
 }
 .jsdalbum{
@@ -675,8 +676,9 @@ a{
     background-color:black;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 20px;
+    text-align: center;
 }
 .names5{
     align-items: center;
@@ -706,27 +708,22 @@ a{
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
     padding: 20px;
 }
 
 .resultadosAlbums{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    justify-content: space-between;
     padding: 20px;
-    
 }
 .resultadosTracks{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    justify-content: space-between;
     padding: 20px;
-    
 }
 .tito{
     color:black ;
@@ -739,7 +736,7 @@ a{
 .tracks{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     justify-content: space-between;
 }
