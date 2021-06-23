@@ -72,7 +72,7 @@ function buscarYMostrarPlaylist(id){
                                 <a href="./detail-track.html?id=${data.id}"><img class="fotop" src="${data.album.cover_medium}" alt=""></a>
                                 <h2> <a href="./detail-track.html?id=${data.id}">${data.title}</a></h2>
                                 <h4> <a href="./detail-artist.html?id=${data.artist.id}"> ${data.artist.name} </a></h4>
-                                <h2> <a class="namesagregar" href=""> Agregar a mí playlist </a> </h2>
+                                <h5> <a class="namesagregar" href="./detail-track.html?id=${data.id}"> Eliminar de mí playlist </a> </h5>
                                 </article>
                             <article class="infopl">
                                 <iframe class="player" title="deezer-widget" src="https://widget.deezer.com/widget/dark/track/${id}" width="100%" height="190" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>

@@ -37,63 +37,7 @@ buscador.addEventListener('input', function(){
     //como es un objeto literal usamos el metodo get para obtener los datos
     let aBuscar  = queryStringToObject.get('search'); //obtener la informacion que esta dentro de nuestro form
     //ponemos el name del campo input del formulario porque sino no funciona. 
- 
-    //ALBUMS
-    let proxy = 'https://cors-anywhere.herokuapp.com/';
-    let url4 = `https://api.deezer.com/search/album?q=${aBuscar}`;//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
-    let url1 = proxy+url4
-     
-     //creo un fetch que busca info 
-     fetch(url1)
-     .then(function(response){
-         return response.json()//convertimos la info en formato json
- 
-     })
-     .then(function(data){
-         let info = data.data
- 
-                //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
- 
-        //creamos la variable del campo
-        let oops = document.querySelector('.oops')
 
-        //condicionales chequeamos el contenido
-        if(info.length == 0){
-            oops.style.display = "block";
-           
-
-        }
-        
-        
-        //limpiamos el mensaje de error cuando el usuario modifica el contenido
-           buscador.addEventListener('input', function(){
-               oops.innerText = '';
-               
-        
-                //limpiamos el mensaje de error cuando el usuario modifica el contenido
-        buscador.addEventListener('input', function(){
-            oops.innerText= '';
- 
-        })
- 
-         console.log(info);
-         let section = document.querySelector('.detailx');
-         let resultados= '';
- 
-         //recorremos la info
-    
-         for(let i=0; i<info.length; i++){
-             resultados += `
-             <li class="caja5">
-             <a href="./detail-album.html?id=${info[i].id}" class="names5">${info[i].title}</a>
-             <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">by ${info[i].artist.name}</a>
-              <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_small}"></a>
-           </li>`//los corchetes i son para estar adentro del array
-         }
- 
-         //editamos nuestro html con los resultados
-         section.innerHTML += resultados
-     })
 //TRACKS
 //creamos variables con urls
 let proxy2 = 'https://cors-anywhere.herokuapp.com/'
@@ -109,23 +53,23 @@ fetch(url2)
     .then(function(data){
         let info = data.data
  
-                //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
+                //FALTA IF NO HAY NADA PARA LA BUSQUEDA TRACKS
  
         //creamos la variable del campo
-        let oops = document.querySelector('.oops')
+        let tracks = document.querySelector('.tracks')
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            oops.style.display = "block";
+            tracks.style.display = "block";
         }
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
-            oops.innerText= '';
+            tracks.innerText= '';
  
         })
  
         console.log(info);
-        let trackContainer= document.querySelector('.detailx');
+        let trackContainer= document.querySelector('.resultadosTracks');
         let contenidoTrack= '';
  
         //recorremos la info
@@ -139,6 +83,7 @@ fetch(url2)
         //editamos nuestro html
         trackContainer.innerHTML += contenidoTrack
     })
+    
 // ARTSITAS
  //creamos variables con urls
  let proxy3 = 'https://cors-anywhere.herokuapp.com/'
@@ -154,41 +99,92 @@ fetch(url2)
  .then(function(data){
      let info = data.data
  
-            //FALTA IF NO HAY NADA PARA LA BUSQUEDA OOPS
+            //FALTA IF NO HAY NADA PARA LA BUSQUEDA ARTISTS
  
         //creamos la variable del campo
-        let oops = document.querySelector('.oops')
+        let artists = document.querySelector('.artists')
         let nada = '';
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            nada+= `<h2 class= "tito">Oops! No se encontaron resultados para tu búsqueda</h2>
+            nada+= `<h2 class= "tito">artists> No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="tito">Búsqueda relacionada:</h2>`;
         }
-        oops.innerHTML += nada
+        artists.innerHTML += nada
 
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
-            oops.innerText= '';
+            artists.innerText= '';
  
         })
  
      console.log(info);
-     let artistsContainer= document.querySelector('.detailx');
+     let artistsContainer= document.querySelector('.resultadosArtist');
      let contenidoArtists= '';
  
      //recorremos el array de datos
      for(let i=0; i<info.length; i++){
  
          contenidoArtists += `<li class="caja5">
-                                <a href="./detail-artist.html?id=${info[i].id}" class="5">ARTISTA</a>
                                 <a href="./detail-artist.html?id=${info[i].id}" class="cosa5">${info[i].name}</a>
                                 <a href="./detail-artist.html?id=${info[i].id}"><img class="fotos5" src="${info[i].picture_small}" alt=""></a>
                              </li>`
+
+
+                             
      }
      //editamos el html
      artistsContainer.innerHTML += contenidoArtists
  })   
  
-})
+
+// ALBUMS
+ //creamos variables con urls
+ let proxy4 = 'https://cors-anywhere.herokuapp.com/'
+ let topAlbums = `https://api.deezer.com/search/album?q=${aBuscar}`//luego de ?q= ponemos la variable que armamos que contiene los datos dentro de nuesro buscador.
+ let url4 = proxy4+topAlbums
  
+ //buscamos info de la api
+ fetch(url4)
+ .then(function(response){
+     return response.json()//convertimos la info en formato json
+ 
+ })
+ .then(function(data){
+     let info = data.data
+ 
+            //FALTA IF NO HAY NADA PARA LA BUSQUEDA ALBUMS
+ 
+        //creamos la variable del campo
+        let albums = document.querySelector('.albums')
+        let nada = '';
+ 
+        //condicionales chequeamos el contenido
+        if(info.length == 0){
+            nada+= `<h2 class= "tito">albums> No se encontaron resultados para tu búsqueda</h2>
+                            <h2 class="tito">Búsqueda relacionada:</h2>`;
+        }
+        albums.innerHTML += nada
+
+                //limpiamos el mensaje de error cuando el usuario modifica el contenido
+        buscador.addEventListener('input', function(){
+            albums.innerText= '';
+ 
+        })
+ 
+     console.log(info);
+     let albumsContainer= document.querySelector('.resultadosAlbums');
+     let contenidoAlbums= '';
+ 
+     //recorremos el array de datos
+     for(let i=0; i<info.length; i++){
+ 
+         contenidoAlbums += `<li class="caja5">
+                                <a href="./detail-album.html?id=${info[i].id}" class="names5">${info[i].title}</a>
+                                <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">by ${info[i].artist.name}</a>
+                                <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_small}"></a>
+                            </li>`
+     }
+     //editamos el html
+     albumsContainer.innerHTML += contenidoAlbums
+ }) 

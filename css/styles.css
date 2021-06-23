@@ -673,22 +673,15 @@ a{
     padding: 1%;
     text-align: center;
 }
-.detailx{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-}
+
 .caja5{
-    width: 100%;
+    width: 50%;
     background-color:black;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    padding: 1%;
-    text-align: center;
     justify-content: space-between;
+    padding: 40px;
+    margin: 20px;
 }
 .names5{
     align-items: center;
@@ -697,19 +690,41 @@ a{
 .fotos5{
     align-items: center;
     justify-content: flex-end ;
+    border-radius: 90%;
 
 }
 .cosa5{
     align-items: center;
 
 }
-.oops{
+.resultadosArtist{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin: 40px;
+    padding: 20px;
+
+    
+}
+.resultadosAlbums{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
-    justify-content: center;
-    margin-left: 1180px;
+    justify-content: space-between;
+    margin: 40px;
+    
+}
+.resultadosTracks{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    margin: 40px;
+    
 }
 .tito{
     color:chartreuse ;
