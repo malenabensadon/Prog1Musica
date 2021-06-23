@@ -30,6 +30,11 @@ buscador.addEventListener('input', function(){
  
 })
  
+window.addEventListener('load', function(){
+        let spinner = document.querySelector('.spinner')
+        spinner.style.display = "none";
+      
+
 // resultados de busqueda
  
     let queryString = location.search //Caputramos queryString
@@ -262,18 +267,6 @@ fetch(url2)
      elementolista.style.backgroungColor = "black";
   })
 
-// // //SPINNERRRRRR CUANDO CARGA LA PAG (AREGLARLO)
-// let spinner = document.querySelector('.spinner')
 
-// spinner.addEventListener('submit', function(e){
-// e.preventDefault();//prevenimos el comportamiento default
-     
-// //condicionales chequeamos el contenido
-// if(spinner.onload){
-//         //aparece la rosquita
-//         spinner.innerText = '';
+})
 
-
-
-// })
-// })
