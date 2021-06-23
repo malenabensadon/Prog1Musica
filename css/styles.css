@@ -709,11 +709,14 @@ a{
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    margin-left: 1300px;
+    margin-left: 1180px;
 }
 .tito{
     color:chartreuse ;
     margin-top: 20px;
     border: solid 3px chartreuse;
 
+}
+.resultadobusq{
+    margin: 1180px;;
 }

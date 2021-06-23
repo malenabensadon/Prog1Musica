@@ -58,11 +58,22 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
  
         //creamos la variable del campo
         let oops = document.querySelector('.oops')
+        let resultado7 = document.querySelector('.resultado7')
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
             oops.style.display = "block";
+        }else if (buscador.value !== ""){
+            resultado7.innerText = `Los resultados para tu busqueda: ${input}`;
+        
         }
+        //limpiamos el mensaje de error cuando el usuario modifica el contenido
+           buscador.addEventListener('input', function(){
+               oops.innerText = '';
+               resultado7.innerText = '';
+    
+           })
+        
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
             oops.innerText= '';
@@ -74,8 +85,10 @@ window.addEventListener("load", function(){ //controlar que todo el html esté c
          let resultados= '';
  
          //recorremos la info
+    
          for(let i=0; i<info.length; i++){
-             resultados += `<li class="caja5">
+             resultados += `
+             <li class="caja5">
              <a href="./detail-album.html?id=${info[i].id}" class="names5">${info[i].title}</a>
              <a href="./detail-artist.html?id=${info[i].artist.id}"class="cosa5">by ${info[i].artist.name}</a>
               <a href="./detail-album.html?id=${info[i].id}"><img class="fotos5" src="${info[i].cover_small}"></a>
