@@ -56,33 +56,11 @@ buscador.addEventListener('input', function(){
  
         //creamos la variable del campo
         let oops = document.querySelector('.oops')
-        let proxyRelated = 'https://cors-anywhere.herokuapp.com/'
-        let RelatedPage = 'https://api.deezer.com/chart/0/albums'
-        let urlRelacionado = proxyRelated+RelatedPage;
- 
+
         //condicionales chequeamos el contenido
         if(info.length == 0){
             oops.style.display = "block";
-            fetch(urlAlbumes)
-            .then(function(response){
-            return response.json()
-
-                })
-            .then(function(data){
-                let info = data.data
-                console.log(info);
-                let relatedPageContainer= document.querySelector('.listas');
-                let contenidoRelatedPage= '';
-
-                for(let i=0; i<info.length; i++){
-
-                    contenidoRelatedPage +=   ``
-                }
-                relatedPageContainer.innerHTML += contenidoRelatedPage
-            })   
-.catch( function(error){
-    console.log(error);
-})
+           
 
         }
         
@@ -90,9 +68,7 @@ buscador.addEventListener('input', function(){
         //limpiamos el mensaje de error cuando el usuario modifica el contenido
            buscador.addEventListener('input', function(){
                oops.innerText = '';
-               resultado7.innerText = '';
-    
-           })
+               
         
                 //limpiamos el mensaje de error cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
@@ -214,5 +190,5 @@ fetch(url2)
      artistsContainer.innerHTML += contenidoArtists
  })   
  
- 
+})
  
