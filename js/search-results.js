@@ -200,16 +200,32 @@ fetch(url2)
  //editando el css desde java (detalles copados)
  
  //capturamos el elemento y lo metemos dentro de una variable
- let elementolista = document.querySelector(".caja5")
+ let busquedaper = document.querySelector(".resultado7")
  
  //hacemos un evento en la variable ya asignada
- elementolista.addEventListener('mouseover', function(){
+ busquedaper.addEventListener('mouseover', function(e){
     e.preventDefault()
     //lo que sucede cuando pasa el mouse
-    elementolista.style.backgroundColor = "dimgrey";
+    busquedaper.style.border= "solid 3px chartreuse"; 
  })
- elementolista.addEventListener('mouseout', function(){
+ busquedaper.addEventListener('mouseout', function(){
      //lo que sucede cuando retira el mouse
-    elementolista.style.backgroundColor = "black";
+     busquedaper.style.border = "";
  })
+
+ //OTRO EVENT 
+
+  //capturamos el elemento y lo metemos dentro de una variable
+  let elementolista = document.querySelector(".caja5")
+ 
+  //hacemos un evento en la variable ya asignada
+  elementolista.addEventListener('mouseover', function(e){
+     e.preventDefault()
+     //lo que sucede cuando pasa el mouse
+     elementolista.style.backgroundColor = "grey"; 
+  })
+  elementolista.addEventListener('mouseout', function(){
+      //lo que sucede cuando retira el mouse
+     elementolista.style.backgroungColor = "black";
+  })
 
