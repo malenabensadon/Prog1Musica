@@ -66,7 +66,6 @@ fetch(url2)
     .then(function(data){
         let info = data.data
  
-                //FALTA IF NO HAY NADA PARA LA BUSQUEDA TRACKS
  
         //creamos la variable del campo
         let tracks = document.querySelector('.oops')
