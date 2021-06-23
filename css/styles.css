@@ -3,6 +3,9 @@
     margin: 0%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
 }
 
 /*diseño computadora*/
@@ -769,8 +772,54 @@ a{
     padding: 1%;
     text-align: center;
 }
+.detailx{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        padding: 20px;
+    }
+
+
 .spinner{
     border-radius: 100%;
     width: auto;
     height: 170px;
+    color: yellowgreen;
 }
+/*
+
+#contenedor_carga{
+    background-color: rgba(250, 240, 245, 0.9);
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 1 ease;
+    -o-transition: all 1 ease;
+    transition: all 1 ease;
+    z-index: 10000;
+}
+#carga{
+    border: 15px solid black;
+    border-top-color: white;
+    border-top-style: 100px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+
+}
+@keyframes girar{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+
+}
+}*/
+

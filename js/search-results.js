@@ -1,4 +1,4 @@
-//Formulario
+window.addEventListener('load', function() {//Formulario
  
 //Capturamos el formulario
 let formulario = document.querySelector('form');
@@ -39,7 +39,7 @@ buscador.addEventListener('input', function(){
     //ponemos el name del campo input del formulario porque sino no funciona. 
 
     let infobuscada = document.querySelector('.resultado7')
-    infobuscada.innerText = `"Resultados de busqueda para ${aBuscar}"`;
+    infobuscada.innerText = `"Resultados de busqueda para: ${aBuscar}"`;
     //limpiamos el mensaje cuando el usuario modifica el contenido
         buscador.addEventListener('input', function(){
             infobuscada.innerText= '';
@@ -69,8 +69,7 @@ fetch(url2)
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            nada+= `<h2 class= "tito"> No se encontaron resultados para tu búsqueda</h2>
-                            <h2 class="tito">Búsqueda relacionada:</h2>`;
+            nada+= ``;
         }
         tracks.innerHTML += nada
 
@@ -122,6 +121,34 @@ fetch(url2)
         if(info.length == 0){
             nada+= `<h2 class= "tito"> No se encontaron resultados para tu búsqueda</h2>
                             <h2 class="tito">Búsqueda relacionada:</h2>`;
+
+                            let proxy = 'https://cors-anywhere.herokuapp.com/'
+                            let topTracks = 'https://api.deezer.com/chart/0/tracks'
+                            let url = proxy+topTracks
+                            
+                            //buscamos info de la api
+                            fetch(url)
+                                .then(function(response){
+                                    return response.json()//convertimos la info en formato json
+                            
+                                })
+                                .then(function(data){
+                                    let info = data.data
+                                    console.log(info);
+                                    let trackContainer= document.querySelector('.detailx');
+                                    let contenidoTrack= '';
+                            
+                                    //recorremos la info
+                                    for(let i=0; i<info.length; i++){
+                                        contenidoTrack += `<li class="caja"> 
+                                                                    <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"
+                                                                    alt=""></a> <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a><a href="./detail-artist.html?id=${info[i].artist.id}"class="names">${info[i].artist.name}</a>
+                                                            </li>`
+                                    }
+                                    //editamos nuestro html
+                                    trackContainer.innerHTML += contenidoTrack
+                                })
+                            
         }
         artists.innerHTML += nada
 
@@ -174,8 +201,7 @@ fetch(url2)
  
         //condicionales chequeamos el contenido
         if(info.length == 0){
-            nada+= `<h2 class= "tito"> No se encontaron resultados para tu búsqueda</h2>
-                            <h2 class="tito">Búsqueda relacionada:</h2>`;
+            nada+= ``;
         }
         albums.innerHTML += nada
 
@@ -203,22 +229,7 @@ fetch(url2)
  }) 
 
 
- //SPINNERRRRRR CUANDO CAGA LA PAG (AREGLARLO)
- let spinner = document.querySelector('.spinner')
-    let mispinner = '';
  
-formulario.addEventListener('submit', function(e){
-    e.preventDefault();//prevenimos el comportamiento default
-         
-    //condicionales chequeamos el contenido
-    if(spinner.onload){
-                //aparece la rosquita
-                mispinner.src += "./img/attente.gif";
-    }
-
-
-
-
  //editando el css desde java (detalles copados)
  
  //capturamos el elemento y lo metemos dentro de una variable
@@ -251,4 +262,18 @@ formulario.addEventListener('submit', function(e){
      elementolista.style.backgroungColor = "black";
   })
 
+// // //SPINNERRRRRR CUANDO CARGA LA PAG (AREGLARLO)
+// let spinner = document.querySelector('.spinner9')
+
+// spinner.addEventListener('submit', function(e){
+// e.preventDefault();//prevenimos el comportamiento default
+     
+// //condicionales chequeamos el contenido
+// if(spinner.onload){
+//         //aparece la rosquita
+//         spinner.innerText = '';
+
 })
+
+// })
+// })
