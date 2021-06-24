@@ -150,6 +150,8 @@ window.addEventListener('load', function(){
                                         }
                                         //editamos nuestro html
                                         trackContainer.innerHTML += contenidoTrack
+                                    }).catch(function(error){
+                                        console.log(error);
                                     })
                                 
             }
