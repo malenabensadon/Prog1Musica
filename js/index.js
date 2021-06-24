@@ -92,6 +92,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
         }
         //editamos nuestro html
         albumContainer.innerHTML += contenidoAlbum
+    })
         .catch(function(error){
             console.log(error);
         })  
@@ -128,4 +129,4 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
     .catch(function(error){
         console.log(error);
     })     
-})
+
