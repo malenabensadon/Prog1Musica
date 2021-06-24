@@ -1,4 +1,6 @@
-window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
+window.addEventListener('load', function(){
+    let spinner = document.querySelector('.spinner')
+    spinner.style.display = "none";
     
     //Capturamos el formulario
     let formulario = document.querySelector('form');
@@ -30,9 +32,6 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
     
     })
     
-    window.addEventListener('load', function(){
-            let spinner = document.querySelector('.spinner')
-            spinner.style.display = "none";
         
 
     // resultados de busqueda
@@ -268,4 +267,4 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 
 
     })
-})
+
