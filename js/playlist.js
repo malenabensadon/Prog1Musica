@@ -116,7 +116,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 
                 //desde acaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-                //Cuando el usuario haga click en "vaciar playlist" Agregar id de track dentro del array.
+                //Cuando el usuario haga click en "vaciar playlist" 
                 let chau = document.querySelector('.vaciar');
                 console.log(chau);
 
@@ -125,14 +125,16 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 
                     //Chequear si el id está en el array
                     if(playlist1 !=null){
-                        let borro = localStorage.clear;
+                        localStorage.clear();
                         document.querySelector('.vaciar').innerHTML = `<a href="canciones.html">Agregar canciones a mi playlist</a>`;
                         console.log(playlist1);
-                    } 
+                    } else{
+                        document.querySelector('.vaciar').innerHTML = `<a href="canciones.html">Agregar canciones a mi playlist</a>`;
+                    }
 
 
                 //Armamos un string
-                let chauParaStorage = JSON.stringify(playlist);
+                let chauParaStorage = JSON.stringify(playlist1);
                 //Lo guardamos dentro de localStorage
                 localStorage.clear('playlist1', chauParaStorage);
                 console.log(localStorage);
