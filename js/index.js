@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador
-    
+
 //Formulario
 
     //Capturamos el formulario
@@ -59,6 +59,9 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
             //editamos nuestro html
             trackContainer.innerHTML += contenidoTrack
         })
+        .catch(function(error){
+            console.log(error);
+        })  
         
 
     //url + proxy
@@ -89,6 +92,9 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
         }
         //editamos nuestro html
         albumContainer.innerHTML += contenidoAlbum
+        .catch(function(error){
+            console.log(error);
+        })  
     })   
 
     //url + proxy
@@ -118,5 +124,8 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
         }
         //editamos el html
         artistsContainer.innerHTML += contenidoArtists
-    })   
+    })
+    .catch(function(error){
+        console.log(error);
+    })     
 })
