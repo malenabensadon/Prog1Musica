@@ -101,7 +101,7 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
     //for que recorra la info
         for(let i=0; i<info.length; i++){
 
-            CancionesPage +=   ` <article class="caja"> 
+            CancionesPage +=   `<article class="caja"> 
                                 <a href="./detail-track.html?id=${info[i].id }"><img class="fotos" src="${info[i].album.cover_medium}"alt=""></a> 
                                 <h6> <a href="./detail-track.html?id=${info[i].id }"><img src= "./img/fav.jpg"> </img></a></h6>
                                 <a href="./detail-track.html"class="names">${info[i].title}</a> <a href=".playlists.html"></a>
@@ -122,22 +122,9 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
 
                 chau.addEventListener("click", function(e){
                     e.preventDefault();
-
-                    //Chequear si el id está en el array
-                    if(playlist1 !=null){
-                        localStorage.clear();
-                        document.querySelector('.vaciar').innerHTML = `<a href="canciones.html">Agregar canciones a mi playlist</a>`;
-                        console.log(playlist1);
-                    } else{
-                        document.querySelector('.vaciar').innerHTML = `<a href="canciones.html">Agregar canciones a mi playlist</a>`;
-                    }
-
-
-                //Armamos un string
-                let chauParaStorage = JSON.stringify(playlist1);
-                //Lo guardamos dentro de localStorage
-                localStorage.clear('playlist1', chauParaStorage);
-                console.log(localStorage);
+                    localStorage.clear();
+                    document.querySelector('.vaciar').innerHTML= '<a href= "canciones.html">Agregar canciones a mi playlist</a>';
+                    document.querySelector('.containerpl').innerHTML= '';
 
                 })
 
