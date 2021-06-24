@@ -123,11 +123,14 @@ window.addEventListener('load', function() {//controlar que todo el html esté c
                 chau.addEventListener("click", function(e){
                     e.preventDefault();
                     localStorage.clear();
-                    document.querySelector('.vaciar').innerHTML= '<a href= "canciones.html">Agregar canciones a mi playlist</a>';
+                    document.querySelector('.vaciar').style.display="none"
+                    document.querySelector('.agregar').style.display="inline"
+                    document.querySelector('.upsi').style.display="inline"
                     document.querySelector('.containerpl').innerHTML= '';
-
                 })
 
+
+//<h2 style="display:none" class="agregar" >Oops! Tu playlist se encuentra vacía!</h2>
 })
 
 
