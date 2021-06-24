@@ -1,4 +1,5 @@
 window.addEventListener('load', function() {//controlar que todo el html esté cargado en el navegador 
+    
     //Formulario
     
     //Capturamos el formulario
