@@ -114,8 +114,6 @@ window.addEventListener('load', function(){
     .then(function(data){
         let info = data.data
     
-                //FALTA IF NO HAY NADA PARA LA BUSQUEDA ARTISTS
-    
             //creamos la variable del campo
             let artists = document.querySelector('.oops')
             let nada = '';
@@ -197,8 +195,7 @@ window.addEventListener('load', function(){
     })
     .then(function(data){
         let info = data.data
-    
-                //FALTA IF NO HAY NADA PARA LA BUSQUEDA ALBUMS
+
     
             //creamos la variable del campo
             let albums = document.querySelector('.oops')
